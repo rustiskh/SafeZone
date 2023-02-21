@@ -1,0 +1,214 @@
+.about {
+	padding-top: 100px;
+
+	&__title {
+		text-align: center;
+	}
+
+	&__description {
+		max-width: 1258px;
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 33px;
+		text-align: center;
+		color: color(white);
+		margin: 0 auto;
+		margin-top: 60px;
+	}
+
+	&__wrapper {
+		max-width: 1156px;
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 42px;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	&__btn {
+		margin: 0 auto;
+		margin-top: 60px;
+		max-width: 324px;
+	}
+
+	@include mobile {
+		padding-top: 80px;
+
+		&__description {
+			font-size: 20px;
+			line-height: 25px;
+			margin-top: 40px;
+		}
+
+		&__btn {
+			margin-top: 30px;
+		}
+	}
+}
+
+.about-item {
+	max-width: 212px;
+	position: relative;
+	margin-right: 12px;
+	margin-left: 12px;
+	margin-bottom: 30px;
+
+	&__shape {
+		width: 212px;
+		height: 212px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			border: 1px solid color(accent);
+			top: 15%;
+
+			width: 150px;
+			height: 150px;
+			transform: rotate(45deg);
+		}
+	}
+
+	&__number {
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 37px;
+		text-align: center;
+		color: color(white);
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			text-align: center;
+			top: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&::after {
+			content: "";
+			width: 75px;
+			position: absolute;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			text-align: center;
+			top: 44px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&_years {
+			&::before {
+				content: "более";
+			}
+		}
+
+		&_deals {
+			&::before {
+				content: "более";
+			}
+
+			&::after {
+				content: "cделок";
+			}
+		}
+
+		&_guarantee {
+			&::after {
+				content: "гарантия";
+			}
+		}
+
+		&_pay {
+			&::before {
+				content: "более";
+			}
+
+			&::after {
+				content: "способов оплаты";
+			}
+		}
+	}
+
+	&__description {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		color: color(white);
+		margin-top: 30px;
+
+		@include mobile {
+			margin-top: 15px;
+		}
+	}
+}
+
+body.light {
+	.about {
+		&__description {
+			color: color(gray);
+		}
+
+		&__btn {
+			border-color: color(accent-dark);
+			box-shadow: none;
+			color: color(gray);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.about-item {
+		&__shape {
+			&::before {
+				border: 1px solid color(accent-dark);
+			}
+		}
+
+		&__number {
+			color: color(gray);
+
+			// &::before {
+			// 	content: "";
+			// 	position: absolute;
+			// 	font-weight: 400;
+			// 	font-size: 18px;
+			// 	line-height: 23px;
+			// 	text-align: center;
+			// 	top: -30px;
+			// 	left: 50%;
+			// 	transform: translateX(-50%);
+			// }
+
+			// &::after {
+			// 	content: "";
+			// 	width: 75px;
+			// 	position: absolute;
+			// 	font-weight: 400;
+			// 	font-size: 18px;
+			// 	line-height: 23px;
+			// 	text-align: center;
+			// 	top: 44px;
+			// 	left: 50%;
+			// 	transform: translateX(-50%);
+			// }
+		}
+
+		&__description {
+			color: color(gray);
+		}
+	}
+}

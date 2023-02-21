@@ -1,0 +1,46 @@
+.popular {
+	padding-top: 100px;
+
+	@include mobile {
+		padding-top: 60px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__list {
+		margin-top: 60px;
+		margin-bottom: 52px;
+
+		@include mobile {
+			display: none;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.product-card {
+			margin-bottom: 32px;
+
+			@include laptop {
+				margin: 0 auto;
+				margin-bottom: 32px;
+				justify-content: space-around;
+			}
+		}
+	}
+
+	.select {
+		display: none;
+		margin-bottom: 40px;
+		margin-top: 40px;
+
+		@include mobile {
+			display: flex;
+		}
+	}
+}

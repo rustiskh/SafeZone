@@ -1,0 +1,66 @@
+.cookie-block {
+	position: fixed;
+	bottom: 0;
+	z-index: 10001;
+	background: color(gray-dark);
+	width: 100%;
+	padding: 30px 0;
+
+	.container {
+		position: relative;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		color: color(white);
+
+		@include mobile {
+			font-size: 14px;
+		}
+	}
+
+	&__btn {
+		width: 172px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		text-align: center;
+		color: color(gray-dark);
+
+		margin: 0 auto;
+		margin-top: 20px;
+
+		&:hover {
+			color: color(white);
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 0;
+		top: -12px;
+	}
+}
+
+body.light {
+	.cookie-block {
+		background: color(mint-dark);
+
+		// &__text {
+		// color: color(white);
+		// }
+
+		&__btn {
+			color: color(white);
+			&:hover {
+				color: color(gray-dark);
+			}
+		}
+	}
+}

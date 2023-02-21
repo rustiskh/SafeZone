@@ -1,0 +1,158 @@
+.search {
+	&-wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&-input-wrapper {
+		flex: 1;
+	}
+
+	&-input {
+		min-width: 257px;
+		width: 100%;
+		padding: 9px 0px 10px 20px;
+		border: none;
+
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(accent);
+		background: color(black);
+		border-radius: 6px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+
+		&::placeholder {
+			opacity: 0.5;
+		}
+	}
+
+	&-categories {
+		&-select {
+			width: 188px;
+			margin-left: 1px;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(accent);
+			background: color(black);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&__icon {
+				margin-right: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&.open {
+				.search-categories-list {
+					display: flex;
+					flex-direction: column;
+					flex-wrap: wrap;
+					align-content: start;
+				}
+			}
+		}
+
+		&-selected {
+			padding: 10px;
+			padding-bottom: 9px;
+			white-space: nowrap;
+			cursor: pointer;
+		}
+
+		&-list {
+			display: none;
+			position: absolute;
+			z-index: 1;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			background-color: color(black);
+			border-radius: 0 0 6px 6px;
+			max-height: 390px;
+			list-style: none;
+			padding: 20px;
+			overflow: auto;
+
+			li {
+				width: 154px;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				cursor: pointer;
+				margin-right: 46px;
+
+				&:hover,
+				&.active {
+					color: color(white);
+				}
+			}
+		}
+	}
+	&-button {
+		height: 42px;
+		width: 42px;
+		background: color(green-gradient);
+		border: none;
+		border-radius: 0px 4px 4px 0px;
+		font-size: 16px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #2980b9;
+
+			circle,
+			line {
+				stroke: color(white);
+			}
+		}
+	}
+}
+
+body.light {
+	.search {
+		&-input {
+			color: color(accent-dark);
+			background: color(beige-light);
+		}
+
+		&-categories {
+			&-select {
+				color: color(accent-dark);
+				background: color(beige-light);
+			}
+
+			&-list {
+				background-color: color(beige-light);
+
+				li {
+					&:hover,
+					&.active {
+						color: color(black);
+					}
+				}
+			}
+		}
+		&-button {
+			circle,
+			line {
+				stroke: color(white);
+			}
+
+			&:hover {
+				circle,
+				line {
+					stroke: color(black);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,612 @@
+.header {
+	background: color(gray-dark);
+	&-main {
+		min-height: 86px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+
+		@include mobile {
+			flex-direction: column;
+			padding-top: 5px;
+		}
+
+		&__logo {
+			margin-right: 36px;
+
+			@include mobile {
+				margin-right: 0;
+			}
+
+			img {
+				@include mobile {
+					height: 31px;
+				}
+			}
+
+			&_black {
+				display: none;
+			}
+		}
+
+		&__color-theme {
+			margin-right: 36px;
+
+			cursor: pointer;
+
+			@include mobile {
+				display: none;
+			}
+
+			&-type {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 20px;
+			}
+
+			&-dark,
+			&-light {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&-dark {
+				.header-main__color-theme-type {
+					color: color(white);
+				}
+			}
+
+			&-light {
+				.header-main__color-theme-type {
+					color: color(black);
+				}
+			}
+		}
+
+		&__controls-wrapper {
+			display: flex;
+			align-items: center;
+
+			&:first-child {
+				@include mobile {
+					justify-content: space-between;
+					width: 100%;
+				}
+			}
+		}
+
+		&__auth-btn {
+			color: color(gray-dark);
+
+			&:hover {
+				color: color(white);
+			}
+
+			@include mobile {
+				width: 320px;
+				margin-top: 10px;
+			}
+		}
+
+		&__telegram-btn {
+			margin-left: 24px;
+
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+}
+
+.header-promo {
+	border-bottom: 1px solid #ffffff;
+	background: color(background-dark);
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		height: 50px;
+
+		@include mobile {
+			height: 22px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include mobile {
+		}
+	}
+
+	&__mini-logo {
+		@include mobile {
+			width: 12px;
+		}
+	}
+}
+
+.header-main__search {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	&-mob-opener {
+		display: none;
+		svg {
+			circle,
+			line {
+				stroke: color(accent);
+			}
+		}
+	}
+	@include laptop {
+		&-mob-opener {
+			display: block;
+		}
+
+		.search-wrapper {
+			display: none;
+			position: absolute;
+			bottom: -48%;
+			left: 0px;
+			width: 100%;
+			z-index: 1000;
+		}
+	}
+
+	@include mobile {
+		&-mob-opener {
+			margin-left: 42px;
+		}
+
+		.search-wrapper {
+			bottom: -47%;
+		}
+
+		.search-categories-select {
+			font-size: 12px;
+			line-height: 15px;
+			max-width: 125px;
+		}
+
+		.search-categories-list {
+			padding: 10px 15px;
+		}
+
+		.search-categories-list {
+			max-height: 335px;
+			li {
+				width: 125px;
+				font-size: 14px;
+				line-height: 18px;
+				margin-right: 10px;
+			}
+		}
+
+		.search-input {
+			font-size: 12px;
+			line-height: 15px;
+			min-width: auto;
+		}
+
+		.search-button {
+			height: 34px;
+			width: 34px;
+		}
+	}
+}
+
+// Элементы меню
+.header-main__menu {
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 12px;
+	margin-left: 32px;
+	color: color(accent);
+	cursor: pointer;
+
+	@include mobile {
+		font-size: 0;
+	}
+
+	&-burger {
+		margin-left: 16px;
+	}
+
+	&-wrapper {
+		display: none;
+		max-width: 1328px;
+		width: 100%;
+		position: absolute;
+		// top: 0;
+		background: color(gray-dark);
+		z-index: 10000;
+		margin: 0 auto;
+		padding: 60px 90px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include mobile {
+			top: 0;
+			padding: 15px 25px;
+		}
+
+		&.open {
+			display: block;
+		}
+	}
+
+	&-content-wrapper {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.header-main__color-theme {
+			display: block;
+		}
+	}
+
+	&-title {
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 44px;
+		color: color(accent);
+		margin-bottom: 15px;
+
+		@include mobile {
+			font-size: 26px;
+			line-height: 33px;
+		}
+	}
+
+	&-close {
+		position: absolute;
+		right: 3%;
+		cursor: pointer;
+
+		@include mobile {
+			svg {
+				height: 16px;
+				width: 16px;
+			}
+		}
+	}
+}
+
+// Блок навигации в меню в хедере
+.header__nav {
+	&-box {
+		position: relative;
+		min-width: 235px;
+		margin-top: 25px;
+
+		@include mobile {
+			min-width: 100%;
+		}
+
+		&.open {
+			.header__nav-list {
+				display: block;
+			}
+
+			.header__nav-chevron {
+				transform: rotate(180deg);
+			}
+		}
+
+		.header-main__color-theme {
+			margin-bottom: 20px;
+			&-dark,
+			&-light {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			&-icon {
+				margin-right: 12px;
+			}
+		}
+
+		&:last-child {
+			&::before {
+				content: "";
+				display: block;
+				width: 1px;
+				height: 100%;
+				background: color(accent);
+				position: absolute;
+				left: -60px;
+
+				@include laptop {
+					height: 1px;
+					width: 100%;
+					left: 0px;
+					position: relative;
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+
+	&-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 40px;
+		cursor: pointer;
+
+		@include mobile {
+			margin-bottom: 22px;
+		}
+	}
+
+	&-title {
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 33px;
+		color: color(white);
+
+		@include mobile {
+			font-size: 18px;
+			line-height: 23px;
+		}
+	}
+
+	&-chevron {
+		display: none;
+		// transform: rotate(180deg);
+
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&-list {
+		display: none;
+	}
+
+	&-item {
+		display: flex;
+		margin-top: 25px;
+	}
+
+	&-list {
+		list-style: none;
+	}
+
+	&-link {
+		align-items: center;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	&-contact {
+		&-item {
+			margin-bottom: 26px;
+
+			@include mobile {
+				margin-bottom: 20px;
+			}
+		}
+
+		&-header {
+			display: flex;
+		}
+
+		&-icon {
+			margin-right: 15px;
+		}
+
+		&-title {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 20px;
+			color: color(white);
+		}
+
+		&-link {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 18px;
+			color: color(white);
+			text-decoration: none;
+			margin-top: 10px;
+		}
+	}
+
+	&-social {
+		&-wrapper {
+			margin-top: 15px;
+		}
+
+		&-title {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: color(white);
+		}
+
+		&-box {
+			display: flex;
+			margin-top: 15px;
+		}
+
+		&-link {
+			width: 30px;
+			height: 30px;
+			margin-right: 15px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			background-position: center;
+			background-size: cover;
+
+			&_instagram {
+				background-image: url("../icons/social-networks/icon-social-insta.svg");
+			}
+
+			&_fb {
+				background-image: url("../icons/social-networks/icon-social-fb.svg");
+			}
+
+			&_vk {
+				background-image: url("../icons/social-networks/icon-social-vk.svg");
+			}
+
+			&_telegram {
+				background-image: url("../icons/social-networks/icon-social-tg.svg");
+			}
+		}
+	}
+}
+
+body.light {
+	.header {
+		background: color(mint);
+		&-main {
+			&__logo {
+				&_black {
+					display: block;
+				}
+
+				&_white {
+					display: none;
+				}
+			}
+
+			&__auth-btn {
+				color: color(white);
+
+				&:hover {
+					color: color(gray-dark);
+				}
+			}
+
+			&__telegram-btn {
+				svg {
+					path {
+						fill: color(accent-dark);
+					}
+				}
+			}
+		}
+	}
+
+	.header-promo {
+		border-bottom: 1px solid color(background-dark);
+	}
+
+	.header-main__search {
+		&-mob-opener {
+			svg {
+				circle,
+				line {
+					stroke: color(accent-dark);
+				}
+			}
+		}
+	}
+
+	// Элементы меню
+	.header-main__menu {
+		color: color(accent-dark);
+
+		&-burger {
+			svg {
+				rect {
+					fill: color(accent-dark);
+				}
+			}
+		}
+
+		&-wrapper {
+			background: color(mint-dark);
+		}
+
+		&-title {
+			color: color(white);
+		}
+
+		&-close {
+			svg {
+				path {
+					fill: color(white);
+				}
+			}
+		}
+	}
+
+	// Блок навигации в меню в хедере
+	.header__nav {
+		// &-box {
+		// &:last-child {
+		// 	&::before {
+		// 		background: color(white);
+		// 	}
+		// }
+		// }
+
+		// &-title {
+		// 	color: color(white);
+		// }
+
+		&-chevron {
+			svg {
+				path {
+					fill: color(white);
+				}
+			}
+		}
+
+		// &-link {
+		// 	color: color(white);
+		// }
+
+		&-contact {
+			// &-title {
+			// 	color: color(white);
+			// }
+
+			// &-link {
+			// 	color: color(white);
+			// }
+
+			&-icon {
+				svg {
+					path {
+						fill: color(accent);
+					}
+				}
+			}
+		}
+
+		&-social {
+			&-title {
+				color: color(white);
+			}
+		}
+	}
+}

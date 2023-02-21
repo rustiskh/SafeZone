@@ -1,0 +1,46 @@
+.accounts {
+	padding-top: 100px;
+
+	@include mobile {
+		padding-top: 60px;
+	}
+
+	&__title {
+		text-align: center;
+		margin-bottom: 60px;
+
+		@include mobile {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__cards-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.game-card {
+			margin: 0px 10px 22px 10px;
+
+			@include laptop {
+				&:not(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5), :nth-child(6), :nth-child(7), :nth-child(8)) {
+					display: none;
+				}
+			}
+
+			@include mobile {
+				margin: 0 7px 15px 7px;
+			}
+		}
+	}
+
+	&__btn {
+		margin: 0 auto;
+		margin-top: 60px;
+		max-width: 324px;
+
+		@include mobile {
+			margin-top: 40px;
+		}
+	}
+}

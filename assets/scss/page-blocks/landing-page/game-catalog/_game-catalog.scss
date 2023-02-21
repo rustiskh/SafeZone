@@ -1,0 +1,167 @@
+.game-catalog {
+	padding-top: 100px;
+	position: relative;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__category-wrapper {
+		min-width: 356px;
+	}
+
+	&__category-item {
+		margin-bottom: 50px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		&_active {
+			.game-catalog__category-name {
+				color: color(accent);
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:hover {
+			.game-catalog__category-name {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__category-icon {
+		height: 20px;
+		margin-right: 20px;
+	}
+
+	&__category-name {
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 38px;
+		color: color(white);
+	}
+
+	&__cards-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-between;
+		max-width: 1010px;
+		min-height: 636px;
+	}
+
+	&__btn {
+		width: 356px;
+		position: absolute;
+		bottom: 0px;
+	}
+
+	.select {
+		display: none;
+		margin-bottom: 40px;
+	}
+
+	@include laptop {
+		&__wrapper {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__category-wrapper {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-bottom: 30px;
+		}
+
+		&__category-item {
+			margin-bottom: 0px;
+			margin-right: 24px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		&__category-icon {
+			margin-right: 6px;
+		}
+
+		&__cards-wrapper {
+			.game-card {
+				margin-bottom: 22px;
+			}
+		}
+
+		&__btn {
+			max-width: 324px;
+			position: relative;
+			margin: 0 auto;
+			margin-top: 20px;
+			width: auto;
+		}
+	}
+
+	@include mobile {
+		padding-top: 60px;
+
+		&__category-wrapper {
+			display: none;
+			flex-direction: column;
+			min-width: auto;
+		}
+
+		&__category-name {
+			font-size: 20px;
+			line-height: 25px;
+		}
+
+		&__cards-wrapper {
+			.game-card {
+				margin-bottom: 15px;
+			}
+			min-height: auto;
+			justify-content: space-around;
+		}
+
+		&__btn {
+			margin-top: 25px;
+		}
+
+		.select {
+			display: flex;
+		}
+	}
+}
+
+body.light {
+	.game-catalog {
+		&__category-item {
+			&_active {
+				.game-catalog__category-name {
+					color: color(accent-dark);
+				}
+			}
+		}
+
+		&__category-icon {
+			svg {
+				path {
+					fill: color(accent-dark);
+				}
+				rect {
+					fill: color(accent-dark);
+				}
+			}
+		}
+
+		&__category-name {
+			color: color(gray);
+		}
+	}
+}

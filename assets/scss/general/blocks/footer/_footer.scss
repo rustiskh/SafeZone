@@ -1,0 +1,209 @@
+.footer {
+	background: color(gray-dark);
+	margin-top: 100px;
+
+	@include mobile {
+		margin-top: 60px;
+	}
+
+	&__main-wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding: 40px 0;
+	}
+
+	&__additional-wrapper {
+		background: color(background-dark);
+		padding: 15px 0;
+	}
+
+	&__additional-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__copywrite {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: color(white);
+	}
+
+	&__bank-link {
+		margin-right: 40px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	@include mobile {
+		&__main-wrapper {
+			// flex-direction: column;
+			flex-wrap: wrap;
+			padding: 40px 20px;
+			padding-bottom: 10px;
+		}
+
+		&__additional-content {
+			flex-direction: column-reverse;
+		}
+
+		&__copywrite {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		&__bank-link {
+			margin-right: 16px;
+		}
+
+		&__bank-img {
+			height: 22px;
+		}
+	}
+}
+
+// Навигационный блок Футера - вынес отдельно для удобства
+.footer__nav {
+	&-box {
+		@include mobile {
+			margin-bottom: 30px;
+
+			&:last-child {
+				order: -1;
+			}
+		}
+	}
+
+	&-item {
+		display: flex;
+		margin-top: 15px;
+	}
+
+	&-header {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+
+		&::before {
+			content: "";
+			width: 2px;
+			height: 40px;
+			border: 2px solid #3eda2b;
+			margin-right: 12px;
+		}
+	}
+
+	&-list {
+		list-style: none;
+	}
+
+	&-link {
+		align-items: center;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 20px;
+		color: color(white);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&-icon {
+		margin-right: 10px;
+	}
+
+	&-social {
+		&-wrapper {
+			margin-top: 15px;
+		}
+
+		&-title {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: color(white);
+		}
+
+		&-box {
+			display: flex;
+			margin-top: 15px;
+		}
+
+		&-link {
+			width: 30px;
+			height: 30px;
+			margin-right: 15px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			background-position: center;
+			background-size: cover;
+
+			&_instagram {
+				background-image: url("../icons/social-networks/icon-social-insta.svg");
+			}
+
+			&_fb {
+				background-image: url("../icons/social-networks/icon-social-fb.svg");
+			}
+
+			&_vk {
+				background-image: url("../icons/social-networks/icon-social-vk.svg");
+			}
+
+			&_telegram {
+				background-image: url("../icons/social-networks/icon-social-tg.svg");
+			}
+		}
+	}
+}
+
+body.light {
+	.footer {
+		background: color(mint-dark);
+
+		&__additional-wrapper {
+			background: color(mint);
+		}
+
+		&__copywrite {
+			color: color(gray);
+		}
+	}
+
+	// Навигационный блок Футера - вынес отдельно для удобства
+	.footer__nav {
+		&-header {
+			color: color(beige-light);
+
+			&::before {
+				border: 2px solid color(beige-light);
+			}
+		}
+
+		&-link {
+			color: color(gray);
+		}
+
+		&-icon {
+			svg {
+				path {
+					fill: color(beige-light);
+				}
+			}
+		}
+
+		&-social {
+			&-title {
+				color: color(gray);
+			}
+		}
+	}
+}

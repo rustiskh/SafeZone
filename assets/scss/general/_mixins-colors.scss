@@ -1,0 +1,32 @@
+$colors: (
+	white: #ffffff,
+	gray: #333333,
+	black: #0a0a0a,
+	gray-dark: #191c1a,
+	beige-light: #f7eec3,
+	mint: #cee7d2,
+	mint-dark: #39a872,
+
+	accent: #3eda2b,
+	accent-dark: #008d26,
+
+	background-dark: #0a0a0a,
+	background-light: #e9e9e9,
+
+	green-gradient: linear-gradient(90deg, #16c753 0%, #008d26 100%),
+	main-slider-dark-gradient: linear-gradient(360deg, #0a0a0a 0%, rgba(10, 10, 10, 0.53125) 25.93%, rgba(10, 10, 10, 0) 35.22%),
+	main-slider-dark-gradient_mob: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.53125) 33.96%, rgba(10, 10, 10, 0) 50%),
+	main-slider-white-gradient: linear-gradient(360deg, #e9e9e9 0%, rgba(233, 233, 233, 0.53125) 13.26%, rgba(10, 10, 10, 0) 35.22%, rgba(233, 233, 233, 0) 35.22%),
+	main-slider-white-gradient_mob: linear-gradient(180deg, #0a0a0a 0%, rgba(10, 10, 10, 0.53125) 33.96%, rgba(10, 10, 10, 0) 50%),
+	button-shadow: rgba(22, 199, 83, 0.84),
+	button-shadow-small: rgba(22, 199, 83, 0.42),
+);
+:root {
+	// each item in color map
+	@each $name, $color in $colors {
+		--color-#{$name}: #{$color};
+	}
+}
+@function color($color-name) {
+	@return var(--color-#{$color-name});
+}
