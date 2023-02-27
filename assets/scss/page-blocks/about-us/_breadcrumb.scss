@@ -1,0 +1,48 @@
+.breadcrumb {
+    &.container {
+        margin-top: 30px;
+        @include mobile {
+            margin-top: 20px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline;
+        position: relative;
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        &::before {
+            content: "◇";
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #3eda2b;
+            margin: 0 8px;
+        }
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include mobile {
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+}

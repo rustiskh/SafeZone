@@ -20,6 +20,13 @@
 @import "page-blocks/landing-page/telegram-bot/telegram-bot";
 @import "page-blocks/landing-page/game-currency/game-currency";
 @import "page-blocks/landing-page/faq/faq";
+@import "page-blocks/about-us/breadcrumb";
+@import "page-blocks/about-us/hero";
+@import "page-blocks/about-us/numbers";
+@import "page-blocks/about-us/benefit";
+@import "page-blocks/about-us/order";
+@import "page-blocks/about-us/timeline";
+@import "page-blocks/about-us/promo";
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.
@@ -27,46 +34,46 @@
 // Поэтому в конце каждого файла стилей содержится правило для "перекрашивания" элементов, которые находятся внутри body."themeName"
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Source Sans Pro", "Inter", sans-serif;
-	font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", "Inter", sans-serif;
+    font-style: normal;
 }
 
 html,
 body {
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .show {
-	display: block;
+    display: block;
 }
 
 body {
-	&.dark {
-		background-color: color(background-dark);
+    &.dark {
+        background-color: color(background-dark);
 
-		.header-main__color-theme-light {
-			display: none;
-		}
-	}
+        .header-main__color-theme-light {
+            display: none;
+        }
+    }
 
-	&.light {
-		background-color: color(background-light);
+    &.light {
+        background-color: color(background-light);
 
-		.header-main__color-theme-dark {
-			display: none;
-		}
-	}
+        .header-main__color-theme-dark {
+            display: none;
+        }
+    }
 }
 
 .container {
-	max-width: 1520px;
-	margin: 0 auto;
+    max-width: 1520px;
+    margin: 0 auto;
 }
 
 .padding-side {
-	padding-left: 10px;
-	padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
