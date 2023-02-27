@@ -89,3 +89,15 @@
         }
     }
 }
+
+body.light {
+    .hero {
+        &__descr {
+            color: color(gray);
+        }
+
+        &__divider {
+            background: color(accent-dark);
+        }
+    }
+}

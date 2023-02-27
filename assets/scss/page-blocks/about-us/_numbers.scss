@@ -80,7 +80,7 @@
     }
 
     &__descr {
-        background: #191c1a;
+        background: color(gray-dark);
         width: 100%;
         height: 86px;
         z-index: -1;
@@ -98,6 +98,26 @@
         @include mobile {
             font-size: 14px;
             line-height: 18px;
+        }
+    }
+}
+
+body.light {
+    .numbers {
+        &__card {
+            border: 1px solid color(accent-dark);
+        }
+
+        &__value {
+            color: color(accent-dark);
+        }
+
+        &__descr {
+            background: color(mint);
+        }
+
+        &__text {
+            color: color(gray);
         }
     }
 }

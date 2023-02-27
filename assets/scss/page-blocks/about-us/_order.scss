@@ -96,3 +96,15 @@
         }
     }
 }
+
+body.light {
+    .order {
+        &__divider {
+            background: color(accent-dark);
+        }
+
+        &__descr {
+            color: color(gray);
+        }
+    }
+}

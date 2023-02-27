@@ -46,3 +46,11 @@
         }
     }
 }
+
+body.light {
+    .breadcrumb {
+        &__link {
+            color: color(gray);
+        }
+    }
+}

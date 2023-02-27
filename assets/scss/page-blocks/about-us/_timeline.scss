@@ -72,3 +72,20 @@
         }
     }
 }
+
+body.light {
+    .timeline-item {
+        &__shape {
+            &::before {
+                border: 1px solid color(accent-dark);
+            }
+        }
+        &__number {
+            color: color(gray);
+        }
+
+        &__description {
+            color: color(gray);
+        }
+    }
+}

@@ -3123,6 +3123,10 @@ body.light .faq__item-link {
   }
 }
 
+body.light .breadcrumb__link {
+  color: var(--color-gray);
+}
+
 .hero__title {
   text-align: center;
   margin-top: 63px;
@@ -3234,6 +3238,13 @@ body.light .faq__item-link {
   }
 }
 
+body.light .hero__descr {
+  color: var(--color-gray);
+}
+body.light .hero__divider {
+  background: var(--color-accent-dark);
+}
+
 .numbers__subtitle {
   margin-top: 77px;
   text-align: center;
@@ -3332,7 +3343,7 @@ body.light .faq__item-link {
   }
 }
 .numbers__descr {
-  background: #191c1a;
+  background: var(--color-gray-dark);
   width: 100%;
   height: 86px;
   z-index: -1;
@@ -3358,6 +3369,19 @@ body.light .faq__item-link {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+body.light .numbers__card {
+  border: 1px solid var(--color-accent-dark);
+}
+body.light .numbers__value {
+  color: var(--color-accent-dark);
+}
+body.light .numbers__descr {
+  background: var(--color-mint);
+}
+body.light .numbers__text {
+  color: var(--color-gray);
 }
 
 .benefit__title {
@@ -3469,7 +3493,7 @@ body.light .faq__item-link {
 }
 .benefit__descr {
   padding: 20px 30px 25px 30px;
-  background: #191c1a;
+  background: var(--color-gray-dark);
   width: 100%;
   height: 216px;
   z-index: -1;
@@ -3496,6 +3520,22 @@ body.light .faq__item-link {
     font-size: 14px;
     line-height: 18px;
   }
+}
+
+body.light .benefit__card {
+  border: 1px solid var(--color-accent-dark);
+}
+body.light .benefit__value-icon path {
+  fill: var(--color-accent-dark);
+}
+body.light .benefit__value-text {
+  color: var(--color-gray);
+}
+body.light .benefit__descr {
+  background: var(--color-beige-light);
+}
+body.light .benefit__text {
+  color: var(--color-gray);
 }
 
 .order__wrapper {
@@ -3620,6 +3660,13 @@ body.light .faq__item-link {
   }
 }
 
+body.light .order__divider {
+  background: var(--color-accent-dark);
+}
+body.light .order__descr {
+  color: var(--color-gray);
+}
+
 .timeline {
   padding-top: 100px;
 }
@@ -3703,61 +3750,16 @@ body.light .faq__item-link {
   }
 }
 
-.promo {
-  /* @include laptop {
-  	&__title {
-  		@include tablet {
-  			margin-bottom: 20px;
-  		}
-  	}
-
-  	&__box-wrapper {
-  		padding: 40px 20px;
-  	}
-
-  	&__content-wrapper {
-  		@include tablet {
-  			flex-direction: column;
-  		}
-  	}
-
-  	&__img {
-  		@include tablet {
-  			width: 429px;
-  			height: 256px;
-  			margin-bottom: 20px;
-  		}
-  	}
-  }
-
-  @include tablet {
-  	&__title {
-  		margin-bottom: 20px;
-  	}
-
-  	&__content-wrapper {
-  		flex-direction: column;
-  	}
-
-  	&__img {
-  		width: 429px;
-  		height: 256px;
-  		margin-bottom: 20px;
-  	}
-  }
-
-  @include mobile {
-  	&__img {
-  		background-image: url("../icons/telegram-bot-block/telegram-bot_mob_dark.svg");
-  	}
-
-  	&__description {
-  		font-size: 14px;
-  		line-height: 18px;
-  		margin-bottom: 20px;
-  	}
-  } */
+body.light .timeline-item__shape::before {
+  border: 1px solid var(--color-accent-dark);
 }
+body.light .timeline-item__number {
+  color: var(--color-gray);
+}
+body.light .timeline-item__description {
+  color: var(--color-gray);
+}
+
 .promo.container {
   margin-top: 100px;
 }
@@ -3809,6 +3811,13 @@ body.light .faq__item-link {
   .promo__descr {
     text-align: left;
   }
+}
+
+body.light .promo__box-wrapper {
+  border: 1px solid var(--color-accent-dark);
+}
+body.light .promo__descr {
+  color: var(--color-gray);
 }
 
 * {
