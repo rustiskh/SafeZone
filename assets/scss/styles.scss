@@ -29,6 +29,11 @@
 @import "page-blocks/about-us/order";
 @import "page-blocks/about-us/timeline";
 @import "page-blocks/about-us/promo";
+
+// Страница Контакты
+@import "page-blocks/contact/contacts";
+@import "page-blocks/contact/ya-map";
+
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.
