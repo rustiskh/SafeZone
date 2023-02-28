@@ -1,60 +1,64 @@
 .promo {
-    &.container {
-        margin-top: 100px;
+	&.container {
+		margin-top: 100px;
 
-        @include mobile {
-            margin-top: 60px;
-        }
-    }
+		@include mobile {
+			margin-top: 60px;
+		}
+	}
 
-    &__title {
-        text-align: center;
-        margin-bottom: 16px;
-        @include mobile {
-            margin-bottom: 0;
-        }
-        @include mobile-small {
-            text-align: left;
-        }
-    }
+	&__title {
+		text-align: center;
+		margin-bottom: 16px;
+		@include mobile {
+			margin-bottom: 0;
+		}
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 
-    &__box-wrapper {
-        border: 1px solid color(accent);
-        padding: 78px 119px 77px 119px;
+	&__box-wrapper {
+		border: 1px solid color(accent);
+		padding: 78px 119px 77px 119px;
 
-        @include mobile {
-            padding: 0;
-            border: none;
-        }
-    }
+		@include mobile {
+			padding: 0;
+			border: none;
+		}
+	}
 
-    &__descr {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
-        margin-top: 60px;
-        text-align: center;
+	&__descr {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		margin-top: 60px;
+		text-align: center;
 
-        @include mobile {
-            margin-top: 40px;
-            font-size: 14px;
-            line-height: 18px;
-        }
-        @include mobile-small {
-            text-align: left;
-        }
-    }
+		@include mobile {
+			margin-top: 40px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 }
 
 body.light {
-    .promo {
-        &__box-wrapper {
-            border: 1px solid color(accent-dark);
-        }
+	.promo {
+		&__box-wrapper {
+			border: 1px solid color(accent-dark);
 
-        &__descr {
-            color: color(gray);
-        }
-    }
+			@include mobile {
+				border: none;
+			}
+		}
+
+		&__descr {
+			color: color(gray);
+		}
+	}
 }

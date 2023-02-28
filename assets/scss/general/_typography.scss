@@ -1,43 +1,48 @@
 .title {
-    &_h2 {
-        font-weight: 700;
-        font-size: 54px;
-        line-height: 68px;
-        color: color(white);
+	&_h2 {
+		font-weight: 700;
+		font-size: 54px;
+		line-height: 68px;
+		color: color(white);
 
-        @include mobile {
-            font-size: 30px;
-            line-height: 38px;
-        }
+		@include mobile {
+			font-size: 30px;
+			line-height: 38px;
+		}
 
-        &-small {
-            font-size: 35px;
-            line-height: 44px;
-            color: color(white);
-        }
-    }
+		&-small {
+			font-size: 35px;
+			line-height: 44px;
+			color: color(white);
 
-    &_h3 {
-        font-weight: 700;
-        font-size: 26px;
-        line-height: 33px;
-        color: color(white);
+			@include mobile {
+				font-size: 30px;
+				line-height: 38px;
+			}
+		}
+	}
 
-        @include mobile {
-            font-size: 20px;
-            line-height: 25px;
-        }
-    }
+	&_h3 {
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 33px;
+		color: color(white);
+
+		@include mobile {
+			font-size: 20px;
+			line-height: 25px;
+		}
+	}
 }
 
 body.light {
-    .title {
-        &_h2 {
-            color: color(gray-dark);
-        }
+	.title {
+		&_h2 {
+			color: color(gray-dark);
+		}
 
-        &_h3 {
-            color: color(gray-dark);
-        }
-    }
+		&_h3 {
+			color: color(gray-dark);
+		}
+	}
 }

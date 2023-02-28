@@ -1,124 +1,115 @@
 .benefit {
-    &__title {
-        margin-top: 80px;
-        text-align: center;
-        @include mobile {
-            margin-top: 60px;
-        }
-        @include mobile-small {
-            text-align: left;
-        }
-    }
+	&__title {
+		margin-top: 80px;
+		text-align: center;
 
-    &__wrapper {
-        margin-top: 60px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include laptop {
-            justify-content: center;
-        }
-        @include mobile {
-            margin-top: 40px;
-        }
-    }
+		@include mobile {
+			margin-top: 60px;
+		}
 
-    &__card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 448px;
-        max-height: 336px;
-        width: 100%;
-        height: 100%;
-        border: 1px solid color(accent);
-        border-radius: 15px;
-        overflow: hidden;
-        margin-right: 32px;
-        @include mobile {
-            margin-top: 20px;
-            margin-right: 0;
-        }
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 
-        &:last-child {
-            margin-right: 0;
-            @include laptop {
-                margin-top: 32px;
-            }
-            @include mobile {
-                margin-top: 20px;
-            }
-        }
-    }
+	&__wrapper {
+		margin-top: 60px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
 
-    &__value {
-        padding: 27px 0;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        &-text {
-            margin-left: 20px;
-            font-weight: 700;
-            font-size: 26px;
-            line-height: 33px;
-            display: flex;
-            align-items: center;
-            color: color(white);
-            @include mobile {
-                font-size: 20px;
-                line-height: 25px;
-            }
-        }
-    }
+		@include laptop {
+			justify-content: center;
+		}
 
-    &__descr {
-        padding: 20px 30px 25px 30px;
-        background: color(gray-dark);
-        width: 100%;
-        height: 216px;
-        z-index: -1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+		@include mobile {
+			margin-top: 40px;
+		}
+	}
 
-    &__text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        text-align: center;
-        color: color(white);
-        text-align: start;
-        @include mobile {
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 448px;
+		border: 1px solid color(accent);
+		border-radius: 15px;
+		overflow: hidden;
+		margin: 20px auto 0px auto;
+	}
+
+	&__value {
+		padding: 27px 0;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+
+		&-text {
+			margin-left: 20px;
+			font-weight: 700;
+			font-size: 26px;
+			line-height: 33px;
+			display: flex;
+			align-items: center;
+			color: color(white);
+
+			@include mobile {
+				font-size: 20px;
+				line-height: 25px;
+			}
+		}
+	}
+
+	&__descr {
+		padding: 20px 30px 25px 30px;
+		background: color(gray-dark);
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+		@include mobile {
+			padding: 15px 20px;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		color: color(white);
+		text-align: start;
+
+		@include mobile {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 }
 
 body.light {
-    .benefit {
-        &__card {
-            border: 1px solid color(accent-dark);
-        }
+	.benefit {
+		&__card {
+			border: 1px solid color(accent-dark);
+		}
 
-        &__value {
-            &-icon {
-                path {
-                    fill: color(accent-dark);
-                }
-            }
-            &-text {
-                color: color(gray);
-            }
-        }
+		&__value {
+			&-icon {
+				path {
+					fill: color(accent-dark);
+				}
+			}
+			&-text {
+				color: color(gray);
+			}
+		}
 
-        &__descr {
-            background: color(beige-light);
-        }
+		&__descr {
+			background: color(beige-light);
+		}
 
-        &__text {
-            color: color(gray);
-        }
-    }
+		&__text {
+			color: color(gray);
+		}
+	}
 }

@@ -1,123 +1,138 @@
 .numbers {
-    &__subtitle {
-        margin-top: 77px;
-        text-align: center;
+	&__subtitle {
+		margin-top: 77px;
+		text-align: center;
 
-        @include mobile {
-            margin-top: 40px;
-            font-size: 30px;
-            line-height: 38px;
-        }
+		@include mobile {
+			margin-top: 40px;
+			font-size: 30px;
+			line-height: 38px;
+		}
 
-        @include mobile-small {
-            text-align: left;
-        }
-    }
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 
-    &__wrapper {
-        margin-top: 61px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+	&__wrapper {
+		margin-top: 61px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-        @include tablet {
-            margin-top: 46px;
-            justify-content: space-evenly;
-        }
+		@include tablet {
+			margin-top: 46px;
+			justify-content: space-evenly;
+		}
 
-        @include mobile {
-            margin-top: 40px;
-        }
-    }
+		@include mobile {
+			margin-top: 40px;
+		}
+	}
 
-    &__card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 328px;
-        max-height: 172px;
-        width: 100%;
-        height: 100%;
-        border: 1px solid color(accent);
-        border-radius: 15px;
-        overflow: hidden;
-        margin-right: 39px;
-        &:last-child {
-            margin-right: 0;
-        }
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 328px;
+		// max-height: 172px;
+		width: 100%;
+		height: 100%;
+		border: 1px solid color(accent);
+		border-radius: 15px;
+		overflow: hidden;
+		margin-right: 39px;
 
-        @include laptop {
-            &:last-child {
-                margin-top: 15px;
-            }
-        }
+		min-height: 176px;
+		margin: 20px auto 0px auto;
 
-        @include tablet {
-            margin-top: 15px;
-            margin-right: 0;
-        }
-    }
+		// &:last-child {
+		// 	margin-right: 0;
+		// }
 
-    &__value {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 25px;
-        color: color(accent);
+		// @include laptop {
+		// 	&:last-child {
+		// 		margin-top: 15px;
+		// 	}
+		// }
 
-        @include mobile {
-            font-size: 16px;
-            line-height: 20px;
-        }
-        span {
-            font-weight: 700;
-            font-size: 70px;
-            line-height: 88px;
-            @include mobile {
-                font-size: 50px;
-                line-height: 63px;
-            }
-        }
-    }
+		// @include tablet {
+		// 	margin-top: 15px;
+		// 	margin-right: 0;
+		// }
 
-    &__descr {
-        background: color(gray-dark);
-        width: 100%;
-        height: 86px;
-        z-index: -1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+		@include mobile {
+			min-height: auto;
+		}
+	}
 
-    &__text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        text-align: center;
-        color: color(white);
-        @include mobile {
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
+	&__value {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 25px;
+		color: color(accent);
+
+		@include mobile {
+			font-size: 16px;
+			line-height: 20px;
+		}
+
+		span {
+			font-weight: 700;
+			font-size: 70px;
+			line-height: 88px;
+
+			@include mobile {
+				font-size: 50px;
+				line-height: 63px;
+			}
+		}
+	}
+
+	&__descr {
+		background: color(gray-dark);
+		width: 100%;
+		height: 86px;
+		z-index: -1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px 15px;
+
+		@include mobile {
+			height: auto;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		color: color(white);
+		@include mobile {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 }
 
 body.light {
-    .numbers {
-        &__card {
-            border: 1px solid color(accent-dark);
-        }
+	.numbers {
+		&__card {
+			border: 1px solid color(accent-dark);
+		}
 
-        &__value {
-            color: color(accent-dark);
-        }
+		&__value {
+			color: color(accent-dark);
+		}
 
-        &__descr {
-            background: color(mint);
-        }
+		&__descr {
+			background: color(mint);
+		}
 
-        &__text {
-            color: color(gray);
-        }
-    }
+		&__text {
+			color: color(gray);
+		}
+	}
 }
