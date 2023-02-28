@@ -1,0 +1,125 @@
+.contacts {
+	&__title {
+		text-align: center;
+		margin-bottom: 100px;
+		margin-top: 60px;
+
+		@include mobile {
+			margin-bottom: 40px;
+			margin-top: 30px;
+			text-align: left;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@include mobile {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		margin-bottom: 40px;
+
+		&-title {
+			margin-bottom: 40px;
+
+			@include mobile {
+				font-size: 20px;
+				line-height: 25px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__nav {
+		&-social-box {
+			display: flex;
+			margin-top: 15px;
+		}
+
+		&-social-link {
+			width: 30px;
+			height: 30px;
+			margin-right: 30px;
+			text-decoration: none;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			background-position: center;
+			background-size: cover;
+
+			&_instagram {
+				background-image: url("../icons/social-networks/icon-social-insta.svg");
+			}
+
+			&_fb {
+				background-image: url("../icons/social-networks/icon-social-fb.svg");
+			}
+
+			&_vk {
+				background-image: url("../icons/social-networks/icon-social-vk.svg");
+			}
+
+			&_telegram {
+				background-image: url("../icons/social-networks/icon-social-tg.svg");
+			}
+		}
+
+		&-item {
+			display: flex;
+			margin-bottom: 34px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@include mobile {
+				margin-bottom: 20px;
+			}
+		}
+
+		&-list {
+			list-style: none;
+		}
+
+		&-link {
+			align-items: center;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(white);
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&-icon {
+			margin-right: 20px;
+		}
+	}
+}
+
+body.light {
+	.contacts {
+		&__nav {
+			&-link {
+				color: color(gray);
+			}
+
+			&-icon {
+				svg {
+					path {
+						fill: color(accent-dark);
+					}
+				}
+			}
+		}
+	}
+}
