@@ -10,6 +10,7 @@
 @import "general/blocks/header/header";
 @import "general/blocks/footer/footer";
 @import "general/blocks/cookie/cookie-block";
+@import "general/blocks/breadcrumps/breadcrumb";
 @import "page-blocks/landing-page/main-slider/main-slider";
 @import "page-blocks/landing-page/game/game";
 @import "page-blocks/landing-page/game-catalog/game-catalog";
@@ -20,6 +21,14 @@
 @import "page-blocks/landing-page/telegram-bot/telegram-bot";
 @import "page-blocks/landing-page/game-currency/game-currency";
 @import "page-blocks/landing-page/faq/faq";
+
+// Страница о компании 27.02.2023
+@import "page-blocks/about-us/hero";
+@import "page-blocks/about-us/numbers";
+@import "page-blocks/about-us/benefit";
+@import "page-blocks/about-us/order";
+@import "page-blocks/about-us/timeline";
+@import "page-blocks/about-us/promo";
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.

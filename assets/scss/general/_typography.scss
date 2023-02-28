@@ -9,6 +9,17 @@
 			font-size: 30px;
 			line-height: 38px;
 		}
+
+		&-small {
+			font-size: 35px;
+			line-height: 44px;
+			color: color(white);
+
+			@include mobile {
+				font-size: 30px;
+				line-height: 38px;
+			}
+		}
 	}
 
 	&_h3 {
