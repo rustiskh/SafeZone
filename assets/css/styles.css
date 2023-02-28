@@ -3920,6 +3920,12 @@ body.light .contacts__nav-icon svg path {
   margin-top: 60px;
   margin-bottom: 100px;
 }
+@media (max-width: 1560px) {
+  .ya-map.container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
 @media (max-width: 768px) {
   .ya-map.container {
     margin-top: 40px;
@@ -3930,6 +3936,11 @@ body.light .contacts__nav-icon svg path {
   .ya-map {
     height: 410px;
   }
+}
+
+body.light .ya-map {
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
 * {
