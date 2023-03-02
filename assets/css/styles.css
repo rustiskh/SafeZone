@@ -270,12 +270,9 @@ body.light .search-button:hover line {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .select .selected {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
   line-height: 23px;
   color: var(--color-accent);
@@ -301,17 +298,22 @@ body.light .search-button:hover line {
   border-radius: 0 0 6px 6px;
   max-height: 390px;
   list-style: none;
-  padding: 20px;
+  padding: 16px;
+  padding-top: 0;
   overflow: auto;
+  width: calc(100% - 48px);
+  margin-left: 24px;
+  margin-right: 24px;
 }
-.select .list li {
-  font-weight: 400;
+.select .list .item {
+  margin-top: 20px;
+}
+.select .list .item__header {
+  font-weight: 700;
   font-size: 18px;
   line-height: 23px;
-  padding-top: 7px;
-  padding-bottom: 7px;
   cursor: pointer;
-  margin-right: 46px;
+  color: var(--color-white);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,10 +321,18 @@ body.light .search-button:hover line {
       -ms-flex-align: center;
           align-items: center;
 }
-.select .list li svg {
+.select .list .item__header svg {
   margin-right: 10px;
 }
-.select .list li:hover, .select .list li.active {
+.select .list .item__description {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-white);
+  cursor: pointer;
+}
+.select .list .item:hover, .select .list .item.active {
   color: var(--color-white);
 }
 

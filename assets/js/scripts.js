@@ -166,6 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const categoriesList = select.querySelector('.list');
         const categoriesItems = select.querySelectorAll('.item');
 
+
         categoriesSelected.addEventListener('click', () => {
             select.classList.toggle('open');
         });
@@ -173,7 +174,9 @@ window.addEventListener("DOMContentLoaded", () => {
         categoriesItems.forEach((item) => {
             item.addEventListener('click', () => {
                 const value = item.dataset.value;
-                categoriesSelected.innerHTML = item.innerHTML;
+                // Change_old start - item.innerHTML изменен на item.firstElementChild.innerHTML чтобы выбранный элемент выводился без item__descriptions
+                categoriesSelected.innerHTML = item.firstElementChild.innerHTML;
+                // Change_old end
                 categoriesSelected.dataset.value = value;
                 select.classList.remove('open');
 
