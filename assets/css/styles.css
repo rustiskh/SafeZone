@@ -298,7 +298,8 @@ body.light .search-button:hover line {
   border-radius: 0 0 6px 6px;
   max-height: 390px;
   list-style: none;
-  padding: 20px;
+  padding: 16px;
+  padding-top: 0;
   overflow: auto;
   width: calc(100% - 48px);
   margin-left: 24px;
@@ -311,8 +312,6 @@ body.light .search-button:hover line {
   font-weight: 700;
   font-size: 18px;
   line-height: 23px;
-  padding-top: 7px;
-  padding-bottom: 7px;
   cursor: pointer;
   color: var(--color-white);
   display: -webkit-box;
