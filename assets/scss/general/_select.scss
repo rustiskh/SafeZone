@@ -24,20 +24,16 @@
 		.list {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
 		}
 	}
 
 	.selected {
-		font-weight: 400;
+		font-weight: 700;
 		font-size: 18px;
 		line-height: 23px;
 		color: color(accent);
 		display: flex;
 		align-items: center;
-		// padding: 15px;
-		// padding-bottom: 9px;
-		// white-space: nowrap;
 		cursor: pointer;
 
 		svg {
@@ -59,20 +55,36 @@
 		padding: 20px;
 		overflow: auto;
 
-		li {
-			font-weight: 400;
-			font-size: 18px;
-			line-height: 23px;
-			padding-top: 7px;
-			padding-bottom: 7px;
-			cursor: pointer;
-			margin-right: 46px;
+		width: calc(100% - 48px);
+		margin-left: 24px;
+		margin-right: 24px;
 
-			display: flex;
-			align-items: center;
+		.item {
+			margin-top: 20px;
+			&__header {
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 23px;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				cursor: pointer;
+				color: color(white);
 
-			svg {
-				margin-right: 10px;
+				display: flex;
+				align-items: center;
+
+				svg {
+					margin-right: 10px;
+				}
+			}
+
+			&__description {
+				margin-top: 10px;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 18px;
+				color: color(white);
+				cursor: pointer;
 			}
 
 			&:hover,
