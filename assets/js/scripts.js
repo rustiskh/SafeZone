@@ -250,10 +250,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Скрипт копирования промокодов
     const promoContainer = document.querySelectorAll('.promocode__wrapper');
-    const promoCode = document.querySelectorAll('.promocode__code');
-    // const promoCopy = document.querySelectorAll('.promocode__copy');
-    // console.log(promoContainer);
-    // console.log(promoCode);
 
     promoContainer.forEach(elem => {
         const promoCopy = elem.querySelectorAll('.promocode__copy');
@@ -281,32 +277,4 @@ window.addEventListener("DOMContentLoaded", () => {
             })
         });
     });
-
-    // promoCopy.forEach(elem => {
-    //     elem.addEventListener('click', () => {
-
-    //         let activeItem;
-    //         // Clipboard.writeText('sfa');
-    //         navigator.clipboard.writeText(elem.previousElementSibling.innerHTML).then(
-    //             elem.classList.add('promocode__copy_active')
-    //         );
-
-    //         const onChangeActiveItem = (element) => {
-    //             if (activeItem) {
-    //                 activeItem.classList.remove('promocode__copy_active');
-    //             }
-    //             activeItem = element;
-    //             element.classList.add('promocode__copy_active');
-
-    //         }
-
-    //         elem.forEach(element => {
-    //             element.addEventListener('click', ({ currentTarget }) => {
-    //                 onChangeActiveItem(currentTarget);
-    //             })
-    //         });
-
-    //         console.log(activeItem);
-    //     });
-    // });
 });
