@@ -3,12 +3,10 @@
 	align-items: center;
 
 	&__wrapper {
-		// width: fit-content;
 		max-width: 1220px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		// justify-content: start;
 		margin: 0 auto;
 		overflow-x: auto;
 		scrollbar-width: none;

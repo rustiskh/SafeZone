@@ -5,12 +5,17 @@
 @import "general/select";
 @import "general/typography";
 @import "general/hor-scroll-menu";
+@import "general/hor-unscroll-menu";
 @import "general/product-card";
 @import "general/game-card";
 @import "general/blocks/header/header";
 @import "general/blocks/footer/footer";
 @import "general/blocks/cookie/cookie-block";
 @import "general/blocks/breadcrumps/breadcrumb";
+@import "general/blocks/telegram-bot/telegram-bot";
+@import "general/blocks/faq/faq";
+
+// Главный лендинг
 @import "page-blocks/landing-page/main-slider/main-slider";
 @import "page-blocks/landing-page/game/game";
 @import "page-blocks/landing-page/game-catalog/game-catalog";
@@ -18,9 +23,7 @@
 @import "page-blocks/landing-page/popular-games/popular";
 @import "page-blocks/landing-page/usage/usage";
 @import "page-blocks/landing-page/accounts/accounts";
-@import "page-blocks/landing-page/telegram-bot/telegram-bot";
 @import "page-blocks/landing-page/game-currency/game-currency";
-@import "page-blocks/landing-page/faq/faq";
 
 // Страница о компании 27.02.2023
 @import "page-blocks/about-us/hero";
@@ -29,6 +32,15 @@
 @import "page-blocks/about-us/order";
 @import "page-blocks/about-us/timeline";
 @import "page-blocks/about-us/promo";
+
+// Страница Игра частотная
+@import "page-blocks/game-page/hero-game";
+@import "page-blocks/game-page/telegram-bot-game";
+@import "page-blocks/game-page/services";
+@import "page-blocks/game-page/promocode";
+@import "page-blocks/game-page/guide-game";
+@import "page-blocks/game-page/game-review";
+@import "page-blocks/game-page/game-page-faq";
 
 // Страница Контакты
 @import "page-blocks/contact/contacts";
