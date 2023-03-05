@@ -1,0 +1,147 @@
+.guide-game {
+    &__title {
+        margin-top: 80px;
+        text-align: center;
+
+        @include mobile {
+            margin-top: 60px;
+        }
+    }
+
+    &__wrapper {
+        max-width: 1480px;
+        margin: 28px auto 0 auto;
+        /* margin-top: 60px; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include mobile {
+            margin-top: 20px;
+            max-width: 270px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 688px;
+        border: 1px solid color(accent);
+        border-radius: 15px;
+        overflow: hidden;
+        /* margin: 32px auto 0px auto; */
+        margin-right: 32px;
+        margin-top: 32px;
+
+        @include laptop {
+            margin-right: 0;
+            margin-top: 20px;
+        }
+    }
+
+    &__name {
+        padding: 30px;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 44px;
+        color: color(white);
+        text-align: left;
+
+        @include mobile {
+            font-size: 20px;
+            line-height: 25px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 27px 20px 25px 20px;
+        }
+    }
+
+    &__descr {
+        padding: 30px;
+        background: color(gray-dark);
+        width: 100%;
+        height: 100%;
+        /*       z-index: -1; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include mobile {
+            padding: 15px 20px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        color: color(white);
+        text-align: start;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__reading {
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: color(accent);
+        text-decoration: none;
+        @include mobile {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__more {
+        margin: 60px auto 0 auto;
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: color(accent);
+        text-decoration: none;
+        cursor: pointer;
+        @include mobile {
+            font-size: 20px;
+            line-height: 25px;
+            margin-top: 35px;
+        }
+    }
+}
+
+body.light {
+    .guide-game {
+        &__card {
+            border: 1px solid color(accent-dark);
+        }
+
+        &__name {
+            color: color(gray);
+        }
+
+        &__descr {
+            background: color(mint);
+        }
+
+        &__text {
+            color: color(gray);
+        }
+
+        &__reading {
+            color: color(accent-dark);
+        }
+
+        &__more {
+            color: color(accent-dark);
+        }
+    }
+}
