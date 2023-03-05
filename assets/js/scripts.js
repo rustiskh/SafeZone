@@ -66,19 +66,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     searchMobOpener.addEventListener('click', () => {
         searchHeaderField.style.display = "flex";
-        // searchMobOpener.style.display = "none";  
     })
 
     // Кнопка меню в хеддере и открытие меню + аккардеоны в меню
     const headerMenu = document.querySelector('.header-main__menu');
     const headerMenuWrapper = document.querySelector('.header-main__menu-wrapper');
     const headerMenuClose = document.querySelector('.header-main__menu-close');
-
+    // Change old start 05.03 - скорректировал событие клика
     headerMenu.addEventListener('click', () => {
-        headerMenuWrapper.classList.toggle('open');
-        headerMenuClose.classList.remove('open');
+        headerMenuWrapper.classList.add('open');
     });
-
+    // Change old end 05.03
     headerMenuClose.addEventListener('click', () => {
         headerMenuWrapper.classList.remove('open');
     });
@@ -160,26 +158,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Кастомные селекты секций (Игры, Каталог)
     const selects = document.querySelectorAll('.select');
-
+    // Change_old start 05.03 - скрипт изменен таким образом, чтобы список закрывался при клике вне селектора и после выбора категории
     selects.forEach((select) => {
         const categoriesSelected = select.querySelector('.selected');
-        const categoriesList = select.querySelector('.list');
         const categoriesItems = select.querySelectorAll('.item');
 
 
-        categoriesSelected.addEventListener('click', () => {
-            select.classList.toggle('open');
+        select.addEventListener('click', () => {
+            select.classList.add('open');
         });
 
         categoriesItems.forEach((item) => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (event) => {
+                event.stopPropagation();
                 const value = item.dataset.value;
                 // Change_old start - item.innerHTML изменен на item.firstElementChild.innerHTML чтобы выбранный элемент выводился без item__descriptions
                 categoriesSelected.innerHTML = item.firstElementChild.innerHTML;
                 // Change_old end
                 categoriesSelected.dataset.value = value;
                 select.classList.remove('open');
-
             });
         });
 
@@ -189,7 +186,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
+    // Change_old end 05.03
 
     // Скрипт блока faq
     const faqItems = document.querySelectorAll(".faq__item");

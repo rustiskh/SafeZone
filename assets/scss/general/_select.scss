@@ -39,6 +39,10 @@
 		svg {
 			margin-right: 10px;
 		}
+
+		.item__title {
+			width: 100%;
+		}
 	}
 
 	.list {
@@ -62,6 +66,13 @@
 
 		.item {
 			margin-top: 20px;
+
+			&:hover {
+				.item__header {
+					color: color(accent);
+				}
+			}
+
 			&__header {
 				font-weight: 700;
 				font-size: 18px;
@@ -75,6 +86,10 @@
 				svg {
 					margin-right: 10px;
 				}
+			}
+
+			&__title {
+				width: 100%;
 			}
 
 			&__description {
@@ -126,7 +141,7 @@ body.light {
 		.list {
 			background-color: color(mint-dark);
 
-			li {
+			.item {
 				color: color(gray);
 
 				svg {
