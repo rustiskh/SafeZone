@@ -220,4 +220,93 @@ window.addEventListener("DOMContentLoaded", () => {
             setTheme('dark')
         })
     });
+
+    // Страница Игры - 05.03 Меню элементов без горизонтальной прокрутки и селекта на мобильной версии (по дизайну) 
+
+    // Скрипт меню категорий (аккунты, игры)
+    const horUnScrollContainer = document.querySelectorAll('.hor-unscroll-menu');
+
+    horUnScrollContainer.forEach(elem => {
+        const horUnScrollMenuItems = elem.querySelectorAll('.hor-unscroll-menu__item');
+        let activeItem = horUnScrollMenuItems?.[0];
+
+        activeItem?.classList?.add('hor-unscroll-menu__item_active');
+
+        const onChangeActiveItem = (element) => {
+            if (activeItem) {
+                activeItem.classList.remove('hor-unscroll-menu__item_active');
+            }
+            activeItem = element;
+            element.classList.add('hor-unscroll-menu__item_active');
+
+        }
+
+        horUnScrollMenuItems.forEach(element => {
+            element.addEventListener('click', ({ currentTarget }) => {
+                onChangeActiveItem(currentTarget);
+            })
+        });
+    })
+
+    // Скрипт копирования промокодов
+    const promoContainer = document.querySelectorAll('.promocode__wrapper');
+    const promoCode = document.querySelectorAll('.promocode__code');
+    // const promoCopy = document.querySelectorAll('.promocode__copy');
+    // console.log(promoContainer);
+    // console.log(promoCode);
+
+    promoContainer.forEach(elem => {
+        const promoCopy = elem.querySelectorAll('.promocode__copy');
+        let activeItem;
+
+        promoCopy.forEach(item => {
+            item.addEventListener('click', () => {
+                navigator.clipboard.writeText(item.previousElementSibling.innerHTML).then(
+                    item.classList.add('promocode__copy_active')
+                );
+            });
+        });
+
+        const onChangeActiveItem = (element) => {
+            if (activeItem) {
+                activeItem.classList.remove('promocode__copy_active');
+            }
+            activeItem = element;
+            element.classList.add('promocode__copy_active');
+        }
+
+        promoCopy.forEach(element => {
+            element.addEventListener('click', ({ currentTarget }) => {
+                onChangeActiveItem(currentTarget);
+            })
+        });
+    });
+
+    // promoCopy.forEach(elem => {
+    //     elem.addEventListener('click', () => {
+
+    //         let activeItem;
+    //         // Clipboard.writeText('sfa');
+    //         navigator.clipboard.writeText(elem.previousElementSibling.innerHTML).then(
+    //             elem.classList.add('promocode__copy_active')
+    //         );
+
+    //         const onChangeActiveItem = (element) => {
+    //             if (activeItem) {
+    //                 activeItem.classList.remove('promocode__copy_active');
+    //             }
+    //             activeItem = element;
+    //             element.classList.add('promocode__copy_active');
+
+    //         }
+
+    //         elem.forEach(element => {
+    //             element.addEventListener('click', ({ currentTarget }) => {
+    //                 onChangeActiveItem(currentTarget);
+    //             })
+    //         });
+
+    //         console.log(activeItem);
+    //     });
+    // });
 });

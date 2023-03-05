@@ -1,0 +1,7 @@
+.game-page-faq {
+	&.container {
+		@include mobile {
+			margin-top: 80px;
+		}
+	}
+}
