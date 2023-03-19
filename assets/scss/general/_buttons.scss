@@ -51,7 +51,9 @@
 }
 
 body.light {
-	&_nofill {
-		color: color(accent-dark);
+	.button {
+		&_nofill {
+			color: color(accent-dark);
+		}
 	}
 }
