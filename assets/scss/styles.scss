@@ -50,6 +50,10 @@
 // Страница Блог (все статьи)
 @import "page-blocks/blog/blog";
 
+// Страница отдельной статьи
+@import "page-blocks/blog-article/blog-article";
+@import "page-blocks/blog-article/other-articles-slider";
+
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.

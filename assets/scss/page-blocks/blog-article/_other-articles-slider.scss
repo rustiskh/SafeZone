@@ -1,0 +1,155 @@
+.other-articles {
+	position: relative;
+	&__title {
+		margin-top: 80px;
+		text-align: center;
+		@include mobile {
+			margin-top: 60px;
+		}
+	}
+
+	&__more {
+		display: block;
+		max-width: 1408px;
+		margin: 18px auto 0 auto;
+		margin-top: 18px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		text-align: right;
+		color: color(accent);
+		text-decoration: none;
+		cursor: pointer;
+
+		@include laptop {
+			text-align: center;
+		}
+		@include mobile {
+			font-size: 20px;
+			line-height: 25px;
+			position: absolute;
+			bottom: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		max-width: 1408px;
+		margin: 18px auto 0 auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+.other-articles {
+	.slick-slide {
+		margin-right: 32px;
+
+		@include mobile {
+			margin-right: 12px;
+		}
+	}
+
+	.slick-dots {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		position: relative;
+		top: 0px;
+		list-style: none;
+		margin-top: 32px;
+
+		li {
+			margin-bottom: 12px;
+			margin-right: 16px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			button {
+				display: block;
+				width: 30px;
+				height: 3px;
+				background: none;
+				border: none;
+				font-size: 0px;
+				cursor: pointer;
+
+				background: rgba(62, 218, 43, 0.5);
+				opacity: 0.5;
+				border: 1px solid color(accent);
+			}
+		}
+
+		li.slick-active {
+			button {
+				opacity: 1;
+				background: color(accent);
+			}
+		}
+	}
+
+	.slick-prev,
+	.slick-next {
+		width: 70px;
+		height: 70px;
+		background: none;
+		border: none;
+		position: absolute;
+		top: 216px;
+		cursor: pointer;
+		z-index: 50;
+	}
+
+	.slick-next {
+		right: -72px;
+		@include laptop {
+			right: -42px;
+		}
+	}
+
+	.slick-prev {
+		left: -71px;
+		@include laptop {
+			left: -41px;
+		}
+	}
+}
+
+body.light {
+	.other-articles {
+		&__more {
+			color: color(accent-dark);
+		}
+	}
+
+	.other-articles {
+		.slick-dots {
+			li {
+				button {
+					background: color(accent-dark);
+					opacity: 0.5;
+					border: 1px solid color(accent-dark);
+				}
+			}
+
+			.slick-active {
+				button {
+					background: color(accent-dark);
+					opacity: 1;
+				}
+			}
+		}
+
+		.slick-prev,
+		.slick-next {
+			background-color: color(background-light);
+		}
+	}
+}

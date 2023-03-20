@@ -136,6 +136,25 @@ window.addEventListener("DOMContentLoaded", () => {
         ]
     });
 
-
+    // Слайдер на странице Статья блога
+    $(".other-articles__wrapper").slick({
+        arrows: true,
+        centerMode: true,
+        variableWidth: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: true,
+        prevArrow: '<button type="button" class="slick-prev"><img src="assets/icons/pages/game/arrow-left.svg"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="assets/icons/pages/game/arrow-right.svg"></button>',
+        responsive: [
+            {
+                breakpoint: 1560,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ]
+    });
 });
 
