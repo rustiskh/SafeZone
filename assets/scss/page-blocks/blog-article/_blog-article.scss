@@ -1,0 +1,164 @@
+.blog-article {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px;
+	color: color(white);
+
+	@include mobile {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	&__main-title {
+		text-align: center;
+		margin-top: 60px;
+
+		@include mobile {
+			margin-top: 30px;
+			text-align: left;
+		}
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-top: 60px;
+		margin-bottom: 60px;
+		color: color(gray-light);
+
+		@include mobile {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__views {
+		display: flex;
+		align-items: center;
+
+		&-icon {
+			margin-right: 10px;
+		}
+	}
+
+	&__description {
+		max-width: 928px;
+		margin: 0 auto;
+		margin-bottom: 60px;
+		text-align: center;
+
+		@include mobile {
+			margin-bottom: 20px;
+			text-align: left;
+		}
+
+		&-text {
+		}
+	}
+}
+
+// Основная текстовая обертка
+.blog-article {
+	&__wrapper {
+		margin-top: 60px;
+
+		@include mobile {
+			margin-top: 20px;
+		}
+
+		&.media {
+			display: flex;
+			align-items: start;
+			flex: 0 0 50%;
+
+			@include laptop {
+				flex-direction: column;
+			}
+
+			&.media_left {
+				.blog-article__media-content {
+					order: -1;
+					flex-direction: row-reverse;
+				}
+			}
+		}
+	}
+
+	&__text-wrapper {
+	}
+
+	&__subtitle {
+		margin-bottom: 40px;
+
+		@include mobile {
+			margin-bottom: 20px;
+		}
+	}
+
+	// По-умолчанию Медиа-контент в статье - справа
+	&__media-content {
+		display: flex;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 1px;
+			background: color(accent);
+			position: relative;
+			margin-right: 32px;
+			margin-left: 32px;
+
+			@include laptop {
+				display: none;
+			}
+		}
+
+		@include laptop {
+			margin: 0 auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&__secondary-title {
+		margin-top: 75px;
+		text-align: center;
+
+		@include mobile {
+			margin-top: 20px;
+			text-align: left;
+		}
+	}
+}
+
+body.light {
+	.blog-article {
+		color: color(gray);
+
+		&__info {
+			color: color(gray-dark);
+		}
+
+		&__views {
+			&-icon {
+				path {
+					fill: color(accent-dark);
+				}
+			}
+		}
+	}
+
+	// Основная текстовая обертка
+	.blog-article {
+		&__media-content {
+			&::before {
+				background: color(accent-dark);
+			}
+		}
+	}
+}
