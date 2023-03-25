@@ -1,0 +1,256 @@
+.donat-rus {
+    &__title {
+        text-align: center;
+        margin-top: 80px;
+
+        @include mobile {
+            margin-top: 30px;
+        }
+
+        @include mobile-small {
+            text-align: left;
+        }
+    }
+
+    &__wrapper {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        margin-bottom: 60px;
+
+        .donat-rus__description_main {
+            grid-column-start: 1;
+        }
+        .donat-rus__description_second {
+            grid-column-start: 1;
+            margin-top: 30px;
+
+            @include mobile {
+                margin-top: 20px;
+            }
+        }
+        .donat-rus__img {
+            grid-column-start: 2;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+
+        @include laptop {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        @include mobile {
+            align-items: flex-start;
+            margin-top: 19px;
+        }
+    }
+
+    &__step {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 44px;
+        color: color(white);
+
+        @include mobile {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__descr {
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: color(white);
+        max-width: 688px;
+        width: 100%;
+
+        @include mobile {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+
+        @include laptop {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 688px;
+
+            @include tablet {
+                width: 100%;
+            }
+        }
+    }
+
+    &__example-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: color(white);
+        margin-bottom: 30px;
+        @include mobile {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__example-img {
+        width: 482px;
+        height: 532px;
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__block {
+        max-width: 1409px;
+        margin: 0 auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid color(accent);
+        border-bottom: 1px solid color(accent);
+
+        @include laptop {
+            flex-direction: column-reverse;
+            align-items: center;
+            max-width: 688px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        &-balance {
+            border: none;
+            padding: 0;
+            margin-top: 60px;
+
+            @include laptop {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+        }
+
+        &-img {
+            @include laptop {
+                margin-top: 20px;
+            }
+        }
+
+        &-image {
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+
+    &__card {
+        max-width: 688px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        margin-left: 31px;
+
+        @include laptop {
+            margin: 0;
+        }
+
+        &-balance {
+            margin-left: 0;
+            margin-right: 32px;
+            @include laptop {
+                margin: 0;
+            }
+        }
+
+        &-step {
+            margin-top: 87px;
+            font-weight: 700;
+            font-size: 35px;
+            line-height: 44px;
+            color: color(white);
+
+            @include laptop {
+                margin: 0;
+            }
+
+            @include mobile {
+                font-size: 20px;
+                line-height: 25px;
+            }
+
+            &-balance {
+                margin-top: 0;
+            }
+        }
+
+        &-text {
+            margin-top: 30px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 23px;
+            color: color(white);
+
+            @include laptop {
+                margin-top: 20px;
+            }
+
+            @include mobile {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+body.light {
+    .donat-rus {
+        &__step {
+            color: color(gray);
+        }
+
+        &__descr {
+            color: color(gray);
+        }
+
+        &__example-text {
+            color: color(gray);
+        }
+
+        &__block {
+            border-top: 1px solid color(accent-dark);
+            border-bottom: 1px solid color(accent-dark);
+
+            &-balance {
+                border: none;
+            }
+        }
+
+        &__card {
+            &-step {
+                color: color(gray);
+            }
+
+            &-text {
+                color: color(gray);
+            }
+        }
+    }
+}
