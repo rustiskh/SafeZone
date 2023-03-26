@@ -69,7 +69,7 @@
 
 		&.media {
 			display: flex;
-			align-items: start;
+			align-items: center;
 			flex: 0 0 50%;
 
 			@include laptop {
@@ -112,6 +112,12 @@
 			@include laptop {
 				display: none;
 			}
+		}
+
+		img,
+		iframe,
+		video {
+			max-width: 656px;
 		}
 
 		@include laptop {
