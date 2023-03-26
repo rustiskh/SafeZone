@@ -1,0 +1,318 @@
+.review {
+	&__title {
+		text-align: center;
+		margin-top: 60px;
+		margin-bottom: 100px;
+
+		@include mobile {
+			text-align: left;
+			margin-top: 30px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+
+		@include mobile {
+			flex-direction: column;
+		}
+	}
+
+	&__wrapper-links {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-right: 32px;
+		margin-right: 28px;
+
+		@include mobile {
+			padding-right: 0;
+			margin-right: 0;
+			margin-bottom: 40px;
+			flex-direction: row;
+			justify-content: center;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0px;
+			height: 425px;
+			width: 1px;
+			background: color(accent);
+		}
+	}
+
+	&__wrapper-form {
+		width: 100%;
+	}
+
+	&__link {
+		max-width: 208px;
+		position: relative;
+		margin-bottom: 10px;
+
+		text-decoration: none;
+
+		&:hover {
+			.review__link-shape {
+				&::before {
+					background: color(gray-dark);
+				}
+			}
+		}
+
+		@include mobile {
+			margin-bottom: 0;
+
+			&:not(:last-child) {
+				margin-right: 16px;
+			}
+		}
+
+		&-shape {
+			width: 212px;
+			height: 212px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
+
+			@include mobile {
+				width: 128px;
+				height: 128px;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				border: 1px solid color(accent);
+				top: 15%;
+				width: 150px;
+				height: 150px;
+				transform: rotate(45deg);
+				z-index: -1;
+
+				@include mobile {
+					width: 90px;
+					height: 90px;
+				}
+			}
+		}
+
+		&-icon {
+			@include mobile {
+				width: 28px;
+			}
+		}
+
+		&-text {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			text-align: center;
+			color: color(white);
+
+			@include mobile {
+				font-size: 10px;
+				line-height: 12px;
+			}
+		}
+	}
+}
+
+.review__form {
+	display: flex;
+
+	@include mobile {
+		flex-direction: column;
+	}
+
+	&-title {
+		margin-bottom: 40px;
+
+		@include mobile {
+			font-size: 20px;
+			line-height: 25px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&-text-zone {
+		max-width: 872px;
+		margin-right: 34px;
+		width: 100%;
+
+		@include mobile {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	&-text {
+		background: color(gray-dark);
+		border: 1px solid color(accent-dark);
+		resize: vertical;
+		padding: 20px 24px;
+		width: 100%;
+		height: 100%;
+		max-height: 254px;
+
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+
+		&::placeholder {
+			opacity: 0.7;
+		}
+	}
+
+	&-inputs {
+		display: flex;
+		flex-direction: column;
+		max-width: 325px;
+		width: 100%;
+
+		@include mobile {
+			max-width: 100%;
+		}
+
+		input,
+		select {
+			background: color(gray-dark);
+			padding: 20px;
+			margin-bottom: 32px;
+			border: none;
+			border-left: 1px solid color(accent);
+
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(white);
+			cursor: pointer;
+
+			&::placeholder {
+				opacity: 0.7;
+			}
+
+			@include mobile {
+				margin-bottom: 20px;
+				padding: 11px 20px;
+
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+
+		select {
+			appearance: none;
+			background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
+			background-repeat: no-repeat;
+			background-position: 95% center;
+			position: relative;
+
+			&::-ms-expand,
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			option {
+				&:first-child {
+					display: none;
+				}
+
+				&:checked {
+					background-color: color(gray-light);
+				}
+			}
+		}
+	}
+
+	&-error-text {
+		text-align: center;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: color(red-error);
+
+		margin-top: 12px;
+
+		@include mobile {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+}
+
+body.light {
+	.review {
+		&__wrapper-links {
+			&::after {
+				background: color(accent-dark);
+			}
+		}
+
+		&__link {
+			&:hover {
+				.review__link-shape {
+					&::before {
+						background: color(mint);
+					}
+				}
+			}
+
+			&-shape {
+				&::before {
+					border: 1px solid color(accent-dark);
+				}
+			}
+
+			&-text {
+				color: color(gray);
+			}
+		}
+
+		.review__form {
+			&-text {
+				background: color(mint);
+				border: 1px solid color(accent-dark);
+				color: color(gray);
+			}
+
+			&-inputs {
+				input,
+				select {
+					background: color(mint);
+					border-left: 1px solid color(accent-dark);
+					color: color(gray);
+				}
+
+				select {
+					appearance: none;
+					background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
+					background-repeat: no-repeat;
+					background-position: 95% center;
+					position: relative;
+
+					&::-ms-expand,
+					&::-webkit-scrollbar {
+						display: none;
+					}
+
+					option {
+						&:checked {
+							background-color: color(mint-dark);
+						}
+					}
+				}
+			}
+		}
+	}
+}

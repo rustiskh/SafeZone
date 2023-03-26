@@ -1,0 +1,142 @@
+.review-card {
+	background-color: color(gray);
+	max-width: 690px;
+	width: 100%;
+	min-height: 236px;
+	border-radius: 20px;
+	padding: 30px;
+
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	overflow: hidden;
+
+	&.open {
+		.review-card__text {
+			overflow: visible;
+			height: 100% !important;
+		}
+	}
+
+	&__category {
+		grid-column-start: 1;
+		grid-row-start: 4;
+	}
+	&__date {
+		grid-row-start: 4;
+	}
+	&__name {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 1;
+	}
+	&__text {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 2;
+	}
+	&__show-btn {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 3;
+	}
+
+	&__category,
+	&__date {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(gray-light);
+
+		margin-top: 20px;
+	}
+
+	&__date {
+		text-align: right;
+	}
+
+	&__name {
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 44px;
+		color: color(white);
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		overflow: hidden;
+	}
+
+	&__show-btn {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(accent);
+		cursor: pointer;
+	}
+
+	@include mobile {
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
+		min-height: 167px;
+		border-radius: 10px;
+
+		&__category,
+		&__date {
+			font-size: 14px;
+			line-height: 18px;
+			margin-top: 0px;
+		}
+
+		&__date {
+			text-align: left;
+		}
+
+		&__name {
+			font-size: 35px;
+			line-height: 44px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		&__text {
+			font-size: 14px;
+			line-height: 18px;
+			margin-bottom: 15px;
+		}
+
+		&__show-btn {
+			font-size: 14px;
+			line-height: 18px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+body.light {
+	.review-card {
+		background-color: color(beige-light);
+
+		&__category,
+		&__date {
+			color: color(gray-light);
+		}
+
+		&__name {
+			color: color(gray);
+		}
+
+		&__text {
+			color: color(gray);
+		}
+
+		&__show-btn {
+			color: color(accent-dark);
+		}
+	}
+}
