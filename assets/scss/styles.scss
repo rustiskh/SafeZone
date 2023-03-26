@@ -16,13 +16,13 @@
 @import "general/blocks/faq/faq";
 @import "general/blocks/article-card/article-card";
 @import "general/blocks/review-card/review-card";
+@import "general/blocks/popular-games/popular";
 
 // Главный лендинг
 @import "page-blocks/landing-page/main-slider/main-slider";
 @import "page-blocks/landing-page/game/game";
 @import "page-blocks/landing-page/game-catalog/game-catalog";
 @import "page-blocks/landing-page/about/about";
-@import "page-blocks/landing-page/popular-games/popular";
 @import "page-blocks/landing-page/usage/usage";
 @import "page-blocks/landing-page/accounts/accounts";
 @import "page-blocks/landing-page/game-currency/game-currency";
@@ -43,6 +43,13 @@
 @import "page-blocks/game-page/guide-game";
 @import "page-blocks/game-page/game-review";
 @import "page-blocks/game-page/game-page-faq";
+
+// Страница Конкурс
+@import "page-blocks/event-page/hero-event";
+
+// Страница Донаты
+@import "page-blocks/donat-page/hero-donat";
+@import "page-blocks/donat-page/donat-rus";
 
 // Страница Контакты
 @import "page-blocks/contact/contacts";

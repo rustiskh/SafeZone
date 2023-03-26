@@ -7,6 +7,10 @@
 
 	&__title {
 		text-align: center;
+
+		@include mobile {
+			text-align: left;
+		}
 	}
 
 	&__list {
