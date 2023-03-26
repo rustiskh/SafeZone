@@ -3,7 +3,7 @@
 	align-items: center;
 
 	&__wrapper {
-		max-width: 1220px;
+		// max-width: 1220px;
 		display: flex;
 		align-items: start;
 		justify-content: center;
@@ -68,7 +68,7 @@
 }
 
 body.light {
-	.hor-scroll-menu {
+	.hor-unscroll-menu {
 		&__item {
 			color: color(gray);
 

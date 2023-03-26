@@ -1,0 +1,49 @@
+.review-gallery {
+	&.container {
+		margin-top: 100px;
+
+		@include mobile {
+			margin-top: 40px;
+		}
+	}
+
+	&__navigation {
+		.hor-unscroll-menu {
+			display: flex;
+			@include mobile {
+				display: none;
+			}
+		}
+
+		.select {
+			display: none;
+			@include mobile {
+				display: flex;
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-around;
+		align-items: start;
+		flex-wrap: wrap;
+		margin-top: 60px;
+
+		@include mobile {
+			margin-top: 40px;
+		}
+	}
+
+	.review-card {
+		margin-bottom: 32px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include mobile {
+			margin-bottom: 20px;
+		}
+	}
+}

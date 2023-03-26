@@ -15,6 +15,7 @@
 @import "general/blocks/telegram-bot/telegram-bot";
 @import "general/blocks/faq/faq";
 @import "general/blocks/article-card/article-card";
+@import "general/blocks/review-card/review-card";
 
 // Главный лендинг
 @import "page-blocks/landing-page/main-slider/main-slider";
@@ -54,6 +55,10 @@
 @import "page-blocks/blog-article/blog-article";
 @import "page-blocks/blog-article/other-articles-slider";
 
+// Страница Отзывы
+@import "page-blocks/review/review";
+@import "page-blocks/review/review-gallery";
+
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.
@@ -71,6 +76,13 @@
 html,
 body {
 	overflow-x: hidden;
+}
+
+input,
+textarea {
+	&:focus {
+		outline: none;
+	}
 }
 
 .show {

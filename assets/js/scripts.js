@@ -277,4 +277,28 @@ window.addEventListener("DOMContentLoaded", () => {
             })
         });
     });
+
+
+    // Скрипт переполнения карточки отзывов review-card
+    const reviewCard = document.querySelectorAll('.review-card');
+
+    function openReviewCard(btn) {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.add('open');
+            btn.remove();
+        })
+    }
+
+    reviewCard.forEach(elem => {
+        let reviewText = elem.querySelector('.review-card__text');
+        const showMoreBtn = elem.querySelector('.review-card__show-btn');
+
+        if (reviewText.clientHeight > 69) {
+            reviewText.style.height = '46px';
+        } else {
+            showMoreBtn.remove();
+        }
+
+        openReviewCard(showMoreBtn);
+    })
 });
