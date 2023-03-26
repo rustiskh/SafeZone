@@ -2336,6 +2336,65 @@ body.light .review-card__show-btn {
   color: var(--color-accent-dark);
 }
 
+.popular {
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  .popular {
+    padding-top: 60px;
+  }
+}
+.popular__title {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .popular__title {
+    text-align: left;
+  }
+}
+.popular__list {
+  margin-top: 60px;
+  margin-bottom: 52px;
+}
+@media (max-width: 768px) {
+  .popular__list {
+    display: none;
+  }
+}
+.popular__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.popular__content .product-card {
+  margin-bottom: 32px;
+}
+@media (max-width: 1290px) {
+  .popular__content .product-card {
+    margin: 0 auto;
+    margin-bottom: 32px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+.popular .select {
+  display: none;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .popular .select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .main-slider {
   overflow: hidden;
 }
@@ -3060,60 +3119,6 @@ body.light .about-item__number {
 }
 body.light .about-item__description {
   color: var(--color-gray);
-}
-
-.popular {
-  padding-top: 100px;
-}
-@media (max-width: 768px) {
-  .popular {
-    padding-top: 60px;
-  }
-}
-.popular__title {
-  text-align: center;
-}
-.popular__list {
-  margin-top: 60px;
-  margin-bottom: 52px;
-}
-@media (max-width: 768px) {
-  .popular__list {
-    display: none;
-  }
-}
-.popular__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.popular__content .product-card {
-  margin-bottom: 32px;
-}
-@media (max-width: 1290px) {
-  .popular__content .product-card {
-    margin: 0 auto;
-    margin-bottom: 32px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-}
-.popular .select {
-  display: none;
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-@media (max-width: 768px) {
-  .popular .select {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .usage {
@@ -5187,6 +5192,7 @@ body.light .game-review .slick-next {
           align-items: flex-start;
   -ms-flex-line-pack: center;
       align-content: center;
+  list-style: none;
 }
 @media (max-width: 768px) {
   .hero-event__prizes-list {
@@ -5238,22 +5244,22 @@ body.light .game-review .slick-next {
     margin-left: 6px;
   }
 }
-.hero-event__img {
+.hero-event__media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 @media (max-width: 1290px) {
-  .hero-event__img {
+  .hero-event__media {
     margin-bottom: 40px;
   }
 }
 @media (max-width: 768px) {
-  .hero-event__img {
+  .hero-event__media {
     margin-bottom: 19px;
   }
 }
-.hero-event__img::before {
+.hero-event__media::before {
   content: "";
   display: inline-block;
   width: 1px;
@@ -5263,22 +5269,16 @@ body.light .game-review .slick-next {
   margin-right: 32px;
 }
 @media (max-width: 1290px) {
-  .hero-event__img::before {
+  .hero-event__media::before {
     display: none;
   }
 }
-.hero-event__img img {
+.hero-event__media-item {
   max-width: 656px;
 }
 @media (max-width: 998px) {
-  .hero-event__img img {
+  .hero-event__media-item {
     width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .hero-event__img img {
-    width: 270px;
-    height: 278px;
   }
 }
 .hero-event__btn {
@@ -5333,14 +5333,13 @@ body.light .hero-event__subtitle {
 body.light .hero-event__text {
   color: var(--color-gray);
 }
-body.light .hero-event__prizes-type svg {
+body.light .hero-event__prizes-type svg rect {
   stroke: var(--color-accent-dark);
-  /* stroke: #008d26; */
 }
 body.light .hero-event__prizes-name {
   color: var(--color-gray);
 }
-body.light .hero-event__img::before {
+body.light .hero-event__media::before {
   background: var(--color-accent-dark);
 }
 body.light .hero-event__terms {
@@ -5348,87 +5347,6 @@ body.light .hero-event__terms {
 }
 body.light .hero-event__terms::before {
   background: var(--color-accent-dark);
-}
-
-.popular-games {
-  padding-top: 66px;
-}
-@media (max-width: 768px) {
-  .popular-games {
-    padding-top: 60px;
-  }
-}
-.popular-games__title {
-  text-align: center;
-}
-@media (max-width: 480px) {
-  .popular-games__title {
-    text-align: left;
-  }
-}
-.popular-games__list {
-  margin: 60px auto 52px auto;
-}
-@media (max-width: 768px) {
-  .popular-games__list {
-    max-width: 276px;
-    margin: 42px auto 40px auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-@media (max-width: 480px) {
-  .popular-games__list {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    margin-left: 0;
-  }
-}
-.popular-games__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.popular-games__content .product-card {
-  margin-bottom: 32px;
-}
-@media (max-width: 1290px) {
-  .popular-games__content .product-card {
-    margin: 0 auto;
-    margin-bottom: 32px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-}
-.popular-games__more {
-  margin-top: 28px;
-  display: block;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  color: var(--color-accent);
-  text-decoration: none;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  .popular-games__more {
-    margin-top: 0px;
-  }
-}
-
-body.light .popular-games__more {
-  color: var(--color-accent-dark);
 }
 
 .hero-donat__title {
@@ -5446,7 +5364,6 @@ body.light .popular-games__more {
   }
 }
 .hero-donat__block {
-  max-width: 1408px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

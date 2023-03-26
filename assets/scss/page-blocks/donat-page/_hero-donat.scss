@@ -1,275 +1,274 @@
 .hero-donat {
-    &__title {
-        text-align: center;
-        margin-top: 33px;
+	&__title {
+		text-align: center;
+		margin-top: 33px;
 
-        @include mobile {
-            margin-top: 30px;
-        }
+		@include mobile {
+			margin-top: 30px;
+		}
 
-        @include mobile-small {
-            text-align: left;
-        }
-    }
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 
-    &__block {
-        max-width: 1408px;
-        display: flex;
-        justify-content: space-between;
+	&__block {
+		display: flex;
+		justify-content: space-between;
 
-        &-first {
-            padding-bottom: 60px;
-            margin: 60px auto 0 auto;
-            border-bottom: 1px solid color(accent);
+		&-first {
+			padding-bottom: 60px;
+			margin: 60px auto 0 auto;
+			border-bottom: 1px solid color(accent);
 
-            @include laptop {
-                flex-direction: column;
-                align-items: center;
-                max-width: 688px;
-            }
+			@include laptop {
+				flex-direction: column;
+				align-items: center;
+				max-width: 688px;
+			}
 
-            @include mobile {
-                margin-top: 20px;
-                padding-bottom: 20px;
-            }
-        }
+			@include mobile {
+				margin-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
 
-        &-second {
-            padding-bottom: 60px;
-            margin: 60px auto 0 auto;
-            border-bottom: 1px solid color(accent);
+		&-second {
+			padding-bottom: 60px;
+			margin: 60px auto 0 auto;
+			border-bottom: 1px solid color(accent);
 
-            @include laptop {
-                flex-direction: column-reverse;
-                align-items: center;
-                max-width: 688px;
-            }
+			@include laptop {
+				flex-direction: column-reverse;
+				align-items: center;
+				max-width: 688px;
+			}
 
-            @include mobile {
-                margin-top: 20px;
-                padding-bottom: 20px;
-            }
-        }
+			@include mobile {
+				margin-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
 
-        &-third {
-            padding-bottom: 60px;
-            margin: 60px auto 0 auto;
-            border-bottom: 1px solid color(accent);
+		&-third {
+			padding-bottom: 60px;
+			margin: 60px auto 0 auto;
+			border-bottom: 1px solid color(accent);
 
-            @include laptop {
-                flex-direction: column;
-                align-items: center;
-                max-width: 688px;
-            }
+			@include laptop {
+				flex-direction: column;
+				align-items: center;
+				max-width: 688px;
+			}
 
-            @include mobile {
-                margin-top: 20px;
-                padding-bottom: 20px;
-            }
-        }
+			@include mobile {
+				margin-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
 
-        &-fourth {
-            margin: 60px auto 0 auto;
+		&-fourth {
+			margin: 60px auto 0 auto;
 
-            @include laptop {
-                flex-direction: column-reverse;
-                align-items: center;
-                max-width: 688px;
-            }
+			@include laptop {
+				flex-direction: column-reverse;
+				align-items: center;
+				max-width: 688px;
+			}
 
-            @include mobile {
-                margin-top: 20px;
-                padding-bottom: 20px;
-            }
-        }
-    }
+			@include mobile {
+				margin-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
+	}
 
-    &__steps {
-        max-width: 688px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        align-content: center;
-        margin-right: 35px;
+	&__steps {
+		max-width: 688px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		align-content: center;
+		margin-right: 35px;
 
-        @include laptop {
-            margin-right: 0;
-        }
+		@include laptop {
+			margin-right: 0;
+		}
 
-        &-three {
-            margin-right: 0;
-            margin-left: 32px;
+		&-three {
+			margin-right: 0;
+			margin-left: 32px;
 
-            @include laptop {
-                margin: 0;
-            }
-        }
+			@include laptop {
+				margin: 0;
+			}
+		}
 
-        &-four {
-            margin-left: 0;
-            margin-right: 32px;
+		&-four {
+			margin-left: 0;
+			margin-right: 32px;
 
-            @include laptop {
-                margin: 0;
-            }
-        }
+			@include laptop {
+				margin: 0;
+			}
+		}
 
-        &-five {
-            margin-left: 32px;
-            margin-right: 0;
+		&-five {
+			margin-left: 32px;
+			margin-right: 0;
 
-            @include laptop {
-                margin: 0;
-            }
-        }
-    }
+			@include laptop {
+				margin: 0;
+			}
+		}
+	}
 
-    &__description {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
+	&__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
 
-        @include mobile {
-            font-size: 14px;
-            line-height: 18px;
-        }
+		@include mobile {
+			font-size: 14px;
+			line-height: 18px;
+		}
 
-        &-three {
-            margin-top: 30px;
-        }
+		&-three {
+			margin-top: 30px;
+		}
 
-        &-four {
-            margin-top: 30px;
-        }
+		&-four {
+			margin-top: 30px;
+		}
 
-        &-five {
-            margin-top: 30px;
-        }
-    }
+		&-five {
+			margin-top: 30px;
+		}
+	}
 
-    &__step {
-        margin-top: 45px;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 44px;
-        color: color(white);
+	&__step {
+		margin-top: 45px;
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 44px;
+		color: color(white);
 
-        @include mobile {
-            margin-top: 20px;
-            font-size: 20px;
-            line-height: 25px;
-        }
+		@include mobile {
+			margin-top: 20px;
+			font-size: 20px;
+			line-height: 25px;
+		}
 
-        &-three {
-            margin-top: 0;
-        }
+		&-three {
+			margin-top: 0;
+		}
 
-        &-four {
-            margin-top: 66px;
+		&-four {
+			margin-top: 66px;
 
-            @include laptop {
-                margin-top: 0;
-            }
-        }
+			@include laptop {
+				margin-top: 0;
+			}
+		}
 
-        &-five {
-            margin-top: 66px;
+		&-five {
+			margin-top: 66px;
 
-            @include laptop {
-                margin-top: 0;
-            }
-        }
-    }
+			@include laptop {
+				margin-top: 0;
+			}
+		}
+	}
 
-    &__button {
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 644px;
+	&__button {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 644px;
 
-        @include mobile {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
+		@include mobile {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
 
-    &__text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
-        margin-right: 24px;
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		margin-right: 24px;
 
-        @include mobile {
-            margin-right: 0;
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
+		@include mobile {
+			margin-right: 0;
+			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 
-    &__btn {
-        width: 328px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	&__btn {
+		width: 328px;
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-        @include mobile {
-            width: 270px;
-            height: 50px;
-            font-size: 18px;
-            line-height: 23px;
-        }
+		@include mobile {
+			width: 270px;
+			height: 50px;
+			font-size: 18px;
+			line-height: 23px;
+		}
 
-        &-icon {
-            height: 29px;
-        }
-    }
+		&-icon {
+			height: 29px;
+		}
+	}
 
-    &__img {
-        @include laptop {
-            margin-top: 20px;
-        }
-    }
+	&__img {
+		@include laptop {
+			margin-top: 20px;
+		}
+	}
 
-    &__image {
-        @include mobile {
-            width: 100%;
-        }
-    }
+	&__image {
+		@include mobile {
+			width: 100%;
+		}
+	}
 }
 
 body.light {
-    .hero-donat {
-        &__block {
-            &-first {
-                border-bottom: 1px solid color(accent-dark);
-            }
+	.hero-donat {
+		&__block {
+			&-first {
+				border-bottom: 1px solid color(accent-dark);
+			}
 
-            &-second {
-                border-bottom: 1px solid color(accent-dark);
-            }
+			&-second {
+				border-bottom: 1px solid color(accent-dark);
+			}
 
-            &-third {
-                border-bottom: 1px solid color(accent-dark);
-            }
-        }
+			&-third {
+				border-bottom: 1px solid color(accent-dark);
+			}
+		}
 
-        &__description {
-            color: color(gray);
-        }
+		&__description {
+			color: color(gray);
+		}
 
-        &__step {
-            color: color(gray);
-        }
+		&__step {
+			color: color(gray);
+		}
 
-        &__text {
-            color: color(gray);
-        }
-    }
+		&__text {
+			color: color(gray);
+		}
+	}
 }

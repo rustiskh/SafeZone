@@ -16,13 +16,13 @@
 @import "general/blocks/faq/faq";
 @import "general/blocks/article-card/article-card";
 @import "general/blocks/review-card/review-card";
+@import "general/blocks/popular-games/popular";
 
 // Главный лендинг
 @import "page-blocks/landing-page/main-slider/main-slider";
 @import "page-blocks/landing-page/game/game";
 @import "page-blocks/landing-page/game-catalog/game-catalog";
 @import "page-blocks/landing-page/about/about";
-@import "page-blocks/landing-page/popular-games/popular";
 @import "page-blocks/landing-page/usage/usage";
 @import "page-blocks/landing-page/accounts/accounts";
 @import "page-blocks/landing-page/game-currency/game-currency";
@@ -46,7 +46,6 @@
 
 // Страница Конкурс
 @import "page-blocks/event-page/hero-event";
-@import "page-blocks/event-page/popular-games";
 
 // Страница Донаты
 @import "page-blocks/donat-page/hero-donat";
@@ -74,16 +73,16 @@
 // Поэтому в конце каждого файла стилей содержится правило для "перекрашивания" элементов, которые находятся внутри body."themeName"
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Source Sans Pro", "Inter", sans-serif;
-    font-style: normal;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Source Sans Pro", "Inter", sans-serif;
+	font-style: normal;
 }
 
 html,
 body {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 input,
@@ -94,33 +93,33 @@ textarea {
 }
 
 .show {
-    display: block;
+	display: block;
 }
 
 body {
-    &.dark {
-        background-color: color(background-dark);
+	&.dark {
+		background-color: color(background-dark);
 
-        .header-main__color-theme-light {
-            display: none;
-        }
-    }
+		.header-main__color-theme-light {
+			display: none;
+		}
+	}
 
-    &.light {
-        background-color: color(background-light);
+	&.light {
+		background-color: color(background-light);
 
-        .header-main__color-theme-dark {
-            display: none;
-        }
-    }
+		.header-main__color-theme-dark {
+			display: none;
+		}
+	}
 }
 
 .container {
-    max-width: 1520px;
-    margin: 0 auto;
+	max-width: 1520px;
+	margin: 0 auto;
 }
 
 .padding-side {
-    padding-left: 10px;
-    padding-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
