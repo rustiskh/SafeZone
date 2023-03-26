@@ -1,0 +1,73 @@
+.popular-games {
+    padding-top: 66px;
+
+    @include mobile {
+        padding-top: 60px;
+    }
+
+    &__title {
+        text-align: center;
+
+        @include mobile-small {
+            text-align: left;
+        }
+    }
+
+    &__list {
+        // margin-top: 60px;
+        // margin-bottom: 52px;
+        margin: 60px auto 52px auto;
+
+        @include mobile {
+            max-width: 276px;
+            margin: 42px auto 40px auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include mobile-small {
+            justify-content: flex-start;
+            margin-left: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .product-card {
+            margin-bottom: 32px;
+
+            @include laptop {
+                margin: 0 auto;
+                margin-bottom: 32px;
+                justify-content: space-around;
+            }
+        }
+    }
+
+    &__more {
+        margin-top: 28px;
+        display: block;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: color(accent);
+        text-decoration: none;
+        cursor: pointer;
+
+        @include mobile {
+            margin-top: 0px;
+        }
+    }
+}
+
+body.light {
+    .popular-games {
+        &__more {
+            color: color(accent-dark);
+        }
+    }
+}
