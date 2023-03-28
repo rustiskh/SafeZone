@@ -1,309 +1,290 @@
-.hero-donat {
-    &__title {
-        text-align: center;
-        margin-top: 33px;
+.donat {
+	&__title {
+		text-align: center;
+		margin-top: 33px;
 
-        @include mobile {
-            margin-top: 30px;
-        }
+		@include mobile {
+			margin-top: 30px;
+		}
 
-        @include mobile-small {
-            text-align: left;
-        }
+		@include mobile-small {
+			text-align: left;
+		}
 
-        &-rus {
-            margin-top: 80px;
+		&-rus {
+			margin-top: 80px;
 
-            @include mobile {
-                margin-top: 60px;
-            }
-        }
-    }
+			@include mobile {
+				margin-top: 60px;
+			}
+		}
+	}
 
-    &__block {
-        max-width: 1409px;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 60px;
-        margin: 60px auto 0 auto;
-        border-bottom: 1px solid color(accent);
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 60px;
+		margin: 60px auto 0 auto;
+		border-bottom: 1px solid color(accent);
 
-        @include laptop {
-            flex-direction: column;
-            align-items: center;
-            max-width: 688px;
-        }
+		@include laptop {
+			flex-direction: column;
+			align-items: center;
+			max-width: 688px;
+		}
 
-        @include mobile {
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
+		@include mobile {
+			margin-top: 20px;
+			padding-bottom: 20px;
+		}
 
-        &_reverse {
-            @include laptop {
-                flex-direction: column-reverse;
-            }
-        }
+		&_reverse {
+			@include laptop {
+				flex-direction: column-reverse;
+			}
 
-        &_not-border {
-            padding-bottom: 0;
-            border: 0;
+			.donat__text-content {
+				margin-right: 0;
+				margin-left: 32px;
 
-            @include laptop {
-                padding-bottom: 60px;
-                border-bottom: 1px solid color(accent);
-            }
+				@include laptop {
+					margin: 0;
+				}
+			}
+		}
 
-            @include mobile {
-                padding-bottom: 20px;
-            }
-        }
+		&_not-border {
+			padding-bottom: 0;
+			border: 0;
 
-        &_grid {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: auto auto;
-            align-items: center;
-            /*  margin-bottom: 60px; */
+			@include laptop {
+				padding-bottom: 60px;
+				border-bottom: 1px solid color(accent);
+			}
 
-            .hero-donat__element_main {
-                grid-column-start: 1;
-            }
-            .hero-donat__element_second {
-                grid-column-start: 1;
-                margin-top: 30px;
+			@include mobile {
+				padding-bottom: 20px;
+			}
+		}
 
-                @include mobile {
-                    margin-top: 20px;
-                }
-            }
-            .hero-donat__img {
-                grid-column-start: 2;
-                grid-row-start: 1;
-                grid-row-end: 4;
-                margin-left: 32px;
+		&_grid {
+			margin-top: 60px;
+			display: grid;
+			grid-template-columns: auto auto;
+			grid-template-rows: auto auto;
+			align-items: center;
+			/*  margin-bottom: 60px; */
 
-                @include laptop {
-                    margin-left: 0;
-                    margin-top: 20px;
-                }
+			.donat__element_main {
+				grid-column-start: 1;
+			}
+			.donat__element_second {
+				grid-column-start: 1;
+				margin-top: 30px;
 
-                img {
-                    @include mobile {
-                        width: 100%;
-                    }
-                }
-            }
+				@include mobile {
+					margin-top: 20px;
+				}
+			}
+			.donat__img {
+				grid-column-start: 2;
+				grid-row-start: 1;
+				grid-row-end: 4;
+				margin-left: 32px;
 
-            @include laptop {
-                margin-top: 40px;
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 30px;
-            }
+				@include laptop {
+					margin-left: 0;
+					margin-top: 20px;
+				}
 
-            @include mobile {
-                align-items: flex-start;
-                margin-top: 19px;
-            }
-        }
-    }
+				img {
+					@include mobile {
+						width: 100%;
+					}
+				}
+			}
 
-    &__text-content {
-        max-width: 688px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        align-content: center;
-        margin-right: 35px;
+			@include laptop {
+				margin-top: 40px;
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 30px;
+			}
 
-        @include laptop {
-            margin-right: 0;
-        }
+			@include mobile {
+				align-items: flex-start;
+				margin-top: 19px;
+			}
+		}
+	}
 
-        &_reverse {
-            margin-right: 0;
-            margin-left: 32px;
+	&__text-content {
+		max-width: 688px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		align-content: center;
+		margin-right: 35px;
 
-            @include laptop {
-                margin: 0;
-            }
-        }
-    }
+		@include laptop {
+			margin-right: 0;
+		}
+	}
 
-    &__description {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
-        margin-top: 30px;
+	&__img {
+		max-width: 668px;
+	}
 
-        @include mobile {
-            font-size: 14px;
-            line-height: 18px;
-        }
+	&__description {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		margin-top: 30px;
 
-        &_mt0 {
-            margin-top: 0;
-        }
-    }
+		@include mobile {
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 
-    &__step {
-        margin-top: 45px;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 44px;
-        color: color(white);
+	&__step {
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 44px;
+		color: color(white);
 
-        @include mobile {
-            margin-top: 20px;
-            font-size: 20px;
-            line-height: 25px;
-        }
+		@include mobile {
+			margin-top: 20px;
+			font-size: 20px;
+			line-height: 25px;
+		}
 
-        &_mt0 {
-            margin-top: 0;
-        }
+		&_one,
+		&_two {
+			margin-top: 45px;
 
-        &_mt66 {
-            margin-top: 66px;
+			@include mobile {
+				margin-top: 20px;
+			}
+		}
+	}
 
-            @include laptop {
-                margin-top: 0;
-            }
-        }
+	&__button {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 644px;
 
-        &_mt71 {
-            margin-top: 71px;
+		@include mobile {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
 
-            @include laptop {
-                margin-top: 0;
-            }
-        }
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		margin-right: 24px;
 
-        &_mt87 {
-            margin-top: 87px;
+		@include mobile {
+			margin-right: 0;
+			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 
-            @include laptop {
-                margin-top: 0;
-            }
-        }
-    }
+	&__btn {
+		width: 328px;
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-    &__button {
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 644px;
+		@include mobile {
+			width: 270px;
+			height: 50px;
+			font-size: 18px;
+			line-height: 23px;
+		}
 
-        @include mobile {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
+		&-icon {
+			height: 29px;
+		}
+	}
 
-    &__text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
-        margin-right: 24px;
+	&__media-content {
+		@include laptop {
+			margin-top: 20px;
+		}
+	}
 
-        @include mobile {
-            margin-right: 0;
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
+	&__img {
+		@include mobile {
+			width: 100%;
+		}
+	}
 
-    &__btn {
-        width: 328px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	&__example-text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		color: color(white);
+		margin-bottom: 30px;
 
-        @include mobile {
-            width: 270px;
-            height: 50px;
-            font-size: 18px;
-            line-height: 23px;
-        }
+		@include mobile {
+			margin-bottom: 20px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
 
-        &-icon {
-            height: 29px;
-        }
-    }
-
-    &__media-content {
-        @include laptop {
-            margin-top: 20px;
-        }
-    }
-
-    &__img {
-        @include mobile {
-            width: 100%;
-        }
-    }
-
-    &__example-text {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        color: color(white);
-        margin-bottom: 30px;
-        @include mobile {
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
-
-    &__example-img {
-        width: 482px;
-        height: 532px;
-        @include tablet {
-            width: 100%;
-        }
-    }
+	&__example-img {
+		width: 482px;
+		height: 532px;
+		@include tablet {
+			width: 100%;
+		}
+	}
 }
 
 body.light {
-    .hero-donat {
-        &__block {
-            border-bottom: 1px solid color(accent-dark);
+	.donat {
+		&__block {
+			border-bottom: 1px solid color(accent-dark);
 
-            &_not-border {
-                padding-bottom: 0;
-                border: 0;
+			&_not-border {
+				padding-bottom: 0;
+				border: 0;
 
-                @include laptop {
-                    padding-bottom: 60px;
-                    border-bottom: 1px solid color(accent-dark);
-                }
-            }
-        }
+				@include laptop {
+					padding-bottom: 60px;
+					border-bottom: 1px solid color(accent-dark);
+				}
+			}
+		}
 
-        &__description {
-            color: color(gray);
-        }
+		&__description {
+			color: color(gray);
+		}
 
-        &__step {
-            color: color(gray);
-        }
+		&__step {
+			color: color(gray);
+		}
 
-        &__text {
-            color: color(gray);
-        }
+		&__text {
+			color: color(gray);
+		}
 
-        &__example-text {
-            color: color(gray);
-        }
-    }
+		&__example-text {
+			color: color(gray);
+		}
+	}
 }
