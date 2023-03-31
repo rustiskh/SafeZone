@@ -1,0 +1,72 @@
+.general-input {
+	background: color(gray-dark);
+	padding: 20px;
+	border: none;
+	border-left: 1px solid color(accent);
+
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 23px;
+	color: color(white);
+	cursor: pointer;
+
+	&::placeholder {
+		opacity: 0.7;
+	}
+
+	@include mobile {
+		padding: 11px 20px;
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+.general-input_select {
+	appearance: none;
+	background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
+	background-repeat: no-repeat;
+	background-position: 95% center;
+	position: relative;
+
+	&::-ms-expand,
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	option {
+		&:first-child {
+			display: none;
+		}
+
+		&:checked {
+			background-color: color(gray-light);
+		}
+	}
+}
+
+body.light {
+	.general-input {
+		background: color(mint);
+		border-left: 1px solid color(accent-dark);
+		color: color(gray);
+	}
+
+	.general-input_select {
+		appearance: none;
+		background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
+		background-repeat: no-repeat;
+		background-position: 95% center;
+		position: relative;
+
+		&::-ms-expand,
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		option {
+			&:checked {
+				background-color: color(mint-dark);
+			}
+		}
+	}
+}

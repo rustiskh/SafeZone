@@ -184,53 +184,11 @@
 			max-width: 100%;
 		}
 
-		input,
-		select {
-			background: color(gray-dark);
-			padding: 20px;
+		.general-input {
 			margin-bottom: 32px;
-			border: none;
-			border-left: 1px solid color(accent);
-
-			font-weight: 400;
-			font-size: 18px;
-			line-height: 23px;
-			color: color(white);
-			cursor: pointer;
-
-			&::placeholder {
-				opacity: 0.7;
-			}
 
 			@include mobile {
 				margin-bottom: 20px;
-				padding: 11px 20px;
-
-				font-size: 14px;
-				line-height: 18px;
-			}
-		}
-
-		select {
-			appearance: none;
-			background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
-			background-repeat: no-repeat;
-			background-position: 95% center;
-			position: relative;
-
-			&::-ms-expand,
-			&::-webkit-scrollbar {
-				display: none;
-			}
-
-			option {
-				&:first-child {
-					display: none;
-				}
-
-				&:checked {
-					background-color: color(gray-light);
-				}
 			}
 		}
 	}
@@ -284,34 +242,6 @@ body.light {
 				background: color(mint);
 				border: 1px solid color(accent-dark);
 				color: color(gray);
-			}
-
-			&-inputs {
-				input,
-				select {
-					background: color(mint);
-					border-left: 1px solid color(accent-dark);
-					color: color(gray);
-				}
-
-				select {
-					appearance: none;
-					background-image: url("/assets/icons/other/icon-dropdown-chevrone.svg");
-					background-repeat: no-repeat;
-					background-position: 95% center;
-					position: relative;
-
-					&::-ms-expand,
-					&::-webkit-scrollbar {
-						display: none;
-					}
-
-					option {
-						&:checked {
-							background-color: color(mint-dark);
-						}
-					}
-				}
 			}
 		}
 	}

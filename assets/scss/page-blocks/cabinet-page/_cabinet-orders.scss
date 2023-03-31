@@ -1,85 +1,95 @@
 .cabinet-orders {
-    padding-top: 80px;
+	padding-top: 80px;
 
-    @include mobile {
-        padding-top: 40px;
-    }
+	@include mobile {
+		padding-top: 40px;
+	}
 
-    &__title {
-        text-align: center;
-        font-size: 35px;
-        line-height: 44px;
+	&__title {
+		text-align: center;
+		font-size: 35px;
+		line-height: 44px;
 
-        /* @include mobile-small {
-            text-align: left;
-        } */
-    }
+		@include mobile-small {
+			text-align: left;
+		}
+	}
 
-    &__list {
-        // margin-top: 60px;
-        // margin-bottom: 52px;
-        margin: 60px auto 52px auto;
+	&__list {
+		margin-top: 60px;
+		margin-bottom: 52px;
+		margin: 60px auto 52px auto;
 
-        @include mobile {
-            max-width: 276px;
-        }
-    }
+		@include mobile {
+			display: none;
+		}
 
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+		&_select {
+			display: none;
 
-        .product-card {
-            margin-bottom: 32px;
+			@include mobile {
+				display: flex;
+				margin-bottom: 40px;
+				margin-top: 40px;
+			}
+		}
+	}
 
-            @include laptop {
-                margin: 0 auto;
-                margin-bottom: 32px;
-                justify-content: space-around;
-            }
-        }
-    }
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 
-    &__card-wrapper {
-        max-width: 1520px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+		.product-card {
+			margin-bottom: 32px;
 
-        .product-card {
-            margin-bottom: 32px;
+			@include laptop {
+				margin: 0 auto;
+				margin-bottom: 32px;
+				justify-content: space-around;
+			}
+		}
+	}
 
-            @include laptop {
-                margin: 0 auto;
-                margin-bottom: 32px;
-                justify-content: space-around;
-            }
-        }
-    }
+	&__card-wrapper {
+		max-width: 1520px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-    &__more {
-        margin-top: 28px;
-        display: block;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 25px;
-        text-align: center;
-        color: color(accent);
-        text-decoration: none;
-        cursor: pointer;
+		.product-card {
+			margin-bottom: 32px;
 
-        @include mobile {
-            margin-top: 0px;
-        }
-    }
+			@include laptop {
+				margin: 0 auto;
+				margin-bottom: 32px;
+				justify-content: space-around;
+			}
+		}
+	}
+
+	&__more {
+		margin-top: 28px;
+		display: block;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 25px;
+		text-align: center;
+		color: color(accent);
+		text-decoration: none;
+		cursor: pointer;
+
+		@include mobile {
+			margin-top: 0px;
+		}
+	}
 }
 
 body.light {
-    .cabinet-orders {
-        &__more {
-            color: color(accent-dark);
-        }
-    }
+	.cabinet-orders {
+		&__more {
+			color: color(accent-dark);
+		}
+	}
 }

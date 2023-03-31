@@ -350,9 +350,10 @@
 						<div class="review__form-text-zone">
 							<textarea id="review-text" name="subject" placeholder="Напишите свой отзыв" class="review__form-text"></textarea>
 						</div>
+						<!-- Change old start - 31.03 - вынес стили инпутов + селекта в общие стили, сделав их глобальными. Для этого инпуту добавлен класс general-input, а селекту дополнительно модификатор general-input_select  -->
 						<div class="review__form-inputs">
-							<input type="text" id="name" name="firstname" placeholder="Ваше имя..." />
-							<select id="service" name="service">
+							<input class="general-input review__form-input" type="text" id="name" name="firstname" placeholder="Ваше имя..." />
+							<select class="general-input general-input_select review__form-select" id="service" name="service">
 								<option value="0">Выберите услугу</option>
 								<option value="1">Услуга_1</option>
 								<option value="2">Услуга_2</option>
@@ -360,6 +361,7 @@
 							<button class="button review__form-btn" type="submit">Отправить отзыв</button>
 							<p class="review__form-error-text">Текст ошибки</p>
 						</div>
+						<!-- Change old end -->
 					</form>
 				</div>
 			</div>

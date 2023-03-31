@@ -1,126 +1,99 @@
 .cabinet-service {
-    &__title {
-        margin-top: 80px;
-        font-size: 35px;
-        line-height: 44px;
-        text-align: center;
+	&__title {
+		margin-top: 80px;
+		font-size: 35px;
+		line-height: 44px;
+		text-align: center;
 
-        @include mobile {
-            margin-top: 60px;
-            font-size: 30px;
-            line-height: 38px;
-        }
+		@include mobile {
+			margin-top: 60px;
+			font-size: 30px;
+			line-height: 38px;
+		}
 
-        /*  @include mobile-small {
-            text-align: left;
-        } */
+		@include mobile-small {
+			text-align: left;
+		}
 
-        &_imputs {
-            margin-bottom: 40px;
+		&_inputs {
+			margin-bottom: 40px;
 
-            @include mobile {
-                margin-top: 40px;
-            }
-        }
-    }
+			@include mobile {
+				margin-top: 40px;
+			}
+		}
+	}
 
-    &__wrapper-btn {
-        max-width: 928px;
-        margin: 60px auto 0 auto;
-        display: flex;
-        justify-content: space-between;
+	&__wrapper-btn {
+		max-width: 928px;
+		margin: 60px auto 0 auto;
+		display: flex;
+		justify-content: space-between;
 
-        @include mobile {
-            margin-top: 40px;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+		@include mobile {
+			margin-top: 40px;
+			margin-bottom: 60px;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 
-    &__btn {
-        max-width: 448px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+	&__btn {
+		max-width: 448px;
+		width: 100%;
 
-        @include mobile {
-            margin-bottom: 20px;
-        }
+		&:hover {
+			svg {
+				path {
+					fill: color(gray-dark);
+				}
+			}
+		}
 
-        &-icon {
-            height: 29px;
-        }
-    }
+		@include mobile {
+			margin-bottom: 20px;
+			height: 50px;
 
-    &__form-inputs {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 
-        input {
-            max-width: 328px;
-            width: 100%;
-            background: color(gray-dark);
-            padding: 19px;
-            /*   margin-bottom: 32px; */
-            border: none;
-            border-left: 1px solid color(accent);
+		&-icon {
+			height: 29px;
+		}
+	}
 
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 23px;
-            color: color(white);
-            cursor: pointer;
-            margin-bottom: 20px;
+	&__form-inputs {
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-            &::placeholder {
-                opacity: 0.7;
-            }
+		.general-input {
+			max-width: 630px;
+			width: 100%;
+			margin-bottom: 20px;
 
-            @include mobile {
-                max-width: 272px;
-                height: 40px;
-                font-size: 14px;
-                line-height: 18px;
-            }
-        }
+			@include mobile {
+				max-width: 328px;
+			}
+		}
 
-        /*      &-error-text {
-            display: none;
-            text-align: center;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 18px;
-            color: color(red-error);
-            margin-top: 12px;
-        } */
-    }
+		.cabinet-service__form-error-text {
+			// display: none;
+			text-align: center;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 18px;
+			color: color(red-error);
+			margin-top: 12px;
+		}
+	}
 
-    &__form-btn {
-        margin-top: 20px;
-        width: 328px;
-        height: 60px;
-
-        @include mobile {
-            width: 272px;
-            height: 50px;
-        }
-    }
-}
-
-body.light {
-    .cabinet-service {
-        &__form-inputs {
-            input {
-                background: color(beige-light);
-                border-left: 1px solid color(accent-dark);
-                color: color(gray);
-                &::placeholder {
-                    opacity: 0.7;
-                }
-            }
-        }
-    }
+	&__form-btn {
+		max-width: 328px;
+		width: 100%;
+		margin-top: 20px;
+	}
 }
