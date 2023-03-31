@@ -65,6 +65,11 @@
 @import "page-blocks/review/review";
 @import "page-blocks/review/review-gallery";
 
+// Личный кабинет
+@import "page-blocks/cabinet-page/cabinet-balance";
+@import "page-blocks/cabinet-page/cabinet-orders";
+@import "page-blocks/cabinet-page/cabinet-service";
+
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.

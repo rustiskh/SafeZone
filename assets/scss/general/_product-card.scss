@@ -1,307 +1,392 @@
 .product-card {
-	width: 738px;
-	padding: 32px;
-	display: flex;
-	justify-content: space-between;
-	background-color: color(gray-dark);
-	position: relative;
-	border-radius: 20px;
+    width: 738px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: color(gray-dark);
+    position: relative;
+    border-radius: 20px;
 
-	&__img {
-		width: 325px;
-		height: 325px;
-	}
+    &__subtitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
 
-	&__content-wrapper {
-		max-width: 324px;
-	}
+        &-block {
+            display: flex;
+        }
 
-	&__title {
-		font-weight: 700;
-		font-size: 35px;
-		line-height: 44px;
-		color: color(white);
-		margin-bottom: 20px;
-	}
+        &-game,
+        &-name {
+            color: color(accent);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 23px;
+            margin-right: 10px;
+        }
 
-	&__list {
-		margin-bottom: 10px;
-	}
+        &-name {
+            color: color(white);
+            margin-right: 0;
+        }
 
-	&__list-item {
-		display: flex;
-		align-items: start;
-		margin-bottom: 20px;
+        &-status {
+            width: 160px;
+            height: 39px;
+            background: color(accent);
+            border-radius: 20px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: color(gray-dark);
+        }
+    }
 
-		&-icon {
-			margin-right: 10px;
-		}
-	}
+    &__main-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
 
-	&__description,
-	&__list-item-text {
-		font-family: "Inter";
-		font-style: normal;
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 15px;
-		color: color(white);
-	}
+    &__img {
+        width: 325px;
+        height: 325px;
+    }
 
-	&__description {
-		margin-bottom: 20px;
-	}
+    &__content-wrapper {
+        max-width: 324px;
+    }
 
-	&__price {
-		font-weight: 700;
-		font-size: 54px;
-		line-height: 68px;
-		color: color(white);
-	}
+    &__title {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 44px;
+        color: color(white);
+        margin-bottom: 20px;
+    }
 
-	&__btn {
-		margin-top: 12px;
-	}
+    &__list {
+        margin-bottom: 10px;
+    }
 
-	@include pc {
-		width: 271px;
-		padding: 20px;
-		flex-direction: column;
-		border-radius: 8px;
-		justify-content: start;
+    &__list-item {
+        display: flex;
+        align-items: start;
+        margin-bottom: 20px;
 
-		&__img {
-			height: 230px;
-			width: 230px;
-		}
+        &-icon {
+            margin-right: 10px;
+        }
+    }
 
-		&__title {
-			font-size: 20px;
-			line-height: 25px;
-			margin-top: 15px;
-			margin-bottom: 15px;
-		}
+    &__description,
+    &__list-item-text {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: color(white);
+    }
 
-		&__list {
-			margin-bottom: 15px;
-		}
+    &__description {
+        margin-bottom: 20px;
+    }
 
-		&__list-item {
-			margin-bottom: 15px;
-		}
+    &__price {
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 68px;
+        color: color(white);
+    }
 
-		&__description,
-		&__list-item-text {
-			font-size: 14px;
-			line-height: 18px;
-		}
+    &__btn {
+        margin-top: 12px;
+    }
 
-		&__description {
-			margin-bottom: 15px;
-		}
+    @include pc {
+        width: 271px;
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 8px;
+        justify-content: start;
 
-		&__price {
-			font-size: 30px;
-			line-height: 38px;
-		}
+        &__subtitle {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
 
-		&__btn {
-			// position: relative;
-			// bottom: 0;
-			// right: 0;
-			// width: 100%;
-			margin-top: 15px;
-		}
-	}
+            &-block {
+                display: flex;
+            }
+
+            &-game,
+            &-name {
+                font-size: 14px;
+                line-height: 18px;
+                margin-right: 6px;
+            }
+
+            &-status {
+                border-radius: 8px;
+                font-size: 14px;
+                line-height: 18px;
+                margin-bottom: 14px;
+            }
+        }
+
+        &__main-wrapper {
+            flex-direction: column;
+        }
+
+        &__img {
+            height: 230px;
+            width: 230px;
+        }
+
+        &__title {
+            font-size: 20px;
+            line-height: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        &__list {
+            margin-bottom: 15px;
+        }
+
+        &__list-item {
+            margin-bottom: 15px;
+        }
+
+        &__description,
+        &__list-item-text {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        &__description {
+            margin-bottom: 15px;
+        }
+
+        &__price {
+            font-size: 30px;
+            line-height: 38px;
+        }
+
+        &__btn {
+            margin-top: 15px;
+        }
+    }
 }
 
 .mini-product-card {
-	width: 485px;
-	padding: 20px;
-	height: 100%;
-	background-color: color(gray-dark);
-	position: relative;
-	border-radius: 12px;
+    width: 485px;
+    padding: 20px;
+    height: 100%;
+    background-color: color(gray-dark);
+    position: relative;
+    border-radius: 12px;
 
-	&__main-wrapper {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
+    &__main-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-	&__img {
-		width: 205px;
-		height: 205px;
-	}
+    &__img {
+        width: 205px;
+        height: 205px;
+    }
 
-	&__content-wrapper {
-		max-width: 220px;
-	}
+    &__content-wrapper {
+        max-width: 220px;
+    }
 
-	&__title {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 25px;
-		color: color(white);
-		margin-bottom: 13px;
-	}
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        color: color(white);
+        margin-bottom: 13px;
+    }
 
-	&__list {
-		margin-bottom: 13px;
-	}
+    &__list {
+        margin-bottom: 13px;
+    }
 
-	&__list-item {
-		display: flex;
-		align-items: start;
-		margin-bottom: 13px;
+    &__list-item {
+        display: flex;
+        align-items: start;
+        margin-bottom: 13px;
 
-		&-icon {
-			margin-right: 5px;
-		}
-	}
+        &-icon {
+            margin-right: 5px;
+        }
+    }
 
-	&__description,
-	&__list-item-text {
-		font-family: "Inter";
-		font-style: normal;
-		font-weight: 400;
-		font-size: 10px;
-		line-height: 12px;
-		color: color(white);
-	}
+    &__description,
+    &__list-item-text {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: color(white);
+    }
 
-	&__description {
-		margin-bottom: 13px;
-	}
+    &__description {
+        margin-bottom: 13px;
+    }
 
-	&__price {
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 38px;
-		color: color(white);
-	}
+    &__price {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 38px;
+        color: color(white);
+    }
 
-	&__btn {
-		margin-top: 20px;
-		padding-top: 6px;
-		padding-bottom: 9px;
-		// position: absolute;
-	}
+    &__btn {
+        margin-top: 20px;
+        padding-top: 6px;
+        padding-bottom: 9px;
+    }
 
-	@include mobile {
-		width: 271px;
-		padding: 20px;
-		flex-direction: column;
-		border-radius: 8px;
-		justify-content: start;
+    @include mobile {
+        width: 271px;
+        padding: 20px;
+        flex-direction: column;
+        border-radius: 8px;
+        justify-content: start;
 
-		&__main-wrapper {
-			flex-direction: column;
-		}
+        &__main-wrapper {
+            flex-direction: column;
+        }
 
-		&__img {
-			height: 230px;
-			width: 230px;
-		}
+        &__img {
+            height: 230px;
+            width: 230px;
+        }
 
-		&__title {
-			font-size: 20px;
-			line-height: 25px;
-			margin-top: 15px;
-			margin-bottom: 15px;
-		}
+        &__title {
+            font-size: 20px;
+            line-height: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
 
-		&__list {
-			margin-bottom: 15px;
-		}
+        &__list {
+            margin-bottom: 15px;
+        }
 
-		&__list-item {
-			margin-bottom: 15px;
-		}
+        &__list-item {
+            margin-bottom: 15px;
+        }
 
-		&__description,
-		&__list-item-text {
-			font-size: 14px;
-			line-height: 18px;
-		}
+        &__description,
+        &__list-item-text {
+            font-size: 14px;
+            line-height: 18px;
+        }
 
-		&__description {
-			margin-bottom: 15px;
-		}
+        &__description {
+            margin-bottom: 15px;
+        }
 
-		&__price {
-			font-size: 30px;
-			line-height: 38px;
-		}
+        &__price {
+            font-size: 30px;
+            line-height: 38px;
+        }
 
-		&__btn {
-			// position: relative;
-			// bottom: 0;
-			// right: 0;
-			// width: 100%;
-			margin-top: 15px;
-		}
-	}
+        &__btn {
+            // position: relative;
+            // bottom: 0;
+            // right: 0;
+            // width: 100%;
+            margin-top: 15px;
+        }
+    }
 }
 
 body.light {
-	.product-card {
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-		background-color: color(beige-light);
+    .product-card {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        background-color: color(beige-light);
 
-		&__title {
-			color: color(gray);
-		}
+        &__subtitle {
+            &-game,
+            &-name {
+                color: color(accent-dark);
+            }
 
-		&__list-item {
-			&-icon {
-				svg {
-					path {
-						fill: color(accent-dark);
-					}
-				}
-			}
-		}
+            &-name {
+                color: color(gray);
+            }
 
-		&__description,
-		&__list-item-text {
-			color: color(gray);
-		}
+            &-status {
+                background: color(accent-dark);
+                color: color(beige-light);
+            }
+        }
 
-		&__price {
-			color: color(gray);
-		}
-	}
+        &__title {
+            color: color(gray);
+        }
 
-	.mini-product-card {
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-		background-color: color(beige-light);
+        &__list-item {
+            &-icon {
+                svg {
+                    path {
+                        fill: color(accent-dark);
+                    }
+                }
+            }
+        }
 
-		&__title {
-			color: color(gray);
-		}
+        &__description,
+        &__list-item-text {
+            color: color(gray);
+        }
 
-		&__list-item {
-			&-icon {
-				svg {
-					path {
-						fill: color(accent-dark);
-					}
-				}
-			}
-		}
+        &__price {
+            color: color(gray);
+        }
+    }
 
-		&__description,
-		&__list-item-text {
-			color: color(gray);
-		}
+    .mini-product-card {
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        background-color: color(beige-light);
 
-		&__description {
-			margin-bottom: 13px;
-		}
+        &__title {
+            color: color(gray);
+        }
 
-		&__price {
-			color: color(gray);
-		}
-	}
+        &__list-item {
+            &-icon {
+                svg {
+                    path {
+                        fill: color(accent-dark);
+                    }
+                }
+            }
+        }
+
+        &__description,
+        &__list-item-text {
+            color: color(gray);
+        }
+
+        &__description {
+            margin-bottom: 13px;
+        }
+
+        &__price {
+            color: color(gray);
+        }
+    }
 }
