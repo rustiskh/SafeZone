@@ -9,6 +9,7 @@
 @import "general/hor-unscroll-menu";
 @import "general/product-card";
 @import "general/game-card";
+@import "general/modals";
 @import "general/blocks/header/header";
 @import "general/blocks/footer/footer";
 @import "general/blocks/cookie/cookie-block";
@@ -83,6 +84,12 @@
 	box-sizing: border-box;
 	font-family: "Source Sans Pro", "Inter", sans-serif;
 	font-style: normal;
+}
+
+html {
+	body.modal-open {
+		overflow: hidden;
+	}
 }
 
 html,

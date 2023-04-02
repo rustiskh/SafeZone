@@ -1141,6 +1141,208 @@ body.light .game-card__game-title {
   color: var(--color-gray);
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+}
+.modal__fade {
+  height: 100%;
+  background-color: rgba(25, 28, 26, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.modal__body {
+  position: relative;
+  max-width: 752px;
+  width: 100%;
+  padding: 60px 32px 60px 32px;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  background-color: var(--color-black);
+}
+.modal__close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+.modal__close:hover svg path {
+  fill: var(--color-accent);
+}
+.modal__title {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 44px;
+  color: var(--color-white);
+}
+.modal__title_tac {
+  text-align: center;
+}
+.modal__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: var(--color-white);
+}
+.modal__text_tac {
+  text-align: center;
+}
+.modal__text .modal__link {
+  color: inherit;
+}
+.modal__btn {
+  margin: 0 auto;
+  max-width: 272px;
+  width: 100%;
+  height: 70px;
+}
+.modal__btn-icon {
+  height: 30px;
+}
+.modal__column-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.modal__error-text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-red-error);
+  margin-top: 12px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+  .modal__body {
+    padding: 15px;
+  }
+  .modal__close {
+    top: 15px;
+    right: 15px;
+  }
+  .modal__close svg {
+    width: 15px;
+    height: 15px;
+  }
+  .modal__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .modal__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .modal__btn {
+    height: 50px;
+  }
+  .modal__btn-icon {
+    height: 30px;
+  }
+}
+
+body.light .modal__fade {
+  background-color: rgba(25, 28, 26, 0.7);
+}
+body.light .modal__body {
+  background-color: var(--color-beige-light);
+}
+body.light .modal__close svg path {
+  fill: var(--color-gray);
+}
+body.light .modal__close:hover svg path {
+  fill: var(--color-accent-dark);
+}
+body.light .modal__title {
+  color: var(--color-gray);
+}
+body.light .modal__text {
+  color: var(--color-gray);
+}
+
+.modal.modal-auth .modal__body {
+  max-width: 512px;
+}
+.modal.modal-auth .modal__title {
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .modal.modal-auth .modal__title {
+    margin-bottom: 15px;
+  }
+}
+.modal.modal-auth .modal__text {
+  margin-bottom: 40px;
+}
+.modal.modal-auth .modal__text:last-child {
+  margin-bottom: 0;
+}
+.modal.modal-auth .modal__btn {
+  max-width: 448px;
+  margin-bottom: 40px;
+}
+.modal.modal-auth .modal__btn:hover svg path {
+  fill: var(--color-gray-dark);
+}
+
+.modal.modal-order .modal__title {
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .modal.modal-order .modal__title {
+    margin-bottom: 15px;
+  }
+}
+.modal.modal-order .modal__text {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .modal.modal-order .modal__text {
+    margin-bottom: 15px;
+  }
+}
+.modal.modal-order .modal__input {
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .modal.modal-order .modal__input {
+    margin-bottom: 15px;
+  }
+}
+.modal.modal-order .modal__menu-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.modal.modal-order .modal__btn {
+  max-width: 448px;
+  margin-top: 40px;
+}
+.modal.modal-order .modal__btn:hover svg path {
+  fill: var(--color-gray-dark);
+}
+
 .header {
   background: var(--color-gray-dark);
 }
@@ -7007,6 +7209,10 @@ body.light .cabinet-orders__more {
           box-sizing: border-box;
   font-family: "Source Sans Pro", "Inter", sans-serif;
   font-style: normal;
+}
+
+html body.modal-open {
+  overflow: hidden;
 }
 
 html,
