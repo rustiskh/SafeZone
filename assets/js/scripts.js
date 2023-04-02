@@ -315,8 +315,6 @@ window.addEventListener("DOMContentLoaded", () => {
         button.addEventListener('click', (event) => {
             // Получаем id модального окна из атрибута data-modal
             const modalId = event.target.getAttribute('data-modal');
-
-            // Открываем модальное окно
             showModal(modalId);
         });
     });
