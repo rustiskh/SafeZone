@@ -1,0 +1,263 @@
+// Общие стили для всех модалок (ниже специфичные для конкретных - откстыпы и пр)
+// body.modal-open {
+// 	overflow: hidden;
+// }
+
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+
+	width: 100%;
+	height: 100%;
+
+	&__fade {
+		height: 100%;
+		background-color: rgba(25, 28, 26, 0.7);
+
+		display: flex;
+		align-items: start;
+		justify-content: center;
+	}
+
+	&__body {
+		position: relative;
+
+		max-width: 752px;
+		width: 100%;
+		padding: 60px 32px 60px 32px;
+		margin-top: 50px;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 50px;
+
+		background-color: color(black);
+	}
+
+	&__close {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+
+		cursor: pointer;
+
+		&:hover {
+			svg {
+				path {
+					fill: color(accent);
+				}
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 44px;
+		color: color(white);
+
+		&_tac {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		color: color(white);
+
+		&_tac {
+			text-align: center;
+		}
+
+		.modal__link {
+			color: inherit;
+		}
+	}
+
+	&__btn {
+		margin: 0 auto;
+		max-width: 272px;
+		width: 100%;
+		height: 70px;
+
+		&-icon {
+			height: 30px;
+		}
+	}
+
+	&__column-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__error-text {
+		text-align: center;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+		color: color(red-error);
+		margin-top: 12px;
+
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@include mobile {
+		&__body {
+			padding: 15px;
+		}
+
+		&__close {
+			top: 15px;
+			right: 15px;
+
+			svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+
+		&__title {
+			font-size: 30px;
+			line-height: 38px;
+		}
+
+		&__text {
+			font-size: 14px;
+			line-height: 18px;
+		}
+
+		&__btn {
+			height: 50px;
+
+			&-icon {
+				height: 30px;
+			}
+		}
+	}
+}
+
+body.light {
+	.modal {
+		&__fade {
+			background-color: rgba(25, 28, 26, 0.7);
+		}
+
+		&__body {
+			background-color: color(beige-light);
+		}
+
+		&__close {
+			svg {
+				path {
+					fill: color(gray);
+				}
+			}
+			&:hover {
+				svg {
+					path {
+						fill: color(accent-dark);
+					}
+				}
+			}
+		}
+
+		&__title {
+			color: color(gray);
+		}
+
+		&__text {
+			color: color(gray);
+		}
+	}
+}
+
+// Модальное окно авторизации
+.modal.modal-auth {
+	.modal {
+		&__body {
+			max-width: 512px;
+		}
+
+		&__title {
+			margin-bottom: 40px;
+
+			@include mobile {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__text {
+			margin-bottom: 40px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__btn {
+			max-width: 448px;
+			margin-bottom: 40px;
+
+			&:hover {
+				svg {
+					path {
+						fill: color(gray-dark);
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal.modal-order {
+	.modal {
+		&__title {
+			margin-bottom: 40px;
+
+			@include mobile {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__text {
+			margin-bottom: 20px;
+
+			@include mobile {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__input {
+			margin-bottom: 20px;
+
+			@include mobile {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__menu-list {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		&__btn {
+			max-width: 448px;
+			margin-top: 40px;
+
+			&:hover {
+				svg {
+					path {
+						fill: color(gray-dark);
+					}
+				}
+			}
+		}
+	}
+}
