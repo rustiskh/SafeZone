@@ -62,7 +62,6 @@ window.addEventListener("DOMContentLoaded", () => {
     // Открытие поисковой строки в хедере на мобильном разрешении
     const searchMobOpener = document.querySelector('.header-main__search-mob-opener');
     const searchHeaderField = document.querySelector('.header-main__search .search-wrapper');
-    console.log(searchMobOpener, searchHeaderField);
 
     searchMobOpener.addEventListener('click', () => {
         searchHeaderField.style.display = "flex";
@@ -301,4 +300,40 @@ window.addEventListener("DOMContentLoaded", () => {
 
         openReviewCard(showMoreBtn);
     })
+
+    // Открытие модальных окон
+    const modalButtons = document.querySelectorAll('[data-event="modal-caller"]');
+    const modals = document.querySelectorAll('[data-type="modal"]');
+
+    function showModal(id) {
+        const modal = document.getElementById(id);
+        modal.style.display = 'block';
+        document.body.classList.add("modal-open");
+    }
+
+    modalButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Получаем id модального окна из атрибута data-modal
+            const modalId = event.target.getAttribute('data-modal');
+            showModal(modalId);
+        });
+    });
+
+    modals.forEach(modal => {
+        const modalCloseBtn = modal.querySelector(".modal__close");
+        const modalFade = modal.querySelector('.modal__fade');
+
+        modalCloseBtn.addEventListener("click", () => {
+            modal.style.display = 'none';
+            document.body.classList.remove("modal-open");
+        });
+        modal.addEventListener('click', (event) => {
+            if (event.target.contains(modalFade)) {
+                modal.style.display = 'none';
+                document.body.classList.remove("modal-open");
+            }
+        });
+
+
+    });
 });
