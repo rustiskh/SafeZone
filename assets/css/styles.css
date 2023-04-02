@@ -1142,6 +1142,7 @@ body.light .game-card__game-title {
 }
 
 .modal {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -1229,11 +1230,6 @@ body.light .game-card__game-title {
   line-height: 18px;
   color: var(--color-red-error);
   margin-top: 12px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 @media (max-width: 768px) {
   .modal__body {
@@ -7209,10 +7205,6 @@ body.light .cabinet-orders__more {
           box-sizing: border-box;
   font-family: "Source Sans Pro", "Inter", sans-serif;
   font-style: normal;
-}
-
-html body.modal-open {
-  overflow: hidden;
 }
 
 html,

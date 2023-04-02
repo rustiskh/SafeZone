@@ -4,6 +4,7 @@
 // }
 
 .modal {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -101,11 +102,6 @@
 		line-height: 18px;
 		color: color(red-error);
 		margin-top: 12px;
-
-		position: absolute;
-		bottom: 20px;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 
 	@include mobile {
