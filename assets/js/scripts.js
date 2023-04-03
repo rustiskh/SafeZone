@@ -333,7 +333,30 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.remove("modal-open");
             }
         });
-
-
     });
+
+    //Скрипт мультиселекта для страницы Каталог
+    // Документация и методы SlimSelect - https://slimselectjs.com/methods#getData
+    var catalogSelect = new SlimSelect({
+        select: '#catalog-select-multiple',
+
+        settings: {
+            openPosition: 'auto',
+            searchPlaceholder: 'Начните вводить название категории',
+            placeholderText: 'Выберите категорию',
+        },
+
+        data: [
+            { text: 'Категория 1' },
+            { text: 'Категория 2' },
+            { text: 'Категория 3' },
+            { text: 'Категория 4' },
+            { text: 'Категория 5' },
+            { text: 'Категория 6' },
+            { text: 'Категория 7' },
+            { text: 'Категория 8' },
+            { text: 'Категория 9' },
+            { text: 'Категория 10' }
+        ],
+    })
 });

@@ -1,0 +1,28 @@
+.catalog {
+	&__title {
+		text-align: center;
+
+		@include mobile {
+			text-align-last: left;
+		}
+	}
+
+	&-select {
+		max-width: 448px;
+		margin: 0 auto;
+		margin-top: 60px;
+	}
+
+	&__accounts-wrapper {
+		padding-top: 80px;
+
+		@include mobile {
+			padding-top: 40px;
+		}
+	}
+
+	&__more-btn {
+		margin: 0 auto;
+		margin-top: 60px;
+	}
+}
