@@ -1,6 +1,6 @@
 .multiselect {
 	.ss-main {
-		height: 46px;
+		min-height: 46px;
 
 		background: color(gray);
 		border-radius: 6px;
@@ -18,6 +18,11 @@
 				color: color(accent);
 
 				opacity: 0.5;
+			}
+
+			.ss-single {
+				color: color(white);
+				margin-left: 12px;
 			}
 
 			.ss-value {
@@ -140,6 +145,10 @@ body.light {
 			.ss-values {
 				.ss-placeholder {
 					color: color(accent-dark);
+				}
+
+				.ss-single {
+					color: color(gray);
 				}
 
 				.ss-value {

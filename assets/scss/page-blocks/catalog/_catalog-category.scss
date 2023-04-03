@@ -1,6 +1,7 @@
-.catalog {
+.catalog-category {
 	&__title {
 		text-align: center;
+		margin-top: 30px;
 
 		@include mobile {
 			text-align: left;
@@ -19,10 +20,5 @@
 		@include mobile {
 			padding-top: 40px;
 		}
-	}
-
-	&__more-btn {
-		margin: 0 auto;
-		margin-top: 60px;
 	}
 }

@@ -335,8 +335,9 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //Скрипт мультиселекта для страницы Каталог
+    //Скрипт мультиселекта для страницы Каталог и Категория каталога
     // Документация и методы SlimSelect - https://slimselectjs.com/methods#getData
+    // Каталог
     var catalogSelect = new SlimSelect({
         select: '#catalog-select-multiple',
 
@@ -357,6 +358,31 @@ window.addEventListener("DOMContentLoaded", () => {
             { text: 'Категория 8' },
             { text: 'Категория 9' },
             { text: 'Категория 10' }
+        ],
+    })
+
+    // Категория каталога
+    var catalogCategorySelect = new SlimSelect({
+        select: '#catalog-category-select-single',
+
+
+        settings: {
+            openPosition: 'auto',
+            searchPlaceholder: 'Начните вводить название игры',
+        },
+
+        data: [
+            { 'placeholder': true, 'text': 'Выберите игру' },
+            { text: 'Игра 1' },
+            { text: 'Игра 2' },
+            { text: 'Игра 3' },
+            { text: 'Игра 4' },
+            { text: 'Игра 5' },
+            { text: 'Игра 6' },
+            { text: 'Игра 7' },
+            { text: 'Игра 8' },
+            { text: 'Игра 9' },
+            { text: 'Игра 10' }
         ],
     })
 });
