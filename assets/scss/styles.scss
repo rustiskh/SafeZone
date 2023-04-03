@@ -4,6 +4,7 @@
 @import "general/fields";
 @import "general/search";
 @import "general/select";
+@import "general/multiselect";
 @import "general/typography";
 @import "general/hor-scroll-menu";
 @import "general/hor-unscroll-menu";
@@ -71,6 +72,9 @@
 @import "page-blocks/cabinet-page/cabinet-balance";
 @import "page-blocks/cabinet-page/cabinet-orders";
 @import "page-blocks/cabinet-page/cabinet-service";
+
+// Каталог
+@import "page-blocks/catalog/catalog";
 
 @import "test";
 

@@ -9,9 +9,10 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/slick.css" />
+		<link rel="stylesheet" href="assets/css/slimselect.css" />
 		<link rel="stylesheet" href="assets/css/styles.min.css" />
-		<script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
-		<link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet" />
+		<!-- <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+		<link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet" /> -->
 	</head>
 	<body class="dark">
 		<header class="header">
@@ -325,17 +326,385 @@
 			</ul>
 		</section>
 
-		<section class="catalog-select multiselect"></section>
-		<select id="selectElement">
-			<option>Option 1</option>
-			<option>Option 2</option>
-			<option>Option 3</option>
-		</select>
-		<script>
-			new SlimSelect({
-				select: "#selectElement",
-			});
-		</script>
+		<h1 class="title title_h2 catalog__title padding-side">Каталог</h1>
+		<div class="multiselect catalog-select padding-side"><select id="catalog-select-multiple" multiple></select></div>
+
+		<section class="accounts catalog__accounts-wrapper container padding-side">
+			<h2 class="title title_h2 accounts__title">Категория-1</h2>
+			<div class="accounts__cards-wrapper">
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<!-- копии для демонстрации  -->
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+			</div>
+			<a href="" class="button button_shadow accounts__btn">Показать ещё</a>
+		</section>
+
+		<section class="accounts catalog__accounts-wrapper container padding-side">
+			<h2 class="title title_h2 accounts__title">Категория-2</h2>
+			<div class="accounts__cards-wrapper">
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<!-- копии для демонстрации  -->
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+			</div>
+			<a href="" class="button button_shadow accounts__btn">Показать ещё</a>
+		</section>
+
+		<section class="accounts catalog__accounts-wrapper container padding-side">
+			<h2 class="title title_h2 accounts__title">Категория-3</h2>
+			<div class="accounts__cards-wrapper">
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<!-- копии для демонстрации  -->
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+				<div class="game-card">
+					<div class="game-card__flag"></div>
+					<img src="assets/img/blank-image.svg" alt="" class="game-card__img" />
+					<div class="game-card__footer">
+						<p class="game-card__game-title">WOW Classic WotLK Item</p>
+					</div>
+				</div>
+			</div>
+			<a href="" class="button button_shadow accounts__btn">Показать ещё</a>
+		</section>
+
+		<button class="button button_nofill catalog__more-btn">Загрузить ещё игры</button>
+
+		<section class="faq container paddin-side">
+			<h2 class="title title_h2 faq__title">Вопрос / Ответ</h2>
+			<div class="faq__items-wrapper">
+				<div class="faq__item open">
+					<div class="faq__item-header">
+						<h3 class="title title_h3 faq__item-title">А это правда безопасно?</h3>
+						<div class="faq__item-icon">
+							<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8721 3.20196e-07C14.533 0.00452333 14.2078 0.133322 13.9605 0.361111L1.16614 12.9215C0.962119 13.1655 0.857856 13.4753 0.873631 13.7906C0.889407 14.106 1.02409 14.4043 1.25149 14.6275C1.47889 14.8508 1.78275 14.983 2.10395 14.9985C2.42516 15.014 2.74075 14.9116 2.98933 14.7113L14.8721 3.03018L26.7548 14.7113C27.0034 14.9116 27.319 15.014 27.6402 14.9985C27.9614 14.983 28.2652 14.8508 28.4926 14.6275C28.72 14.4043 28.8547 14.106 28.8705 13.7906C28.8863 13.4753 28.782 13.1655 28.578 12.9215L15.7837 0.361111C15.5363 0.133322 15.2112 0.00452333 14.8721 3.20196e-07V3.20196e-07Z" fill="#3EDA2B" />
+							</svg>
+						</div>
+					</div>
+					<div class="faq__item-text-wrapper">
+						<p class="faq__item-description">
+							Конечно, нет! Но не у нас. С нашими специалистами вы будете как за каменной стеной! <br /><br />
+							В данной сфере мы работаем уже более 6 лет. Свыше 25 тыс. сделок и тысячи довольных клиентов тому доказательство. Мы с лёгкостью можем гарантировать безопасность ваших личных данных и сохранность Вашего аккаунта
+						</p>
+					</div>
+				</div>
+
+				<div class="faq__item">
+					<div class="faq__item-header">
+						<h3 class="title title_h3 faq__item-title">Что такое игровая валюта?</h3>
+						<div class="faq__item-icon">
+							<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8721 3.20196e-07C14.533 0.00452333 14.2078 0.133322 13.9605 0.361111L1.16614 12.9215C0.962119 13.1655 0.857856 13.4753 0.873631 13.7906C0.889407 14.106 1.02409 14.4043 1.25149 14.6275C1.47889 14.8508 1.78275 14.983 2.10395 14.9985C2.42516 15.014 2.74075 14.9116 2.98933 14.7113L14.8721 3.03018L26.7548 14.7113C27.0034 14.9116 27.319 15.014 27.6402 14.9985C27.9614 14.983 28.2652 14.8508 28.4926 14.6275C28.72 14.4043 28.8547 14.106 28.8705 13.7906C28.8863 13.4753 28.782 13.1655 28.578 12.9215L15.7837 0.361111C15.5363 0.133322 15.2112 0.00452333 14.8721 3.20196e-07V3.20196e-07Z" fill="#3EDA2B" />
+							</svg>
+						</div>
+					</div>
+					<div class="faq__item-text-wrapper">
+						<p class="faq__item-description">
+							Большая часть современных многопользовательских игр основана на принципе free-to-play, предусматривающем бесплатную подписку на игру. Но для расчетов внутри игр создаются специальные валюты. За виртуальные средства можно приобрести самые разнообразные дополнения к персонажу, которые автоматически сделают его сильнее.
+							<br /><br />
+							Какую-то валюту можно добыть фармом, выполняя квесты и закрывая данжи, а какую-то возможно купить лишь за реальные деньги.
+						</p>
+					</div>
+				</div>
+
+				<div class="faq__item">
+					<div class="faq__item-header">
+						<h3 class="title title_h3 faq__item-title">Как оплатить покупку?</h3>
+						<div class="faq__item-icon">
+							<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8721 3.20196e-07C14.533 0.00452333 14.2078 0.133322 13.9605 0.361111L1.16614 12.9215C0.962119 13.1655 0.857856 13.4753 0.873631 13.7906C0.889407 14.106 1.02409 14.4043 1.25149 14.6275C1.47889 14.8508 1.78275 14.983 2.10395 14.9985C2.42516 15.014 2.74075 14.9116 2.98933 14.7113L14.8721 3.03018L26.7548 14.7113C27.0034 14.9116 27.319 15.014 27.6402 14.9985C27.9614 14.983 28.2652 14.8508 28.4926 14.6275C28.72 14.4043 28.8547 14.106 28.8705 13.7906C28.8863 13.4753 28.782 13.1655 28.578 12.9215L15.7837 0.361111C15.5363 0.133322 15.2112 0.00452333 14.8721 3.20196e-07V3.20196e-07Z" fill="#3EDA2B" />
+							</svg>
+						</div>
+					</div>
+					<div class="faq__item-text-wrapper">
+						<p class="faq__item-description">
+							Всё довольно просто. Вы можете оплатить желаемую услугу через
+							<a href="" class="faq__item-link">Телеграм-бота</a>, либо оформить покупку на сайте и оплатить любым удобным способом. Подробнее можно почитать в разделе <a href="" class="faq__item-link">Оплата</a>.
+						</p>
+					</div>
+				</div>
+				<div class="faq__item">
+					<div class="faq__item-header">
+						<h3 class="title title_h3 faq__item-title">Что делать, если будут вопросы?</h3>
+						<div class="faq__item-icon">
+							<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8721 3.20196e-07C14.533 0.00452333 14.2078 0.133322 13.9605 0.361111L1.16614 12.9215C0.962119 13.1655 0.857856 13.4753 0.873631 13.7906C0.889407 14.106 1.02409 14.4043 1.25149 14.6275C1.47889 14.8508 1.78275 14.983 2.10395 14.9985C2.42516 15.014 2.74075 14.9116 2.98933 14.7113L14.8721 3.03018L26.7548 14.7113C27.0034 14.9116 27.319 15.014 27.6402 14.9985C27.9614 14.983 28.2652 14.8508 28.4926 14.6275C28.72 14.4043 28.8547 14.106 28.8705 13.7906C28.8863 13.4753 28.782 13.1655 28.578 12.9215L15.7837 0.361111C15.5363 0.133322 15.2112 0.00452333 14.8721 3.20196e-07V3.20196e-07Z" fill="#3EDA2B" />
+							</svg>
+						</div>
+					</div>
+					<div class="faq__item-text-wrapper">
+						<p class="faq__item-description">
+							Вы можете задать свой вопрос в нашу службу технической поддержки в Телеграм
+							<a href="t.me/safezonemarket_support" class="faq__item-link">t.me/safezonemarket_support</a>
+							или написать нам на почту
+							<a href="mailto:safezonemarket@protonmail.com" class="faq__item-link">safezonemarket@protonmail.com</a>. Ни один вопрос у нас не остаётся без внимания – всё показываем и рассказываем.
+						</p>
+					</div>
+				</div>
+				<div class="faq__item">
+					<div class="faq__item-header">
+						<h3 class="title title_h3 faq__item-title">
+							Сколько всего представлено игр на сайте? <br />
+							И какая вероятность найти нужную мне?
+						</h3>
+						<div class="faq__item-icon">
+							<svg width="29" height="15" viewBox="0 0 29 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.8721 3.20196e-07C14.533 0.00452333 14.2078 0.133322 13.9605 0.361111L1.16614 12.9215C0.962119 13.1655 0.857856 13.4753 0.873631 13.7906C0.889407 14.106 1.02409 14.4043 1.25149 14.6275C1.47889 14.8508 1.78275 14.983 2.10395 14.9985C2.42516 15.014 2.74075 14.9116 2.98933 14.7113L14.8721 3.03018L26.7548 14.7113C27.0034 14.9116 27.319 15.014 27.6402 14.9985C27.9614 14.983 28.2652 14.8508 28.4926 14.6275C28.72 14.4043 28.8547 14.106 28.8705 13.7906C28.8863 13.4753 28.782 13.1655 28.578 12.9215L15.7837 0.361111C15.5363 0.133322 15.2112 0.00452333 14.8721 3.20196e-07V3.20196e-07Z" fill="#3EDA2B" />
+							</svg>
+						</div>
+					</div>
+					<div class="faq__item-text-wrapper">
+						<p class="faq__item-description">
+							На данный момент в магазине более 25 различных игр, в которых у Вас есть возможность приобрести донат, паки и много других плюшек. И это не предел, список постоянно пополняется.
+							<br /><br />
+							У нас Вы можете получить игровую валюту в таких популярных играх как:
+							<a href="/product/genshin_impact_genesis_crystals" class="faq__item-link" target="_blank">Genshin Impact (Кристаллы сотворения)</a>, <a href="/product/league_of_legends_wild_rift_wild_cores" class="faq__item-link" target="_blank">League of Legends: Wild Rift (Wild Cores)</a>, <a href="/product/cookie_run_kingdom_crystals" class="faq__item-link" target="_blank">Cookie Run: Kingdom (Кристаллы)</a>, <a href="/product/apex_legends_mobile_syndicate_coins" class="faq__item-link" target="_blank">Apex Legends Mobile (Syndicate Coins)</a>, <a href="/product/standoff2_gold" class="faq__item-link" target="_blank">Standoff 2 (Золото)</a>,
+							<a href="/product/brawl_stars_gems" class="faq__item-link" target="_blank">Brawl Stars (Гемы)</a>
+							и многих других.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<footer class="footer">
 			<div class="footer__main-wrapper container padding-side">
 				<div class="footer__nav-box">
@@ -459,6 +828,7 @@
 		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<script src="assets/js/slick.min.js"></script>
 		<script src="assets/js/sliders-script.js"></script>
+		<script src="assets/js/slimselect.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
 		<!-- <script src="assets/js/test.js"></script> -->
 	</body>

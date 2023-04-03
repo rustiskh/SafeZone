@@ -1,0 +1,208 @@
+.multiselect {
+	.ss-main {
+		height: 46px;
+
+		background: color(gray);
+		border-radius: 6px;
+		border: none;
+
+		&:focus {
+			box-shadow: none;
+		}
+
+		.ss-values {
+			.ss-placeholder {
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: color(accent);
+
+				opacity: 0.5;
+			}
+
+			.ss-value {
+				background-color: color(accent);
+
+				.ss-value-text {
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 18px;
+					color: color(black);
+				}
+
+				.ss-value-delete {
+					svg {
+						path {
+							stroke: color(gray);
+						}
+					}
+				}
+			}
+		}
+
+		.ss-arrow {
+			path {
+				stroke: color(accent);
+			}
+		}
+	}
+}
+
+.ss-content {
+	background: color(gray);
+	border-radius: 6px;
+	border: none;
+	display: flex;
+	width: 600px;
+
+	.ss-search {
+		input {
+			background: color(gray-dark);
+			padding: 12px 20px;
+			border: none;
+			border-radius: 0px;
+			border-left: 1px solid color(accent);
+
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(white);
+			cursor: pointer;
+
+			&::placeholder {
+				opacity: 0.7;
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+
+			@include mobile {
+				padding: 11px 20px;
+				font-size: 14px;
+				line-height: 18px;
+			}
+		}
+	}
+
+	.ss-list {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 23px;
+
+		@include mobile {
+			flex-wrap: nowrap;
+		}
+
+		.ss-option {
+			width: fit-content;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(accent);
+
+			&:hover {
+				color: color(white);
+				background-color: color(accent);
+			}
+
+			&.ss-selected {
+				font-weight: 700 !important;
+				position: relative !important;
+				background: none !important;
+				color: color(accent) !important;
+
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					width: 94%;
+					height: 1px;
+					background: linear-gradient(90deg, rgba(62, 218, 43, 0) 0%, #3eda2b 51.04%, rgba(62, 218, 43, 0) 100%);
+				}
+			}
+		}
+
+		.ss-search {
+			color: red;
+		}
+	}
+}
+
+body.light {
+	.multiselect {
+		.ss-main {
+			background: color(mint);
+
+			.ss-values {
+				.ss-placeholder {
+					color: color(accent-dark);
+				}
+
+				.ss-value {
+					background-color: color(accent-dark);
+
+					.ss-value-text {
+						color: color(white);
+					}
+
+					.ss-value-delete {
+						svg {
+							path {
+								stroke: color(white);
+							}
+						}
+					}
+				}
+			}
+
+			.ss-arrow {
+				path {
+					stroke: color(accent-dark);
+				}
+			}
+		}
+	}
+
+	.ss-content {
+		background: color(mint);
+
+		.ss-search {
+			input {
+				background: color(mint-dark);
+				border-left: 1px solid color(accent-dark);
+				color: color(white);
+
+				&::placeholder {
+					color: color(white);
+				}
+			}
+		}
+
+		.ss-list {
+			.ss-option {
+				color: color(accent-dark);
+
+				&:hover {
+					color: color(white);
+					background-color: color(accent-dark);
+				}
+
+				&.ss-selected {
+					color: color(accent-dark) !important;
+
+					&::after {
+						background: linear-gradient(90deg, rgba(62, 218, 43, 0) 0%, #008d26 51.04%, rgba(62, 218, 43, 0) 100%);
+					}
+				}
+			}
+
+			.ss-search {
+				color: red;
+			}
+		}
+	}
+}
