@@ -9,6 +9,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/slick.css" />
+		<link rel="stylesheet" href="assets/css/slimselect.css" />
 		<link rel="stylesheet" href="assets/css/styles.min.css" />
 	</head>
 	<body class="dark">
@@ -365,12 +366,12 @@
 			</ul>
 		</section>
 
-		<section class="category-selection container padding-side">
-			<h2 class="title title_h2 category-selection__title">Стратегии</h2>
+		<section class="catalog-category container padding-side">
+			<h2 class="title title_h2 catalog-category__title">Стратегии</h2>
+			<div class="multiselect catalog-category-select"><select id="catalog-category-select-single"></select></div>
 		</section>
 
-		<section class="accounts container padding-side">
-			<h2 class="title title_h2 accounts__title">Все игры</h2>
+		<section class="accounts catalog-category__accounts-wrapper container padding-side">
 			<div class="accounts__cards-wrapper">
 				<div class="game-card">
 					<div class="game-card__flag"></div>
@@ -1130,6 +1131,7 @@
 		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<script src="assets/js/slick.min.js"></script>
 		<script src="assets/js/sliders-script.js"></script>
+		<script src="assets/js/slimselect.min.js"></script>
 		<script src="assets/js/scripts.js"></script>
 		<!-- <script src="assets/js/test.js"></script> -->
 	</body>
