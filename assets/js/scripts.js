@@ -309,6 +309,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const modal = document.getElementById(id);
         modal.style.display = 'block';
         document.body.classList.add("modal-open");
+        // Change old start 04.04 - отменяем прокрутку документа
+        document.body.style.overflow = 'hidden';
+        document.firstElementChild.style.overflow = 'hidden';
+        // Change old end
     }
 
     modalButtons.forEach(button => {
@@ -323,16 +327,24 @@ window.addEventListener("DOMContentLoaded", () => {
         const modalCloseBtn = modal.querySelector(".modal__close");
         const modalFade = modal.querySelector('.modal__fade');
 
-        modalCloseBtn.addEventListener("click", () => {
+        // Change old start 04.04 - вынес закрытие как отд. функцию, добавил вовзращение прокрутки html и body
+        function closeModal() {
             modal.style.display = 'none';
             document.body.classList.remove("modal-open");
+            document.body.style.overflow = '';
+            document.firstElementChild.style.overflow = '';
+        }
+
+        modalCloseBtn.addEventListener("click", () => {
+            closeModal()
         });
+
         modal.addEventListener('click', (event) => {
             if (event.target.contains(modalFade)) {
-                modal.style.display = 'none';
-                document.body.classList.remove("modal-open");
+                closeModal();
             }
         });
+        // Change old end
     });
 
     //Скрипт мультиселекта для страницы Каталог и Категория каталога
@@ -369,20 +381,21 @@ window.addEventListener("DOMContentLoaded", () => {
         settings: {
             openPosition: 'auto',
             searchPlaceholder: 'Начните вводить название игры',
+            placeholder: 'rere'
         },
 
-        data: [
-            { 'placeholder': true, 'text': 'Выберите игру' },
-            { text: 'Игра 1' },
-            { text: 'Игра 2' },
-            { text: 'Игра 3' },
-            { text: 'Игра 4' },
-            { text: 'Игра 5' },
-            { text: 'Игра 6' },
-            { text: 'Игра 7' },
-            { text: 'Игра 8' },
-            { text: 'Игра 9' },
-            { text: 'Игра 10' }
-        ],
+        // data: [
+        //     { 'placeholder': true, 'text': 'Выберите игру' },
+        //     { text: 'Игра 1' },
+        //     { text: 'Игра 2' },
+        //     { text: 'Игра 3' },
+        //     { text: 'Игра 4' },
+        //     { text: 'Игра 5' },
+        //     { text: 'Игра 6' },
+        //     { text: 'Игра 7' },
+        //     { text: 'Игра 8' },
+        //     { text: 'Игра 9' },
+        //     { text: 'Игра 10' }
+        // ],
     })
 });
