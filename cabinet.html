@@ -325,7 +325,8 @@
 			</ul>
 		</section>
 
-		<section class="cabinet-balance container padding-side">
+		<!-- Старый вариант -->
+		<!-- <section class="cabinet-balance container padding-side">
 			<h1 class="title title_h2 cabinet-balance__title">Личный кабинет</h1>
 
 			<h3 class="title title_h2 title_h2-small cabinet-balance__subtitle">Баланс: 1000 р.</h3>
@@ -335,7 +336,37 @@
 				<button class="button cabinet-balance__form-btn" type="submit">Пополнить счёт</button>
 				<p class="cabinet-balance__form-error-text">Текст ошибки выводим здесь</p>
 			</div>
+		</section> -->
+
+		<!-- change old start - новая форма пополнения 05.04.23 -->
+		<h1 class="title title_h2 cabinet-balance__title">Личный кабинет</h1>
+		<section class="cabinet-balance container padding-side">
+			<h3 class="title title_h2 title_h2-small cabinet-balance__subtitle">Баланс: 1000 р.</h3>
+
+			<div class="hor-unscroll-menu cabinet-balance__list">
+				<div class="hor-unscroll-menu__wrapper">
+					<div class="hor-unscroll-menu__item">
+						<p class="hor-unscroll-menu__title">Платежка-1</p>
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<p class="hor-unscroll-menu__title">Платежка-2</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="cabinet-balance__form">
+				<input class="general-input cabinet-balance__form-input" type="text" id="sum" name="balance-sum" placeholder="Введите сумму в рублях" />
+				<select class="general-input general-input_select cabinet-balance__form-input" id="select-type-charge" name="charge">
+					<option value="0">Выберите тип оплаты</option>
+					<option value="1">Карта</option>
+					<option value="2">QIWI</option>
+					<option value="2">Crypto</option>
+				</select>
+				<button class="button cabinet-balance__form-btn" type="submit">Пополнить счёт</button>
+				<p class="cabinet-balance__form-error-text">Текст ошибки выводим здесь</p>
+			</div>
 		</section>
+		<!-- change old end -->
 
 		<section class="cabinet-orders container padding-side">
 			<h2 class="title title_h2 cabinet-orders__title">Заказы</h2>
