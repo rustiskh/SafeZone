@@ -59,6 +59,7 @@
 	border: none;
 	display: flex;
 	width: 600px;
+	z-index: 1000000;
 
 	.ss-search {
 		input {

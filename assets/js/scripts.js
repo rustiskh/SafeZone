@@ -381,7 +381,6 @@ window.addEventListener("DOMContentLoaded", () => {
         settings: {
             openPosition: 'auto',
             searchPlaceholder: 'Начните вводить название игры',
-            placeholder: 'rere'
         },
 
         // data: [
@@ -398,4 +397,187 @@ window.addEventListener("DOMContentLoaded", () => {
         //     { text: 'Игра 10' }
         // ],
     })
+
+
+    // Страница диалога
+    // Селекты в поиске .dialog-search
+    // Разделы
+    // var dialogCategorySelect = new SlimSelect({
+    //     select: '#dialog-category-select',
+
+    //     settings: {
+    //         openPosition: 'auto',
+    //         searchPlaceholder: 'Разделы...',
+    //         placeholder: true,
+    //         text: 'Все разделы',
+    //     },
+    // })
+
+    // // Игры
+    // var dialogGameSelect = new SlimSelect({
+    //     select: '#dialog-game-select',
+
+    //     settings: {
+    //         openPosition: 'auto',
+    //         searchPlaceholder: 'Игры...',
+    //         placeholder: 'Все игры',
+    //     },
+    // })
+
+    // Ниже скрипты работы блока dialog-list, когда он состоит из раскрывающихся секций
+    // Открытие dialog-section
+    const dialogSection = document.querySelectorAll('.dialog-section');
+    const dialogCard = document.querySelectorAll('.dialog-section__item');
+    const dialogMoreBtn = document.querySelector('.dialog-section__more-btn');
+
+    dialogSection.forEach(element => {
+        const dialogSectionHeader = element.querySelector('.dialog-section__header');
+        dialogSectionHeader.addEventListener('click', () => {
+            element.classList.toggle('open')
+        })
+
+        // Появление кнопки Загрузить ещё, если в dialog-section > 5 dialog-section__item
+
+
+        if (dialogCard.length > 5) {
+            dialogMoreBtn.style.display = 'none';
+        }
+    });
+
+
+    // Обрезание текста в dialog-section__item, если он выходит за границы карточки
+
+    dialogCard.forEach(element => {
+        const dialogCardText = element.querySelector('.dialog-section__item-text');
+
+        if (dialogCardText.scrollHeight > 24) {
+            const text = dialogCardText.textContent;
+            let truncatedText = text;
+
+            while (dialogCardText.scrollHeight > 24 && truncatedText.length > 0) {
+                truncatedText = truncatedText.slice(0, -1);
+                dialogCardText.textContent = truncatedText + '...';
+            }
+        }
+    });
+
+    // При открытии страницы чат всегда на последнем сообщении
+    const chatBox = document.querySelector('.dialog-chat');
+    chatBox.scrollTop = chatBox.scrollHeight - chatBox.clientHeight;
+
+    // Добавление и удаление названий добавленных файлов
+    const fileInput = document.getElementById('file-upload');
+    fileInput.addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+        const fileList = event.target.files;
+        const fileUploadFilename = document.getElementById('file-upload-filename');
+
+        for (let i = 0; i < fileList.length; i++) {
+            const fileName = fileList[i].name;
+            const fileItem = document.createElement('div');
+            fileItem.className = 'dialog-message__file-item';
+            const fileItemName = document.createElement('div');
+            fileItemName.className = 'dialog-message__file-name';
+            fileItemName.textContent = fileName;
+            const fileItemDelete = document.createElement('div');
+            fileItemDelete.className = 'dialog-message__file-delete';
+            const fileItemDeleteSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            fileItemDeleteSvg.setAttribute('width', '13');
+            fileItemDeleteSvg.setAttribute('height', '13');
+            fileItemDeleteSvg.setAttribute('viewBox', '0 0 13 13');
+            const fileItemDeletePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            fileItemDeletePath.setAttribute('d', 'M13 1.42272L11.8625 0.345703L6.5 5.42308L1.1375 0.345703L0 1.42272L5.3625 6.5001L0 11.5775L1.1375 12.6545L6.5 7.57712L11.8625 12.6545L13 11.5775L7.6375 6.5001L13 1.42272Z');
+            fileItemDeletePath.setAttribute('fill', '#3EDA2B');
+            fileItemDeleteSvg.appendChild(fileItemDeletePath);
+            fileItemDelete.appendChild(fileItemDeleteSvg);
+            fileItem.appendChild(fileItemName);
+            fileItem.appendChild(fileItemDelete);
+            fileUploadFilename.appendChild(fileItem);
+
+            fileItemDelete.addEventListener('click', function () {
+                fileItem.parentNode.removeChild(fileItem);
+            });
+        }
+    }
+
+    // Селекты в модалке buy
+    // Игры
+    var modalBuyGameSelect = new SlimSelect({
+        select: '#modal-buy-game-select',
+
+        settings: {
+            openPosition: 'auto',
+            searchPlaceholder: 'Игры...',
+            placeholder: 'Все игры',
+        },
+    })
+
+    // Услуги
+    var modalBuyGameSelect = new SlimSelect({
+        select: '#modal-buy-service-select',
+
+        settings: {
+            openPosition: 'auto',
+            searchPlaceholder: 'Услуга...',
+            placeholder: 'Все услуги',
+        },
+    })
+
+    // Изменение статуса Избранное in-favorite
+    const favoriteContainer = document.querySelector('.dialog-footer__favorite');
+    const addFavoriteBtn = document.querySelector('.dialog-footer__favorite-item_add');
+    const removeFavoriteBtn = document.querySelector('.dialog-footer__favorite-item_remove');
+    addFavoriteBtn.addEventListener('click', () => {
+        favoriteContainer.classList.add('in-favorite');
+    })
+
+    removeFavoriteBtn.addEventListener('click', () => {
+        favoriteContainer.classList.remove('in-favorite');
+    })
+
+    // Открытие Шаблонов сообщений
+    const templateBtn = document.querySelector('.dialog-footer__template');
+    const templateBtnText = document.querySelector('.dialog-footer__template-title');
+    const templateBtnIcon = document.querySelector('.dialog-footer__template-title-icon');
+    const templateWrapper = document.querySelector('.dialog-footer__template-body');
+
+    templateBtn.addEventListener('click', () => {
+        templateWrapper.classList.toggle('open');
+
+        if (templateWrapper.classList.contains('open')) {
+            templateBtnText.textContent = "Свернуть шаблоны";
+            templateBtnIcon.style.transform = "rotate(180deg)"
+        } else {
+            templateBtnText.textContent = "Открыть шаблоны";
+            templateBtnIcon.style.transform = "rotate(360deg)"
+        }
+    })
+
+    // Отправка шаблона сообщения в инпут dialog-message
+    const massageInpit = document.querySelector('.dialog-message__input');
+    const massageTemplate = document.querySelectorAll('.dialog-footer__template-item');
+    const massageCustom = document.querySelectorAll('.dialog-footer__template-custom');
+
+    massageTemplate.forEach(element => {
+        element.addEventListener('click', () => {
+            let textContent = element.textContent.substring(1, element.textContent.length - 1);
+            massageInpit.value = textContent;
+        })
+    });
+
+    // Отправка кастомного шаблона сообщения в инпут dialog-message и удаление кастомного шаблона из списка
+    massageCustom.forEach(element => {
+        const text = element.querySelector('.dialog-footer__template-custom-text');
+        const removeBtn = element.querySelector('.dialog-footer__template-custom-remove');
+
+        text.addEventListener('click', () => {
+            let textContent = text.textContent.substring(1, text.textContent.length - 1);
+            massageInpit.value = textContent;
+        })
+
+        removeBtn.addEventListener('click', () => {
+            element.remove();
+        })
+    });
 });
