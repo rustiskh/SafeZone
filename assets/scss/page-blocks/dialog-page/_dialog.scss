@@ -1,0 +1,1179 @@
+.dialog {
+	display: flex;
+
+	@include tablet {
+		flex-direction: column;
+	}
+
+	&.container {
+		margin-top: 50px;
+
+		@include mobile {
+			margin-top: 30px;
+		}
+	}
+
+	// Строка поиска и фильтры
+	&-list {
+		flex-basis: 448px;
+		flex-shrink: 1;
+	}
+
+	&-content {
+		flex: 2 1 0;
+	}
+
+	&-search {
+		&__filter {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			&-item {
+				.multiselect {
+					.ss-main {
+						background: none;
+						max-width: 128px;
+					}
+
+					.ss-values {
+						.ss-single {
+							margin-left: 0;
+						}
+						.ss-value {
+							background-color: transparent;
+
+							.ss-value-text {
+								color: color(accent);
+							}
+
+							.ss-value-delete {
+								svg {
+									path {
+										stroke: color(accent);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&-clear {
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 23px;
+				svg {
+					width: 12px;
+					margin-left: 4px;
+				}
+
+				&:hover {
+					color: color(white);
+
+					svg {
+						path {
+							fill: color(white);
+						}
+					}
+				}
+			}
+		}
+
+		&__field {
+			.search-input {
+				background: color(gray-dark);
+				min-width: auto;
+			}
+		}
+	}
+
+	// Разделы
+	&-section {
+		margin-top: 32px;
+
+		@include mobile {
+			margin-top: 20px;
+		}
+
+		&.open {
+			.dialog-section__body {
+				display: block;
+			}
+
+			.dialog-section__header-icon {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		// Шапка
+		&__header {
+			position: relative;
+			height: 63px;
+			background: color(gray-dark);
+			border-radius: 6px;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			@include mobile {
+				height: 40px;
+			}
+
+			&-count {
+				font-weight: 700;
+				font-size: 26px;
+				line-height: 33px;
+				color: color(gray-dark);
+
+				background: color(green-gradient);
+				border-radius: 6px 0px 0px 6px;
+				height: 100%;
+				min-width: 70px;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 20px;
+
+				@include mobile {
+					font-size: 18px;
+					line-height: 23px;
+					margin-right: 10px;
+					min-width: 48px;
+				}
+			}
+
+			&-title {
+				font-weight: 400;
+				font-size: 26px;
+				line-height: 33px;
+				color: color(accent);
+
+				@include mobile {
+					font-weight: 700;
+					font-size: 18px;
+					line-height: 23px;
+				}
+			}
+
+			&-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		// Тело
+		&__body {
+			display: none;
+			margin-top: 16px;
+
+			@include mobile {
+				margin-top: 12px;
+			}
+		}
+
+		&__more-btn {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 25px;
+			color: color(accent);
+			margin-top: 10px;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		// Элемент секции
+		&__item {
+			padding: 16px 12px;
+			background: color(gray-dark);
+			border-radius: 6px;
+			cursor: pointer;
+
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-header {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&-name {
+				font-weight: 700;
+				font-size: 16px;
+				line-height: 20px;
+				color: color(accent);
+			}
+
+			&-info {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: end;
+			}
+
+			&-id {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 20px;
+				color: color(accent);
+				margin-right: 20px;
+			}
+
+			&-date {
+				font-size: 16px;
+				line-height: 20px;
+				color: color(white);
+				opacity: 0.7;
+			}
+
+			&-text {
+				margin-top: 10px;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: color(white);
+			}
+		}
+	}
+
+	// Область сообщения
+	&-content {
+		margin-left: 32px;
+
+		@include tablet {
+			margin-left: 0;
+		}
+
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			row-gap: 12px;
+			padding-bottom: 24px;
+			border-bottom: 1px solid color(accent);
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+			}
+
+			&-name {
+				font-weight: 700;
+				font-size: 35px;
+				line-height: 44px;
+				color: color(accent);
+
+				@include mobile {
+					font-size: 20px;
+					line-height: 25px;
+				}
+			}
+
+			&-details {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			&-online,
+			&-id {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 20px;
+				color: color(accent);
+
+				@include mobile {
+					font-size: 12px;
+					line-height: 15px;
+				}
+			}
+
+			&-online {
+				margin-right: 10px;
+			}
+
+			&-btn {
+				max-width: 210px;
+				width: 100%;
+				padding-top: 14px;
+				padding-bottom: 19px;
+
+				&:hover {
+					svg {
+						path {
+							fill: color(gray-dark);
+						}
+					}
+				}
+			}
+
+			&-balance {
+				font-weight: 700;
+				font-size: 26px;
+				line-height: 33px;
+				color: color(accent);
+
+				span {
+					font-weight: 400;
+
+					@include mobile {
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__control {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 12px;
+			margin-top: 24px;
+
+			@include mobile {
+				flex-direction: column;
+				margin-top: 16px;
+			}
+
+			&-btn {
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+		}
+	}
+
+	// Блок отображения сообщений
+	&-chat {
+		margin-top: 30px;
+		padding: 32px 16px;
+		background: color(gray-dark);
+		border-radius: 6px;
+
+		max-height: 80vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		/* Скрытие стрелок */
+		&::-webkit-scrollbar-button {
+			display: none;
+		}
+
+		/* Скрытие подложки */
+		&::-webkit-scrollbar-track {
+			display: none;
+		}
+
+		/* Ширина и цвет ползунка в Firefox */
+		scrollbar-color: color(accent);
+		scrollbar-width: thin;
+
+		/* Скрытие стрелок и подложки в Firefox */
+
+		scrollbar-arrow-color: transparent;
+		scrollbar-track-color: transparent;
+
+		// Стили для chrome
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			background-color: none;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: color(accent);
+			width: 4px;
+			border-radius: 6px;
+		}
+
+		&__item {
+			display: flex;
+			flex-direction: column;
+
+			&:not(:first-child) {
+				margin-top: 16px;
+			}
+
+			.dialog-chat__massage {
+				&:last-child {
+					&::after {
+						content: "";
+						position: absolute;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 16px 16px 16px 16px;
+						border-color: transparent transparent color(black) transparent;
+					}
+				}
+			}
+
+			&_left {
+				.dialog-chat__massage {
+					&:last-child {
+						border-bottom-left-radius: 0px;
+
+						&::after {
+							bottom: -16px;
+							left: -16px;
+							transform: rotate(-45deg);
+						}
+					}
+				}
+			}
+
+			&_right {
+				align-items: end;
+				align-items: flex-end;
+
+				.dialog-chat__massage {
+					&:last-child {
+						border-bottom-right-radius: 0px;
+
+						&::after {
+							bottom: -16px;
+							right: -16px;
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+		}
+
+		&__name {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: color(accent);
+		}
+
+		&__massage {
+			position: relative;
+			padding: 16px 16px 12px 16px;
+			background: color(black);
+			margin-top: 16px;
+			width: 80%;
+			border-radius: 6px;
+
+			@include mobile {
+				padding: 10px;
+			}
+		}
+
+		&__text {
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(white);
+
+			@include mobile {
+				line-height: 18px;
+			}
+		}
+
+		&__date {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: color(white);
+			opacity: 0.7;
+			text-align: right;
+			margin-top: 12px;
+
+			@include mobile {
+				margin-top: 5px;
+			}
+		}
+	}
+
+	// Элемент отправки сообщения
+	&-message {
+		margin-top: 32px;
+
+		@include mobile {
+			margin-top: 12px;
+		}
+
+		&__input-area {
+			display: flex;
+			position: relative;
+		}
+
+		&__input-wrapper {
+			flex: 1;
+			position: relative;
+		}
+
+		&__input {
+			min-width: 257px;
+			width: 100%;
+			padding: 18px 0px 19px 20px;
+			border: none;
+
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			color: color(white);
+			background: color(gray-dark);
+			border-radius: 6px;
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+
+			&::placeholder {
+				opacity: 0.5;
+			}
+		}
+
+		&__send-btn {
+			height: auto;
+			width: 60px;
+			background: color(green-gradient);
+			border: none;
+			border-radius: 0px 4px 4px 0px;
+			font-size: 16px;
+			cursor: pointer;
+
+			&:hover {
+				path {
+					fill: color(white);
+				}
+			}
+		}
+
+		&__add-wrapper {
+			position: absolute;
+			top: 50%;
+			right: 80px;
+			transform: translateY(-50%);
+			border: none;
+			background: none;
+			cursor: pointer;
+
+			input {
+				width: 0;
+			}
+
+			label {
+				cursor: pointer;
+
+				&:hover {
+					path {
+						fill: color(white);
+					}
+				}
+			}
+		}
+
+		&__file {
+			display: flex;
+			margin-top: 12px;
+
+			&-item {
+				display: flex;
+				align-items: center;
+				margin-right: 10px;
+				margin-bottom: 12px;
+				cursor: pointer;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:hover {
+					.dialog-message__file-name {
+						color: color(white);
+					}
+
+					.dialog-message__file-delete {
+						svg {
+							path {
+								fill: color(white);
+							}
+						}
+					}
+				}
+			}
+
+			&-name {
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: color(accent);
+				margin-right: 6px;
+			}
+
+			&-delete {
+			}
+		}
+	}
+
+	// Избранное и шаблоны
+	&-footer {
+		margin-top: 30px;
+
+		@include mobile {
+			margin-top: 20px;
+		}
+
+		&__header {
+			display: flex;
+			row-gap: 16px;
+			column-gap: 30px;
+			position: relative;
+		}
+
+		&__favorite {
+			&.in-favorite {
+				.dialog-footer__favorite-item_add {
+					display: none;
+				}
+
+				.dialog-footer__favorite-item_remove {
+					display: flex;
+				}
+			}
+
+			&-item {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+
+				&_remove {
+					display: none;
+				}
+
+				&-text {
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 23px;
+					color: color(accent);
+
+					@include mobile {
+						font-size: 14px;
+						line-height: 13px;
+					}
+				}
+
+				&-icon {
+					margin-right: 10px;
+
+					@include mobile {
+						margin-right: 4px;
+					}
+				}
+
+				&:hover {
+					.dialog-footer__favorite-item-text {
+						color: color(white);
+					}
+
+					.dialog-footer__favorite-item-icon {
+						svg {
+							path {
+								fill: color(white);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&__template {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			&:hover {
+				.dialog-footer__template-title {
+					color: color(white);
+				}
+
+				.dialog-footer__template-title-icon {
+					svg {
+						path {
+							fill: color(white);
+						}
+					}
+				}
+			}
+
+			&-title {
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: color(accent);
+
+				@include mobile {
+					font-size: 14px;
+					line-height: 13px;
+				}
+
+				&-icon {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-left: 10px;
+
+					@include mobile {
+						margin-left: 4px;
+					}
+				}
+			}
+
+			&-body {
+				&.open {
+					display: block;
+				}
+
+				display: none;
+				margin-top: 32px;
+				padding-top: 32px;
+				border-top: 1px solid color(accent);
+
+				@include mobile {
+					margin-top: 16px;
+					padding-top: 16px;
+				}
+
+				> div {
+					&:not(:last-child) {
+						margin-bottom: 16px;
+					}
+				}
+			}
+
+			&-item,
+			&-custom-text,
+			&-add {
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: color(accent);
+				cursor: pointer;
+
+				@include mobile {
+					font-size: 14px;
+					line-height: 13px;
+				}
+
+				&:hover {
+					color: color(white);
+				}
+			}
+
+			&-custom {
+				display: flex;
+				align-items: center;
+
+				&-remove {
+					margin-left: 10px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					cursor: pointer;
+
+					svg {
+						width: 12px;
+					}
+
+					&:hover {
+						svg {
+							path {
+								fill: color(red-error);
+							}
+						}
+					}
+				}
+			}
+
+			&-add {
+				svg {
+					margin-right: 10px;
+				}
+
+				&:hover {
+					svg {
+						path {
+							fill: color(white);
+						}
+					}
+				}
+			}
+		}
+
+		&__back-btn {
+			padding-left: 16px;
+			padding-right: 16px;
+			margin-left: auto;
+		}
+	}
+}
+
+body.light {
+	.dialog {
+		&-search {
+			&__filter {
+				&-item {
+					.multiselect {
+						.ss-main {
+							background: none;
+						}
+
+						.ss-values {
+							.ss-value {
+								background-color: transparent;
+							}
+						}
+					}
+				}
+
+				&-clear {
+					color: color(accent-dark);
+
+					svg {
+						path {
+							fill: color(accent-dark);
+						}
+					}
+
+					&:hover {
+						color: color(gray-dark);
+
+						svg {
+							path {
+								fill: color(gray-dark);
+							}
+						}
+					}
+				}
+			}
+
+			&__field {
+				.search-input {
+					color: color(accent-dark);
+					background: color(mint);
+				}
+			}
+		}
+
+		// Разделы
+		&-section {
+			// Шапка
+			&__header {
+				background: color(beige-light);
+
+				&-count {
+					color: color(beige-light);
+
+					background: color(green-gradient);
+				}
+
+				&-title {
+					color: color(accent-dark);
+				}
+
+				&-icon {
+					svg {
+						path {
+							fill: color(accent-dark);
+						}
+					}
+				}
+			}
+
+			// Тело
+			&__more-btn {
+				color: color(accent-dark);
+			}
+
+			// Элемент секции
+			&__item {
+				background: color(beige-light);
+
+				&-name {
+					color: color(accent-dark);
+				}
+
+				&-id {
+					color: color(accent-dark);
+				}
+
+				&-date {
+					color: color(gray);
+				}
+
+				&-text {
+					color: color(gray);
+				}
+			}
+		}
+
+		// Область сообщения
+		&-content {
+			&__header {
+				border-color: color(accent-dark);
+
+				&-name {
+					color: color(accent-dark);
+				}
+
+				&-online,
+				&-id {
+					color: color(gray);
+				}
+
+				&-balance {
+					color: color(accent-dark);
+				}
+			}
+		}
+
+		// Блок отображения сообщений
+		&-chat {
+			background: color(mint);
+
+			/* Скрытие стрелок */
+			&::-webkit-scrollbar-button {
+				display: none;
+			}
+
+			/* Скрытие подложки */
+			&::-webkit-scrollbar-track {
+				display: none;
+			}
+
+			/* Ширина и цвет ползунка в Firefox */
+			scrollbar-color: color(accent-dark);
+			scrollbar-width: thin;
+
+			/* Скрытие стрелок и подложки в Firefox */
+
+			scrollbar-arrow-color: transparent;
+			scrollbar-track-color: transparent;
+
+			// Стили для chrom
+			&::-webkit-scrollbar {
+				background-color: none;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: color(accent-dark);
+			}
+
+			&__item {
+				.dialog-chat__massage {
+					&:last-child {
+						&::after {
+							border-color: transparent transparent color(background-light) transparent;
+						}
+					}
+				}
+			}
+
+			&__name {
+				color: color(accent-dark);
+			}
+
+			&__massage {
+				background: color(background-light);
+			}
+
+			&__text {
+				color: color(gray);
+			}
+
+			&__date {
+				color: color(gray);
+			}
+		}
+
+		// Элемент отправки сообщения
+		&-message {
+			&__input {
+				color: color(gray);
+				background: color(mint);
+			}
+
+			&__send-btn {
+				background: color(green-gradient);
+
+				path {
+					fill: color(background-light);
+				}
+
+				&:hover {
+					path {
+						fill: color(gray-dark);
+					}
+				}
+			}
+
+			&__add-wrapper {
+				label {
+					path {
+						fill: color(accent-dark);
+					}
+
+					&:hover {
+						path {
+							fill: color(gray-dark);
+						}
+					}
+				}
+			}
+
+			&__file {
+				&-item {
+					&:hover {
+						.dialog-message__file-name {
+							color: color(gray-dark);
+						}
+
+						.dialog-message__file-delete {
+							svg {
+								path {
+									fill: color(gray-dark);
+								}
+							}
+						}
+					}
+				}
+
+				&-name {
+					color: color(accent-dark);
+				}
+
+				&-delete {
+					path {
+						fill: color(accent-dark);
+					}
+				}
+			}
+		}
+
+		// Избранное и шаблоны
+		&-footer {
+			&__favorite {
+				&-item {
+					&_remove {
+						display: none;
+					}
+
+					&-text {
+						color: color(accent-dark);
+					}
+
+					&-icon {
+						path {
+							fill: color(accent-dark);
+						}
+					}
+
+					&:hover {
+						.dialog-footer__favorite-item-text {
+							color: color(gray-dark);
+						}
+
+						.dialog-footer__favorite-item-icon {
+							svg {
+								path {
+									fill: color(gray-dark);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&__template {
+				&:hover {
+					.dialog-footer__template-title {
+						color: color(gray-dark);
+					}
+
+					.dialog-footer__template-title-icon {
+						svg {
+							path {
+								fill: color(gray-dark);
+							}
+						}
+					}
+				}
+
+				&-title {
+					color: color(accent-dark);
+
+					&-icon {
+						path {
+							fill: color(accent-dark);
+						}
+					}
+				}
+
+				&-body {
+					&.open {
+						display: block;
+					}
+					border-color: color(accent-dark);
+				}
+
+				&-item,
+				&-custom-text,
+				&-add {
+					color: color(accent-dark);
+
+					&:hover {
+						color: color(gray-dark);
+					}
+				}
+
+				&-custom {
+					&-remove {
+						svg {
+							path {
+								fill: color(accent-dark);
+							}
+						}
+
+						&:hover {
+							svg {
+								path {
+									fill: color(red-error);
+								}
+							}
+						}
+					}
+				}
+
+				&-add {
+					svg {
+						path {
+							fill: color(accent-dark);
+						}
+					}
+
+					&:hover {
+						svg {
+							path {
+								fill: color(gray-dark);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -178,6 +178,28 @@ body.light {
 		&__text {
 			color: color(gray);
 		}
+
+		&-withdraw {
+			.modal {
+				&__text {
+					color: color(accent-dark);
+				}
+			}
+		}
+
+		&-buy {
+			.modal {
+				&__body {
+					.multiselect {
+						.ss-main {
+							background: color(mint);
+							border-left: 1px solid color(accent-dark);
+							color: color(gray);
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -219,6 +241,7 @@ body.light {
 	}
 }
 
+// Модальное окно заказа
 .modal.modal-order {
 	.modal {
 		&__title {
@@ -261,6 +284,124 @@ body.light {
 					}
 				}
 			}
+		}
+	}
+}
+
+// Модальные окна на странице диалога
+// Модальное окно "Списать с баланса"
+
+.modal.modal-withdraw,
+.modal.modal-deposit,
+.modal.modal-buy,
+.modal.modal-finish,
+.modal.modal-template {
+	.modal {
+		&__body {
+			max-width: 512px;
+		}
+
+		&__title {
+			margin-bottom: 40px;
+
+			@include mobile {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__text {
+			margin-bottom: 40px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__input {
+			width: 100%;
+			margin-bottom: 40px;
+		}
+
+		&__btn {
+			max-width: 100%;
+
+			&:hover {
+				svg {
+					path {
+						fill: color(gray-dark);
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal.modal-withdraw {
+	.modal {
+		&__text {
+			margin-bottom: 40px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			font-weight: 700;
+			font-size: 26px;
+			line-height: 33px;
+			color: color(accent);
+
+			span {
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.modal.modal-buy {
+	.modal {
+		&__body {
+			max-width: 512px;
+
+			.multiselect {
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 40px;
+				}
+
+				.ss-main {
+					background: color(gray-dark);
+					padding: 20px;
+					border: none;
+					border-left: 1px solid color(accent);
+					border-radius: 0px;
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 23px;
+					color: color(white);
+					cursor: pointer;
+
+					&::placeholder {
+						opacity: 0.7;
+					}
+
+					@include mobile {
+						padding: 11px 20px;
+						font-size: 14px;
+						line-height: 18px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal.modal-finish {
+	.modal {
+		&__text {
+			font-weight: 400;
+			font-size: 26px;
+			line-height: 33px;
 		}
 	}
 }

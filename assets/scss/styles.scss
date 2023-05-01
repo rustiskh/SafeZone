@@ -77,6 +77,9 @@
 @import "page-blocks/catalog/catalog";
 @import "page-blocks/catalog/catalog-category";
 
+// Диалоги
+@import "page-blocks/dialog-page/dialog";
+
 @import "test";
 
 // При создании таблиц стилей был применен подход с 1 табилцей стилей, т.к. использование нескольких таблиц делает переключение более ресурсозатратным.
