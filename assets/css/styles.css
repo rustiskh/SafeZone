@@ -11,6 +11,7 @@
   --color-accent: #3eda2b;
   --color-accent-dark: #008d26;
   --color-red-error: #ff0000;
+  --color-orange: #e4581c;
   --color-background-dark: #0a0a0a;
   --color-background-light: #e9e9e9;
   --color-green-gradient: linear-gradient(90deg, #16c753 0%, #008d26 100%);
@@ -7640,6 +7641,39 @@ body.light .cabinet-orders__more {
   -ms-flex-negative: 1;
       flex-shrink: 1;
 }
+.dialog-list__wrapper {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-top: 32px;
+  /* Скрытие стрелок */
+  /* Скрытие подложки */
+  /* Ширина и цвет ползунка в Firefox */
+  scrollbar-color: var(--color-accent);
+  scrollbar-width: thin;
+  /* Скрытие стрелок и подложки в Firefox */
+  scrollbar-arrow-color: transparent;
+  scrollbar-track-color: transparent;
+}
+@media (max-width: 768px) {
+  .dialog-list__wrapper {
+    margin-top: 20px;
+  }
+}
+.dialog-list__wrapper::-webkit-scrollbar-button {
+  display: none;
+}
+.dialog-list__wrapper::-webkit-scrollbar-track {
+  display: none;
+}
+.dialog-list__wrapper::-webkit-scrollbar {
+  width: 4px;
+  background-color: none;
+}
+.dialog-list__wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  width: 4px;
+  border-radius: 6px;
+}
 .dialog-content {
   -webkit-box-flex: 2;
       -ms-flex: 2 1 0px;
@@ -7690,11 +7724,11 @@ body.light .cabinet-orders__more {
   background: var(--color-gray-dark);
   min-width: auto;
 }
-.dialog-section {
+.dialog-section:not(:first-child) {
   margin-top: 32px;
 }
 @media (max-width: 768px) {
-  .dialog-section {
+  .dialog-section:not(:first-child) {
     margin-top: 20px;
   }
 }
@@ -7806,9 +7840,21 @@ body.light .cabinet-orders__more {
   border-radius: 6px;
   cursor: pointer;
   margin-bottom: 10px;
+  position: relative;
 }
 .dialog-section__item:last-child {
   margin-bottom: 0;
+}
+.dialog-section__item.unread::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: var(--color-orange);
+  position: absolute;
+  right: 12px;
+  bottom: 16px;
 }
 .dialog-section__item-header {
   display: -webkit-box;
@@ -7853,6 +7899,7 @@ body.light .cabinet-orders__more {
   font-size: 18px;
   line-height: 23px;
   color: var(--color-white);
+  position: relative;
 }
 .dialog-content {
   margin-left: 32px;
@@ -7860,9 +7907,14 @@ body.light .cabinet-orders__more {
 @media (max-width: 998px) {
   .dialog-content {
     margin-left: 0;
+    margin-top: 24px;
   }
 }
 .dialog-content__header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-accent);
+}
+.dialog-content__header-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7875,8 +7927,6 @@ body.light .cabinet-orders__more {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   row-gap: 12px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--color-accent);
 }
 .dialog-content__header-info {
   display: -webkit-box;
@@ -7944,6 +7994,31 @@ body.light .cabinet-orders__more {
   .dialog-content__header-balance span {
     display: none;
   }
+}
+.dialog-content__header-notification {
+  margin-top: 24px;
+  padding: 16px 12px;
+  background-color: var(--color-gray-dark);
+}
+.dialog-content__header-notification-label, .dialog-content__header-notification-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-accent);
+}
+@media (max-width: 768px) {
+  .dialog-content__header-notification-label, .dialog-content__header-notification-title {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+.dialog-content__header-notification-label {
+  color: var(--color-orange);
+}
+.dialog-content__header-notification-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 12px;
 }
 .dialog-content__control {
   display: -webkit-box;
@@ -8066,6 +8141,15 @@ body.light .cabinet-orders__more {
     padding: 10px;
   }
 }
+.dialog-chat__massage.unread .dialog-chat__date::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: var(--color-accent);
+  margin-right: 8px;
+}
 .dialog-chat__text {
   font-weight: 400;
   font-size: 18px;
@@ -8078,13 +8162,23 @@ body.light .cabinet-orders__more {
   }
 }
 .dialog-chat__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: var(--color-white);
-  opacity: 0.7;
+  color: var(--color-gray-light);
   text-align: right;
   margin-top: 12px;
+  position: relative;
 }
 @media (max-width: 768px) {
   .dialog-chat__date {
@@ -8385,6 +8479,28 @@ body.light .cabinet-orders__more {
   margin-left: auto;
 }
 
+body.light .dialog-list__wrapper {
+  /* Скрытие стрелок */
+  /* Скрытие подложки */
+  /* Ширина и цвет ползунка в Firefox */
+  scrollbar-color: var(--color-accent-dark);
+  scrollbar-width: thin;
+  /* Скрытие стрелок и подложки в Firefox */
+  scrollbar-arrow-color: transparent;
+  scrollbar-track-color: transparent;
+}
+body.light .dialog-list__wrapper::-webkit-scrollbar-button {
+  display: none;
+}
+body.light .dialog-list__wrapper::-webkit-scrollbar-track {
+  display: none;
+}
+body.light .dialog-list__wrapper::-webkit-scrollbar {
+  background-color: none;
+}
+body.light .dialog-list__wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent-dark);
+}
 body.light .dialog-search__filter-item .multiselect .ss-main {
   background: none;
 }
@@ -8450,6 +8566,15 @@ body.light .dialog-content__header-online, body.light .dialog-content__header-id
 body.light .dialog-content__header-balance {
   color: var(--color-accent-dark);
 }
+body.light .dialog-content__header-notification {
+  background-color: var(--color-beige-light);
+}
+body.light .dialog-content__header-notification-label, body.light .dialog-content__header-notification-title {
+  color: var(--color-accent-dark);
+}
+body.light .dialog-content__header-notification-label {
+  color: var(--color-orange);
+}
 body.light .dialog-chat {
   background: var(--color-mint);
   /* Скрытие стрелок */
@@ -8481,6 +8606,9 @@ body.light .dialog-chat__name {
 }
 body.light .dialog-chat__massage {
   background: var(--color-background-light);
+}
+body.light .dialog-chat__massage.unread .dialog-chat__date::before {
+  background: var(--color-accent-dark);
 }
 body.light .dialog-chat__text {
   color: var(--color-gray);
