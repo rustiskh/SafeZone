@@ -455,7 +455,7 @@ window.addEventListener("DOMContentLoaded", () => {
             let truncatedText = text;
 
             while (dialogCardText.scrollHeight > 24 && truncatedText.length > 0) {
-                truncatedText = truncatedText.slice(0, -1);
+                truncatedText = truncatedText.slice(0, 40);
                 dialogCardText.textContent = truncatedText + '...';
             }
         }

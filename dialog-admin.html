@@ -379,133 +379,144 @@
 						</button>
 					</div> -->
 				</div>
-				<div class="dialog-section">
-					<div class="dialog-section__header">
-						<div class="dialog-section__header-count">3</div>
-						<div class="dialog-section__header-title">Избранное</div>
-						<div class="dialog-section__header-icon">
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M8 11C7.85467 10.9979 7.71532 10.9378 7.60932 10.8315L2.12603 4.96999C2.03859 4.8561 1.99391 4.71152 2.00067 4.56436C2.00743 4.41721 2.06515 4.27801 2.16261 4.17383C2.26007 4.06965 2.39029 4.00794 2.52795 4.00072C2.66561 3.99349 2.80086 4.04125 2.9074 4.13472L8 9.58591L13.0926 4.13472C13.1991 4.04125 13.3344 3.99349 13.472 4.00072C13.6097 4.00794 13.7399 4.06965 13.8374 4.17383C13.9348 4.27801 13.9926 4.41721 13.9993 4.56436C14.0061 4.71152 13.9614 4.8561 13.874 4.96999L8.39068 10.8315C8.28468 10.9378 8.14533 10.9979 8 11V11Z" fill="#3EDA2B" />
-							</svg>
+				<!-- Change old start 02.05.23 - для добавления скролла секции обернуты в dialog-list__wrapper. dialog-section__item обернут в ссылку -->
+				<div class="dialog-list__wrapper">
+					<div class="dialog-section">
+						<div class="dialog-section__header">
+							<div class="dialog-section__header-count">3</div>
+							<div class="dialog-section__header-title">Избранное</div>
+							<div class="dialog-section__header-icon">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 11C7.85467 10.9979 7.71532 10.9378 7.60932 10.8315L2.12603 4.96999C2.03859 4.8561 1.99391 4.71152 2.00067 4.56436C2.00743 4.41721 2.06515 4.27801 2.16261 4.17383C2.26007 4.06965 2.39029 4.00794 2.52795 4.00072C2.66561 3.99349 2.80086 4.04125 2.9074 4.13472L8 9.58591L13.0926 4.13472C13.1991 4.04125 13.3344 3.99349 13.472 4.00072C13.6097 4.00794 13.7399 4.06965 13.8374 4.17383C13.9348 4.27801 13.9926 4.41721 13.9993 4.56436C14.0061 4.71152 13.9614 4.8561 13.874 4.96999L8.39068 10.8315C8.28468 10.9378 8.14533 10.9979 8 11V11Z" fill="#3EDA2B" />
+								</svg>
+							</div>
+						</div>
+						<div class="dialog-section__body">
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
+							</div>
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
+							</div>
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
+							</div>
+
+							<div class="dialog-section__more-btn">Загрузить ещё</div>
 						</div>
 					</div>
-					<div class="dialog-section__body">
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
+					<div class="dialog-section open">
+						<div class="dialog-section__header" style="display: none">
+							<div class="dialog-section__header-count">Х</div>
+							<div class="dialog-section__header-title">Все сообщения</div>
+							<div class="dialog-section__header-icon">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 11C7.85467 10.9979 7.71532 10.9378 7.60932 10.8315L2.12603 4.96999C2.03859 4.8561 1.99391 4.71152 2.00067 4.56436C2.00743 4.41721 2.06515 4.27801 2.16261 4.17383C2.26007 4.06965 2.39029 4.00794 2.52795 4.00072C2.66561 3.99349 2.80086 4.04125 2.9074 4.13472L8 9.58591L13.0926 4.13472C13.1991 4.04125 13.3344 3.99349 13.472 4.00072C13.6097 4.00794 13.7399 4.06965 13.8374 4.17383C13.9348 4.27801 13.9926 4.41721 13.9993 4.56436C14.0061 4.71152 13.9614 4.8561 13.874 4.96999L8.39068 10.8315C8.28468 10.9378 8.14533 10.9979 8 11V11Z" fill="#3EDA2B" />
+								</svg>
 							</div>
-							<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
 						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+						<div class="dialog-section__body">
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
 								</div>
+								<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
 							</div>
-							<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
-						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
 								</div>
+								<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
 							</div>
-							<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
-						</div>
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
+							</div>
+							<div class="dialog-section__item">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
+							</div>
+							<div class="dialog-section__item unread">
+								<div class="dialog-section__item-header">
+									<p class="dialog-section__item-name">user-name</p>
+									<div class="dialog-section__item-info">
+										<p class="dialog-section__item-id">ID: ${idNumber}</p>
+										<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
+									</div>
+								</div>
+								<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
+							</div>
 
-						<div class="dialog-section__more-btn">Загрузить ещё</div>
+							<div class="dialog-section__more-btn">Загрузить ещё</div>
+						</div>
 					</div>
 				</div>
-				<div class="dialog-section open">
-					<div class="dialog-section__header" style="display: none">
-						<div class="dialog-section__header-count">Х</div>
-						<div class="dialog-section__header-title">Все сообщения</div>
-						<div class="dialog-section__header-icon">
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M8 11C7.85467 10.9979 7.71532 10.9378 7.60932 10.8315L2.12603 4.96999C2.03859 4.8561 1.99391 4.71152 2.00067 4.56436C2.00743 4.41721 2.06515 4.27801 2.16261 4.17383C2.26007 4.06965 2.39029 4.00794 2.52795 4.00072C2.66561 3.99349 2.80086 4.04125 2.9074 4.13472L8 9.58591L13.0926 4.13472C13.1991 4.04125 13.3344 3.99349 13.472 4.00072C13.6097 4.00794 13.7399 4.06965 13.8374 4.17383C13.9348 4.27801 13.9926 4.41721 13.9993 4.56436C14.0061 4.71152 13.9614 4.8561 13.874 4.96999L8.39068 10.8315C8.28468 10.9378 8.14533 10.9979 8 11V11Z" fill="#3EDA2B" />
-							</svg>
-						</div>
-					</div>
-					<div class="dialog-section__body">
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
-							</div>
-							<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
-						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
-							</div>
-							<p class="dialog-section__item-text">Здесь начало последнего сообщения...</p>
-						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
-							</div>
-							<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
-						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
-							</div>
-							<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
-						</div>
-						<div class="dialog-section__item">
-							<div class="dialog-section__item-header">
-								<p class="dialog-section__item-name">user-name</p>
-								<div class="dialog-section__item-info">
-									<p class="dialog-section__item-id">ID: ${idNumber}</p>
-									<p class="dialog-section__item-date">${DD.MM.YYYY} ${HH:MM}</p>
-								</div>
-							</div>
-							<p class="dialog-section__item-text">Здесь текст сообщения не помещается в контейнер и поэтому обрезается, чтобы всегда была 1 строка</p>
-						</div>
-
-						<div class="dialog-section__more-btn">Загрузить ещё</div>
-					</div>
-				</div>
+				<!-- Change old end -->
 			</div>
 			<div class="dialog-content">
 				<div class="dialog-content__header">
-					<div class="dialog-content__header-info">
-						<h3 class="dialog-content__header-name">${name}</h3>
-						<div class="dialog-content__header-details">
-							<p class="dialog-content__header-online">Был в сети: 3 дня назад</p>
-							<p class="dialog-content__header-id">ID диалога: ${id-number}</p>
+					<!-- Change_old start 02/05/23 - добавление плашки. + Содержимое секции завернуто в header-wrapper -->
+					<div class="dialog-content__header-wrapper">
+						<div class="dialog-content__header-info">
+							<h3 class="dialog-content__header-name">${name}</h3>
+							<div class="dialog-content__header-details">
+								<p class="dialog-content__header-online">Был в сети: 3 дня назад</p>
+								<p class="dialog-content__header-id">ID диалога: ${id-number}</p>
+							</div>
 						</div>
+						<div class="button button_icon dialog-content__header-btn">
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21.2823 8.83075L7.99299 13.9819C7.4582 14.2218 7.27732 14.7022 7.86373 14.9629L11.273 16.0519L19.5162 10.9311C19.9663 10.6097 20.4271 10.6954 20.0306 11.049L12.9508 17.4924L12.7284 20.2193C12.9344 20.6403 13.3115 20.6423 13.5521 20.433L15.5109 18.57L18.8655 21.095C19.6446 21.5587 20.0686 21.2595 20.2362 20.4097L22.4366 9.93691C22.665 8.89087 22.2754 8.42997 21.2823 8.83075Z" fill="white" />
+							</svg>
+							Отправить в tg
+						</div>
+						<p class="dialog-content__header-balance"><span>Баланс:</span>${balance}</p>
 					</div>
-					<div class="button button_icon dialog-content__header-btn">
-						<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M21.2823 8.83075L7.99299 13.9819C7.4582 14.2218 7.27732 14.7022 7.86373 14.9629L11.273 16.0519L19.5162 10.9311C19.9663 10.6097 20.4271 10.6954 20.0306 11.049L12.9508 17.4924L12.7284 20.2193C12.9344 20.6403 13.3115 20.6423 13.5521 20.433L15.5109 18.57L18.8655 21.095C19.6446 21.5587 20.0686 21.2595 20.2362 20.4097L22.4366 9.93691C22.665 8.89087 22.2754 8.42997 21.2823 8.83075Z" fill="white" />
-						</svg>
-						Отправить в tg
+					<div class="dialog-content__header-notification">
+						<div class="dialog-content__header-notification-label">Системное уведомление</div>
+						<div class="dialog-content__header-notification-title">Посетитель ожидает ответа оператора</div>
 					</div>
-					<p class="dialog-content__header-balance"><span>Баланс:</span>${balance}</p>
 				</div>
 
 				<div class="dialog-chat">
@@ -530,11 +541,11 @@
 							<p class="dialog-chat__text">Текст сообщения текст сообщения текст сообщения текст сообщения текст сообщения Текст сообщения текст сообщения текст сообщения текст</p>
 							<p class="dialog-chat__date">${DD.MM.YY} ${HH:MM}</p>
 						</div>
-						<div class="dialog-chat__massage">
+						<div class="dialog-chat__massage unread">
 							<p class="dialog-chat__text">Текст сообщения текст сообщения текст сообщения текст сообщения текст сообщения Текст сообщения текст сообщения текст сообщения текст</p>
 							<p class="dialog-chat__date">${DD.MM.YY} ${HH:MM}</p>
 						</div>
-						<div class="dialog-chat__massage">
+						<div class="dialog-chat__massage unread">
 							<p class="dialog-chat__text">Текст сообщения текст сообщения текст сообщения текст сообщения текст сообщения Текст сообщения текст сообщения текст сообщения текст</p>
 							<p class="dialog-chat__date">${DD.MM.YY} ${HH:MM}</p>
 						</div>

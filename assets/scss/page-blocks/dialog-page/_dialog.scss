@@ -17,6 +17,48 @@
 	&-list {
 		flex-basis: 448px;
 		flex-shrink: 1;
+
+		&__wrapper {
+			max-height: 600px;
+			overflow-y: auto;
+			margin-top: 32px;
+
+			@include mobile {
+				margin-top: 20px;
+			}
+
+			/* Скрытие стрелок */
+			&::-webkit-scrollbar-button {
+				display: none;
+			}
+
+			/* Скрытие подложки */
+			&::-webkit-scrollbar-track {
+				display: none;
+			}
+
+			/* Ширина и цвет ползунка в Firefox */
+			scrollbar-color: color(accent);
+			scrollbar-width: thin;
+
+			/* Скрытие стрелок и подложки в Firefox */
+
+			scrollbar-arrow-color: transparent;
+			scrollbar-track-color: transparent;
+
+			// Стили для chrome
+
+			&::-webkit-scrollbar {
+				width: 4px;
+				background-color: none;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: color(accent);
+				width: 4px;
+				border-radius: 6px;
+			}
+		}
 	}
 
 	&-content {
@@ -90,10 +132,12 @@
 
 	// Разделы
 	&-section {
-		margin-top: 32px;
+		&:not(:first-child) {
+			margin-top: 32px;
 
-		@include mobile {
-			margin-top: 20px;
+			@include mobile {
+				margin-top: 20px;
+			}
 		}
 
 		&.open {
@@ -202,9 +246,23 @@
 			cursor: pointer;
 
 			margin-bottom: 10px;
-
+			position: relative;
 			&:last-child {
 				margin-bottom: 0;
+			}
+
+			&.unread {
+				&::after {
+					content: "";
+					display: block;
+					width: 16px;
+					height: 16px;
+					border-radius: 100%;
+					background: color(orange);
+					position: absolute;
+					right: 12px;
+					bottom: 16px;
+				}
 			}
 
 			&-header {
@@ -246,6 +304,7 @@
 				font-size: 18px;
 				line-height: 23px;
 				color: color(white);
+				position: relative;
 			}
 		}
 	}
@@ -256,16 +315,20 @@
 
 		@include tablet {
 			margin-left: 0;
+			margin-top: 24px;
 		}
 
 		&__header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			row-gap: 12px;
 			padding-bottom: 24px;
 			border-bottom: 1px solid color(accent);
+
+			&-wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				row-gap: 12px;
+			}
 
 			&-info {
 				display: flex;
@@ -333,6 +396,35 @@
 					@include mobile {
 						display: none;
 					}
+				}
+			}
+
+			&-notification {
+				margin-top: 24px;
+				padding: 16px 12px;
+				background-color: color(gray-dark);
+
+				&-label,
+				&-title {
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 20px;
+					color: color(accent);
+
+					@include mobile {
+						font-size: 12px;
+						line-height: 15px;
+					}
+				}
+
+				&-label {
+					color: color(orange);
+				}
+
+				&-title {
+					font-weight: 700;
+					font-size: 18px;
+					margin-top: 12px;
 				}
 			}
 		}
@@ -471,6 +563,20 @@
 			@include mobile {
 				padding: 10px;
 			}
+
+			&.unread {
+				.dialog-chat__date {
+					&::before {
+						content: "";
+						display: block;
+						width: 16px;
+						height: 16px;
+						border-radius: 100%;
+						background: color(accent);
+						margin-right: 8px;
+					}
+				}
+			}
 		}
 
 		&__text {
@@ -485,13 +591,17 @@
 		}
 
 		&__date {
+			display: flex;
+			justify-content: end;
+			justify-content: flex-end;
+			align-items: center;
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 20px;
-			color: color(white);
-			opacity: 0.7;
+			color: color(gray-light);
 			text-align: right;
 			margin-top: 12px;
+			position: relative;
 
 			@include mobile {
 				margin-top: 5px;
@@ -824,6 +934,38 @@
 
 body.light {
 	.dialog {
+		&-list {
+			&__wrapper {
+				/* Скрытие стрелок */
+				&::-webkit-scrollbar-button {
+					display: none;
+				}
+
+				/* Скрытие подложки */
+				&::-webkit-scrollbar-track {
+					display: none;
+				}
+
+				/* Ширина и цвет ползунка в Firefox */
+				scrollbar-color: color(accent-dark);
+				scrollbar-width: thin;
+
+				/* Скрытие стрелок и подложки в Firefox */
+
+				scrollbar-arrow-color: transparent;
+				scrollbar-track-color: transparent;
+
+				// Стили для chrom
+				&::-webkit-scrollbar {
+					background-color: none;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background-color: color(accent-dark);
+				}
+			}
+		}
+
 		&-search {
 			&__filter {
 				&-item {
@@ -938,6 +1080,22 @@ body.light {
 				&-balance {
 					color: color(accent-dark);
 				}
+
+				&-notification {
+					background-color: color(beige-light);
+
+					&-label,
+					&-title {
+						color: color(accent-dark);
+					}
+
+					&-label {
+						color: color(orange);
+					}
+
+					&-title {
+					}
+				}
 			}
 		}
 
@@ -989,6 +1147,14 @@ body.light {
 
 			&__massage {
 				background: color(background-light);
+
+				&.unread {
+					.dialog-chat__date {
+						&::before {
+							background: color(accent-dark);
+						}
+					}
+				}
 			}
 
 			&__text {
