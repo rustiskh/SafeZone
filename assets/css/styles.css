@@ -8722,6 +8722,118 @@ body.light .dialog-footer__template-add:hover svg path {
   fill: var(--color-gray-dark);
 }
 
+.page-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: var(--color-background-dark);
+}
+.page-loader__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+@media (max-width: 768px) {
+  .page-loader__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.page-loader__icon svg {
+  width: 50px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+}
+.page-loader__icon circle {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 4;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite;
+}
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+.page-loader__logo {
+  margin-left: 36px;
+}
+@media (max-width: 768px) {
+  .page-loader__logo {
+    margin-left: 0;
+    margin-top: 24px;
+  }
+}
+.page-loader__logo-img_black {
+  display: none;
+}
+
+body.light .page-loader {
+  background: var(--color-background-light);
+}
+body.light .page-loader__icon circle {
+  stroke: var(--color-accent-dark);
+}
+body.light .page-loader__logo-img_black {
+  display: block;
+}
+body.light .page-loader__logo-img_white {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
