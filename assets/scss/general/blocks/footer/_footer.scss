@@ -34,6 +34,10 @@
 		margin-right: 40px;
 		text-decoration: none;
 
+		&_tinkoff-light-mode {
+			display: none;
+		}
+
 		&:last-child {
 			margin-right: 0;
 		}
@@ -177,6 +181,14 @@ body.light {
 
 		&__copywrite {
 			color: color(gray);
+		}
+
+		&__bank-link_tinkoff-dark-mode {
+			display: none;
+		}
+
+		&__bank-link_tinkoff-light-mode {
+			display: inline-block;
 		}
 	}
 
