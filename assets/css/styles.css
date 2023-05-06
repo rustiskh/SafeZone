@@ -2198,22 +2198,34 @@ body.light .header-main__menu-burger svg rect {
   fill: var(--color-accent-dark);
 }
 body.light .header-main__menu-wrapper {
-  background: var(--color-mint-dark);
+  background: var(--color-beige-light);
 }
 body.light .header-main__menu-title {
-  color: var(--color-white);
+  color: var(--color-gray);
 }
 body.light .header-main__menu-close svg path {
-  fill: var(--color-white);
+  fill: var(--color-gray);
+}
+body.light .header__nav-title {
+  color: var(--color-gray);
 }
 body.light .header__nav-chevron svg path {
-  fill: var(--color-white);
+  fill: var(--color-gray);
+}
+body.light .header__nav-link {
+  color: var(--color-gray);
+}
+body.light .header__nav-contact-title {
+  color: var(--color-gray);
+}
+body.light .header__nav-contact-link {
+  color: var(--color-gray);
 }
 body.light .header__nav-contact-icon svg path {
-  fill: var(--color-accent);
+  fill: var(--color-accent-dark);
 }
 body.light .header__nav-social-title {
-  color: var(--color-white);
+  color: var(--color-gray);
 }
 
 .footer {
@@ -2258,6 +2270,9 @@ body.light .header__nav-social-title {
 .footer__bank-link {
   margin-right: 40px;
   text-decoration: none;
+}
+.footer__bank-link_tinkoff-light-mode {
+  display: none;
 }
 .footer__bank-link:last-child {
   margin-right: 0;
@@ -2382,6 +2397,12 @@ body.light .footer__additional-wrapper {
 }
 body.light .footer__copywrite {
   color: var(--color-gray);
+}
+body.light .footer__bank-link_tinkoff-dark-mode {
+  display: none;
+}
+body.light .footer__bank-link_tinkoff-light-mode {
+  display: inline-block;
 }
 body.light .footer__nav-header {
   color: var(--color-beige-light);
@@ -5148,9 +5169,11 @@ body.light .promo__descr {
   }
 }
 .hero-game__btn {
-  width: 208px;
+  min-width: 208px;
   height: 60px;
-  margin-right: 30px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 15px;
   margin-bottom: 20px;
 }
 @media (max-width: 1290px) {

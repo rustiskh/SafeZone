@@ -544,17 +544,17 @@ body.light {
 		}
 
 		&-wrapper {
-			background: color(mint-dark);
+			background: color(beige-light);
 		}
 
 		&-title {
-			color: color(white);
+			color: color(gray);
 		}
 
 		&-close {
 			svg {
 				path {
-					fill: color(white);
+					fill: color(gray);
 				}
 			}
 		}
@@ -570,35 +570,35 @@ body.light {
 		// }
 		// }
 
-		// &-title {
-		// 	color: color(white);
-		// }
+		&-title {
+			color: color(gray);
+		}
 
 		&-chevron {
 			svg {
 				path {
-					fill: color(white);
+					fill: color(gray);
 				}
 			}
 		}
 
-		// &-link {
-		// 	color: color(white);
-		// }
+		&-link {
+			color: color(gray);
+		}
 
 		&-contact {
-			// &-title {
-			// 	color: color(white);
-			// }
+			&-title {
+				color: color(gray);
+			}
 
-			// &-link {
-			// 	color: color(white);
-			// }
+			&-link {
+				color: color(gray);
+			}
 
 			&-icon {
 				svg {
 					path {
-						fill: color(accent);
+						fill: color(accent-dark);
 					}
 				}
 			}
@@ -606,7 +606,7 @@ body.light {
 
 		&-social {
 			&-title {
-				color: color(white);
+				color: color(gray);
 			}
 		}
 	}
