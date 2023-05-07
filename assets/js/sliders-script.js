@@ -48,7 +48,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     $(".game__slider-wrapper").slick({
         arrows: true,
-        // centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
         variableWidth: true,
         slidesToShow: 4,
         slidesToScroll: 4,
