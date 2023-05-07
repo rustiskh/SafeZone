@@ -1,4 +1,10 @@
+const loader = document.querySelector('.page-loader');
+
+
 window.addEventListener("DOMContentLoaded", () => {
+    // Удаление лоадера при загрузке ДОМа
+    setTimeout(loader.remove(), 500)
+
     // Скрипт поисковой строки
     const searchInput = document.querySelector('.search-input');
     const searchButton = document.querySelector('.search-button');
