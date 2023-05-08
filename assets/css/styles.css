@@ -205,7 +205,6 @@ body.light .general-input_select option:checked {
   opacity: 0.5;
 }
 .search-categories-select {
-  width: 188px;
   margin-left: 1px;
   font-weight: 700;
   font-size: 18px;
@@ -304,6 +303,9 @@ body.light .search-input {
 body.light .search-categories-select {
   color: var(--color-accent-dark);
   background: var(--color-beige-light);
+}
+body.light .search-categories-select__icon path {
+  fill: var(--color-accent-dark);
 }
 body.light .search-categories-list {
   background-color: var(--color-beige-light);
@@ -1870,7 +1872,6 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
   .header-main__search .search-categories-select {
     font-size: 12px;
     line-height: 15px;
-    max-width: 125px;
   }
   .header-main__search .search-categories-list {
     padding: 10px 15px;

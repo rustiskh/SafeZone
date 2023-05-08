@@ -1,9 +1,9 @@
-const loader = document.querySelector('.page-loader');
+// const loader = document.querySelector('.page-loader');
 
 
 window.addEventListener("DOMContentLoaded", () => {
     // Скрытие лоадера при загрузке ДОМа
-    setTimeout(loader.style.display = 'none', 500);
+    // setTimeout(loader.style.display = 'none', 500);
 
     // Скрипт поисковой строки
     const searchInput = document.querySelector('.search-input');
