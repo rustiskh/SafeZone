@@ -31,7 +31,6 @@
 
 	&-categories {
 		&-select {
-			width: 188px;
 			margin-left: 1px;
 			font-weight: 700;
 			font-size: 18px;
@@ -97,6 +96,7 @@
 			}
 		}
 	}
+
 	&-button {
 		height: 42px;
 		width: 42px;
@@ -128,6 +128,12 @@ body.light {
 			&-select {
 				color: color(accent-dark);
 				background: color(beige-light);
+
+				&__icon {
+					path {
+						fill: color(accent-dark);
+					}
+				}
 			}
 
 			&-list {
