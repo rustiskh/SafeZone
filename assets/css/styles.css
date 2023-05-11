@@ -986,6 +986,15 @@ body.light .hor-unscroll-menu__item_active::before {
   width: 325px;
   height: 325px;
 }
+.product-card__img img {
+  height: 100%;
+  width: auto;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 .product-card__content-wrapper {
   max-width: 324px;
 }
