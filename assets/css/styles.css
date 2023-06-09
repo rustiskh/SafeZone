@@ -578,9 +578,7 @@ body.light .select .list .item:hover, body.light .select .list .item.active {
   }
 }
 .ss-content .ss-list .ss-option {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   font-weight: 400;
   font-size: 18px;
   line-height: 23px;
