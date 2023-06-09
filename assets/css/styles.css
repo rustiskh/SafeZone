@@ -3375,6 +3375,7 @@ body.light .main-slider .slick-dots li.slick-active button {
 }
 .game-slide__item:hover {
   text-decoration: underline;
+  text-decoration-color: var(--color-white);
 }
 .game-slide__item::after {
   content: "";
@@ -3520,6 +3521,9 @@ body.light .game-slide__title {
 body.light .game-slide__item::after {
   background: -webkit-gradient(linear, left top, right top, from(rgba(62, 218, 43, 0)), color-stop(51.04%, #008d26), to(rgba(62, 218, 43, 0)));
   background: linear-gradient(90deg, rgba(62, 218, 43, 0) 0%, #008d26 51.04%, rgba(62, 218, 43, 0) 100%);
+}
+body.light .game-slide__item:hover {
+  text-decoration-color: var(--color-black);
 }
 body.light .game-slide__item-name {
   color: var(--color-gray-dark);
