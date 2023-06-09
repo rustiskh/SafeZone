@@ -383,7 +383,6 @@ window.addEventListener("DOMContentLoaded", () => {
     var catalogCategorySelect = new SlimSelect({
         select: '#catalog-category-select-single',
 
-
         settings: {
             openPosition: 'auto',
             searchPlaceholder: 'Начните вводить название игры',
