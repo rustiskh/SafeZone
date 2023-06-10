@@ -4993,13 +4993,43 @@ body.light .promo__descr {
 .hero-game__wrapper .hero-game__description_main {
   grid-column-start: 1;
 }
+.hero-game__wrapper .hero-game__description_main.right {
+  grid-column-start: 2;
+}
+.hero-game__wrapper .hero-game__description_main.left {
+  grid-column-start: 1;
+}
 .hero-game__wrapper .hero-game__description_second {
+  grid-column-start: 1;
+}
+.hero-game__wrapper .hero-game__description_second.right {
+  grid-column-start: 2;
+}
+.hero-game__wrapper .hero-game__description_second.left {
   grid-column-start: 1;
 }
 .hero-game__wrapper .hero-game__img {
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: 4;
+}
+.hero-game__wrapper .hero-game__img.right {
+  grid-column-start: 1;
+  margin-right: 20px;
+}
+@media (max-width: 1290px) {
+  .hero-game__wrapper .hero-game__img.right {
+    margin-right: 0;
+  }
+}
+.hero-game__wrapper .hero-game__img.left {
+  grid-column-start: 2;
+  margin-left: 20px;
+}
+@media (max-width: 1290px) {
+  .hero-game__wrapper .hero-game__img.left {
+    margin-left: 0;
+  }
 }
 @media (max-width: 1290px) {
   .hero-game__wrapper {
