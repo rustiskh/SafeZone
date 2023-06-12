@@ -86,6 +86,18 @@ window.addEventListener("DOMContentLoaded", () => {
         headerMenuWrapper.classList.remove('open');
     });
 
+    // Change old start 12.06 - Добавил обработчик события клика вне зоны меню, чтобы закрывать меню при клике вне области меню
+    document.addEventListener('click', (event) => {
+        const targetElement = event.target;
+
+        const isClickedInsideMenu = headerMenu.contains(targetElement) || headerMenuWrapper.contains(targetElement);;
+
+        if (!isClickedInsideMenu) {
+            headerMenuWrapper.classList.remove('open');
+        }
+    });
+    // Change old end 12.06
+
     // Создание и работа аккардеонов в меню на мобильном разрешении
     var menuBox = document.querySelectorAll(".header__nav-box");
 
