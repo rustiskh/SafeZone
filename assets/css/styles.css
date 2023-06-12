@@ -1115,6 +1115,9 @@ body.light .hor-unscroll-menu__item_active::before {
   }
   .product-card__btn {
     margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 }
 
