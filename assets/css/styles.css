@@ -1186,8 +1186,8 @@ body.light .hor-unscroll-menu__item_active::before {
 }
 .mini-product-card__btn {
   margin-top: 20px;
-  padding-top: 6px;
-  padding-bottom: 9px;
+  padding: 6px 0 9px 0;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .mini-product-card {
