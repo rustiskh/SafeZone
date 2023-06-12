@@ -49,6 +49,7 @@
 
 		&:hover {
 			text-decoration: underline;
+			text-decoration-color: color(white);
 		}
 
 		&::after {
@@ -208,6 +209,10 @@ body.light {
 		&__item {
 			&::after {
 				background: linear-gradient(90deg, rgba(62, 218, 43, 0) 0%, #008d26 51.04%, rgba(62, 218, 43, 0) 100%);
+			}
+
+			&:hover {
+				text-decoration-color: color(black);
 			}
 
 			&-name {

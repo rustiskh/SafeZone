@@ -55,7 +55,8 @@
 		max-width: 1520px;
 		margin: 0 auto;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 20px;
 		flex-wrap: wrap;
 
 		.product-card {

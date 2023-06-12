@@ -190,6 +190,9 @@
 
 		&__btn {
 			margin-top: 15px;
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
 		}
 	}
 }
@@ -262,8 +265,8 @@
 
 	&__btn {
 		margin-top: 20px;
-		padding-top: 6px;
-		padding-bottom: 9px;
+		padding: 6px 0 9px 0;
+		width: 100%;
 	}
 
 	@include mobile {
@@ -313,10 +316,6 @@
 		}
 
 		&__btn {
-			// position: relative;
-			// bottom: 0;
-			// right: 0;
-			// width: 100%;
 			margin-top: 15px;
 		}
 	}

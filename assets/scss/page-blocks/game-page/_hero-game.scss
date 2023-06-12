@@ -18,14 +18,50 @@
 
 		.hero-game__description_main {
 			grid-column-start: 1;
+
+			&.right {
+				grid-column-start: 2;
+			}
+
+			&.left {
+				grid-column-start: 1;
+			}
 		}
+
 		.hero-game__description_second {
 			grid-column-start: 1;
+
+			&.right {
+				grid-column-start: 2;
+			}
+
+			&.left {
+				grid-column-start: 1;
+			}
 		}
+
 		.hero-game__img {
 			grid-column-start: 2;
 			grid-row-start: 1;
 			grid-row-end: 4;
+
+			&.right {
+				grid-column-start: 1;
+				margin-right: 20px;
+
+				@include laptop {
+					margin-right: 0;
+				}
+			}
+
+			&.left {
+				grid-column-start: 2;
+				margin-left: 20px;
+
+				@include laptop {
+					margin-left: 0;
+				}
+			}
 		}
 
 		@include laptop {

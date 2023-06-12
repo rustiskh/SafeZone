@@ -159,16 +159,6 @@ body.light {
 		&__description {
 			color: color(gray);
 		}
-
-		&__btn {
-			border-color: color(accent-dark);
-			box-shadow: none;
-			color: color(gray);
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 
 	.about-item {
@@ -180,31 +170,6 @@ body.light {
 
 		&__number {
 			color: color(gray);
-
-			// &::before {
-			// 	content: "";
-			// 	position: absolute;
-			// 	font-weight: 400;
-			// 	font-size: 18px;
-			// 	line-height: 23px;
-			// 	text-align: center;
-			// 	top: -30px;
-			// 	left: 50%;
-			// 	transform: translateX(-50%);
-			// }
-
-			// &::after {
-			// 	content: "";
-			// 	width: 75px;
-			// 	position: absolute;
-			// 	font-weight: 400;
-			// 	font-size: 18px;
-			// 	line-height: 23px;
-			// 	text-align: center;
-			// 	top: 44px;
-			// 	left: 50%;
-			// 	transform: translateX(-50%);
-			// }
 		}
 
 		&__description {
