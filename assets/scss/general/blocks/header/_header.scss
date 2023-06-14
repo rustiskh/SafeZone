@@ -468,20 +468,9 @@
 			background-position: center;
 			background-size: cover;
 
-			&_instagram {
-				background-image: url("../icons/social-networks/icon-social-insta.svg");
-			}
-
-			&_fb {
-				background-image: url("../icons/social-networks/icon-social-fb.svg");
-			}
-
-			&_vk {
-				background-image: url("../icons/social-networks/icon-social-vk.svg");
-			}
-
-			&_telegram {
-				background-image: url("../icons/social-networks/icon-social-tg.svg");
+			img {
+				width: 30px;
+				height: 30px;
 			}
 		}
 	}
