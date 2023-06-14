@@ -43,6 +43,11 @@
 		}
 	}
 
+	&__bank-img {
+		height: 30px;
+		width: auto;
+	}
+
 	@include mobile {
 		&__main-wrapper {
 			// flex-direction: column;
@@ -66,6 +71,7 @@
 
 		&__bank-img {
 			height: 22px;
+			width: auto;
 		}
 	}
 }

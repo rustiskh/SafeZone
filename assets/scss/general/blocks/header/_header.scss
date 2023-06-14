@@ -20,8 +20,12 @@
 			}
 
 			img {
+				width: 229px;
+				height: 57px;
+
 				@include mobile {
 					height: 31px;
+					width: 124.55px;
 				}
 			}
 

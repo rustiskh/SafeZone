@@ -1725,9 +1725,14 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
     margin-right: 0;
   }
 }
+.header-main__logo img {
+  width: 229px;
+  height: 57px;
+}
 @media (max-width: 768px) {
   .header-main__logo img {
     height: 31px;
+    width: 124.55px;
   }
 }
 .header-main__logo_black {
@@ -2288,6 +2293,10 @@ body.light .header__nav-social-title {
 .footer__bank-link:last-child {
   margin-right: 0;
 }
+.footer__bank-img {
+  height: 30px;
+  width: auto;
+}
 @media (max-width: 768px) {
   .footer__main-wrapper {
     -ms-flex-wrap: wrap;
@@ -2310,6 +2319,7 @@ body.light .header__nav-social-title {
   }
   .footer__bank-img {
     height: 22px;
+    width: auto;
   }
 }
 
