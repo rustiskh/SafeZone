@@ -5,11 +5,11 @@
 		height: 618px;
 		position: relative;
 		z-index: 999;
-		background-position: center;
+		background-position: right;
 		background-size: cover;
 
 		@include mobile {
-			background-position: right;
+			background-position: center;
 		}
 
 		&::after {
@@ -83,18 +83,32 @@
 			font-size: 16px;
 			line-height: 20px;
 			max-width: 356px;
+
+			@include mobile {
+				max-width: 100%;
+			}
 		}
 
 		&[data-slide-number="1"] {
-			background-image: url("../img/pages/landing-page/main-slider/main-slider-img_1.webp");
+			background-image: url("../img/pages/landing-page/main-slider/img_1.webp");
+			@include mobile {
+				background-image: url("../img/pages/landing-page/main-slider/img_1_mob.webp");
+			}
 		}
 
 		&[data-slide-number="2"] {
-			background-image: url("../img/pages/landing-page/main-slider/main-slider-img_2.webp");
+			background-image: url("../img/pages/landing-page/main-slider/img_2.webp");
+			@include mobile {
+				background-image: url("../img/pages/landing-page/main-slider/img_2_mob.webp");
+			}
 		}
 
 		&[data-slide-number="3"] {
-			background-image: url("../img/pages/landing-page/main-slider/main-slider-img_3.webp");
+			background-image: url("../img/pages/landing-page/main-slider/img_3.webp");
+			@include mobile {
+				background-image: url("../img/pages/landing-page/main-slider/img_3_mob.webp");
+				background-position-x: right;
+			}
 		}
 	}
 }
