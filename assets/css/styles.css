@@ -5239,6 +5239,9 @@ body.light .promo__descr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 @media (max-width: 1290px) {
   .hero-game__img {

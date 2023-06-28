@@ -145,6 +145,7 @@
 
 	&__img {
 		display: flex;
+		height: fit-content;
 
 		@include laptop {
 			margin-bottom: 40px;
