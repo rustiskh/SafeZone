@@ -27,6 +27,69 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 20px;
+
+		@include mobile {
+			display: grid;
+			grid-gap: 11px;
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+
+			.product-card {
+				// Отделяем карточку множественного заказа от остальных без доп. классов
+				// Если карточка множественного заказа первая, то тут и ниже - используем first-child, если последняя - :last-child
+				&:first-child {
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+
+				&:not(:first-child) {
+					max-width: 271px;
+					width: 100%;
+
+					.product-card {
+						&__img {
+							width: auto;
+							height: 120px;
+
+							img {
+								position: static;
+								transform: none;
+								width: auto;
+							}
+						}
+
+						&__main-wrapper {
+							align-items: center;
+						}
+
+						&__content-wrapper {
+							width: 100%;
+							align-items: center;
+						}
+
+						&__description,
+						&__list {
+							display: none;
+						}
+
+						&__title {
+							text-align: center;
+							font-size: 20px;
+						}
+
+						&__price {
+							text-align: center;
+							font-size: 16px;
+						}
+
+						&__btn {
+							font-size: 14px;
+							padding-top: 14px;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.select {
