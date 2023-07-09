@@ -343,24 +343,49 @@
 		<section class="cabinet-balance container padding-side">
 			<h3 class="title title_h2 title_h2-small cabinet-balance__subtitle">Баланс: 1000 р.</h3>
 
+			<!-- change old start - новая обертка платежек -->
 			<div class="hor-unscroll-menu cabinet-balance__list">
 				<div class="hor-unscroll-menu__wrapper">
 					<div class="hor-unscroll-menu__item">
-						<p class="hor-unscroll-menu__title">Платежка-1</p>
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/lava-logo.svg" alt="Lava" />
 					</div>
 					<div class="hor-unscroll-menu__item">
-						<p class="hor-unscroll-menu__title">Платежка-2</p>
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/qiwi-logo.svg" alt="QIWI" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/yookassa-logo.svg" alt="YooMoney" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/cards-rf-logo.svg" alt="Карта РФ" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/cards-sng-logo.svg" alt="Карта СНГ" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="" alt="Оплата криптовалютой" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="/assets/img/pages/cabinet/payment-systems/freekassа-logo.svg" alt="FreeKassa" />
+					</div>
+					<div class="hor-unscroll-menu__item">
+						<img class="hor-unscroll-menu__title" src="" alt="ALT-name" />
 					</div>
 				</div>
 			</div>
+			<!-- Здесь описание выбранной плтежки (удалить коммент перед релизом) -->
+			<div class="cabinet-balance__payment-info">
+				<div class="cabinet-balance__payment-info-title">Заголовок описания платежки</div>
+				<div class="cabinet-balance__payment-info-description">Текст-описание выбранной платежки. Условия. Лимиты. Проценты и комиссии и все остальное.</div>
+			</div>
+			<!-- change old end -->
 
 			<div class="cabinet-balance__form">
 				<input class="general-input cabinet-balance__form-input" type="text" id="sum" name="balance-sum" placeholder="Введите сумму в рублях" />
 				<select class="general-input general-input_select cabinet-balance__form-input" id="select-type-charge" name="charge">
 					<option value="0">Выберите тип оплаты</option>
-					<option value="1">Карта</option>
-					<option value="2">QIWI</option>
-					<option value="2">Crypto</option>
+					<option value="1">Способ 1</option>
+					<option value="2">Способ 2</option>
+					<option value="2">Способ 3</option>
 				</select>
 				<button class="button cabinet-balance__form-btn" type="submit">Пополнить счёт</button>
 				<p class="cabinet-balance__form-error-text">Текст ошибки выводим здесь</p>
