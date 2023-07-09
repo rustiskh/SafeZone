@@ -7490,10 +7490,92 @@ body.light .review .review__form-text {
 .cabinet-balance__list {
   margin-top: 80px;
 }
+.cabinet-balance__list .hor-unscroll-menu__wrapper {
+  gap: 18px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.cabinet-balance__list .hor-unscroll-menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-top: 26px;
+  padding: 26px 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 0;
+  background-color: var(--color-background-light);
+}
+.cabinet-balance__list .hor-unscroll-menu__item::before {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  border-color: var(--color-accent-dark);
+}
+.cabinet-balance__list .hor-unscroll-menu__item_active::before {
+  background: var(--color-accent-dark);
+}
+.cabinet-balance__list .hor-unscroll-menu__item img {
+  height: 60px;
+  width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--color-gray);
+  white-space: break-spaces;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 20px;
+}
 @media (max-width: 768px) {
   .cabinet-balance__list {
     margin-top: 40px;
     margin-bottom: 20px;
+  }
+}
+.cabinet-balance__payment-info {
+  margin-top: 50px;
+}
+@media (max-width: 768px) {
+  .cabinet-balance__payment-info {
+    margin-top: 20px;
+  }
+}
+.cabinet-balance__payment-info-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 44px;
+  color: var(--color-white);
+}
+@media (max-width: 768px) {
+  .cabinet-balance__payment-info-title {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+.cabinet-balance__payment-info-description {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  margin-top: 20px;
+  color: var(--color-white);
+}
+@media (max-width: 768px) {
+  .cabinet-balance__payment-info-description {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 12px;
   }
 }
 .cabinet-balance__form {
@@ -7586,6 +7668,12 @@ body.light .review .review__form-text {
 }
 
 body.light .cabinet-balance__subtitle {
+  color: var(--color-gray);
+}
+body.light .cabinet-balance__payment-info-title {
+  color: var(--color-gray);
+}
+body.light .cabinet-balance__payment-info-description {
   color: var(--color-gray);
 }
 

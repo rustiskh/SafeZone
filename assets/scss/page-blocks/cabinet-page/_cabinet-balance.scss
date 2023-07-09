@@ -24,9 +24,87 @@
 	&__list {
 		margin-top: 80px;
 
+		.hor-unscroll-menu__wrapper {
+			gap: 18px;
+			flex-direction: row;
+		}
+
+		.hor-unscroll-menu__item {
+			display: flex;
+			position: relative;
+			padding-top: 26px;
+			padding: 26px 12px;
+			border: 1px solid;
+			border-radius: 4px;
+			margin: 0;
+			background-color: color(background-light);
+
+			&::before {
+				position: absolute;
+				top: 12px;
+				left: 8px;
+				border-color: color(accent-dark);
+			}
+
+			&_active {
+				&::before {
+					background: color(accent-dark);
+				}
+			}
+
+			img {
+				height: 60px;
+				width: 120px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: color(gray);
+				white-space: break-spaces;
+				text-align: center;
+				font-size: 1rem;
+				line-height: 20px;
+			}
+		}
+
 		@include mobile {
 			margin-top: 40px;
 			margin-bottom: 20px;
+		}
+	}
+
+	&__payment-info {
+		margin-top: 50px;
+
+		@include mobile {
+			margin-top: 20px;
+		}
+
+		&-title {
+			text-align: center;
+			font-weight: 700;
+			font-size: 26px;
+			line-height: 44px;
+			color: color(white);
+
+			@include mobile {
+				font-size: 20px;
+				line-height: 25px;
+			}
+		}
+
+		&-description {
+			text-align: center;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 23px;
+			margin-top: 20px;
+			color: color(white);
+
+			@include mobile {
+				font-size: 14px;
+				line-height: 18px;
+				margin-top: 12px;
+			}
 		}
 	}
 
@@ -99,6 +177,16 @@ body.light {
 	.cabinet-balance {
 		&__subtitle {
 			color: color(gray);
+		}
+
+		&__payment-info {
+			&-title {
+				color: color(gray);
+			}
+
+			&-description {
+				color: color(gray);
+			}
 		}
 	}
 }
