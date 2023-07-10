@@ -7518,7 +7518,8 @@ body.light .review .review__form-text {
 .cabinet-balance__list .hor-unscroll-menu__item_active::before {
   background: var(--color-accent-dark);
 }
-.cabinet-balance__list .hor-unscroll-menu__item img {
+.cabinet-balance__list .hor-unscroll-menu__item img,
+.cabinet-balance__list .hor-unscroll-menu__item .hor-unscroll-menu__title {
   height: 60px;
   width: 120px;
   display: -webkit-box;
