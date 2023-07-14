@@ -5345,10 +5345,12 @@ body.light .promo__descr {
 }
 .hero-game__img img {
   max-width: 656px;
+  border-radius: 16px;
 }
 @media (max-width: 998px) {
   .hero-game__img img {
     width: 100%;
+    border-radius: 8px;
   }
 }
 .hero-game__buttons {

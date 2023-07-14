@@ -157,9 +157,11 @@
 
 		img {
 			max-width: 656px;
+			border-radius: 16px;
 
 			@include tablet {
 				width: 100%;
+				border-radius: 8px;
 			}
 		}
 	}
