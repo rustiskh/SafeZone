@@ -93,12 +93,8 @@
 	}
 
 	.select {
-		display: none;
+		display: flex;
 		margin-bottom: 40px;
 		margin-top: 40px;
-
-		@include mobile {
-			display: flex;
-		}
 	}
 }

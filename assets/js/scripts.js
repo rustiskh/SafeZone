@@ -175,23 +175,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Кастомные селекты секций (Игры, Каталог)
     const selects = document.querySelectorAll('.select');
-    // Change_old start 05.03 - скрипт изменен таким образом, чтобы список закрывался при клике вне селектора и после выбора категории
+    // Change_old start 15.07 - скрипт доработан для улучшения UX (закрытие при повторном клике)
     selects.forEach((select) => {
         const categoriesSelected = select.querySelector('.selected');
         const categoriesItems = select.querySelectorAll('.item');
 
-
         select.addEventListener('click', () => {
-            select.classList.add('open');
+            select.classList.toggle('open');
         });
 
         categoriesItems.forEach((item) => {
             item.addEventListener('click', (event) => {
                 event.stopPropagation();
                 const value = item.dataset.value;
-                // Change_old start - item.innerHTML изменен на item.firstElementChild.innerHTML чтобы выбранный элемент выводился без item__descriptions
                 categoriesSelected.innerHTML = item.firstElementChild.innerHTML;
-                // Change_old end
                 categoriesSelected.dataset.value = value;
                 select.classList.remove('open');
             });
@@ -203,7 +200,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    // Change_old end 05.03
+    // Change_old end 15.07
 
     // Скрипт блока faq
     const faqItems = document.querySelectorAll(".faq__item");
