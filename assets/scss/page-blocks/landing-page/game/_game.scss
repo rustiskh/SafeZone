@@ -118,6 +118,7 @@
 		top: 45%;
 		transform: translateY(-45%);
 		cursor: pointer;
+		z-index: 1000;
 
 		&.slick-next {
 			right: -42px;
@@ -125,6 +126,35 @@
 
 		&.slick-prev {
 			left: -42px;
+		}
+
+		@media (max-width: 1600px) {
+			// width: 100px;
+			// background-color: color(gray);
+			padding: 16px 24px;
+			backdrop-filter: blur(100px);
+			// filter: opacity(25%);
+			transition: all ease-in-out 0.3s;
+
+			&:hover {
+				background-color: color(gray);
+			}
+
+			&.slick-next {
+				right: 0px;
+			}
+
+			&.slick-prev {
+				left: 0px;
+			}
+		}
+
+		@include laptop {
+			padding: 12px 18px;
+
+			svg {
+				height: 30px;
+			}
 		}
 	}
 
@@ -242,6 +272,31 @@ body.light {
 			li.slick-active {
 				button {
 					background: color(accent-dark);
+				}
+			}
+		}
+
+		.slick-arrow {
+			svg {
+				path {
+					fill: color(accent-dark);
+				}
+			}
+
+			&.slick-next {
+			}
+
+			&.slick-prev {
+			}
+
+			@media (max-width: 1600px) {
+				&:hover {
+				}
+
+				&.slick-next {
+				}
+
+				&.slick-prev {
 				}
 			}
 		}
