@@ -9,6 +9,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.querySelector('.search-input');
     const searchButton = document.querySelector('.search-button');
     const searchCategoriesSelect = document.querySelector('.search-categories-select');
+    // Change old start 14.07 - открытие списка вариантов при вводе символов в строку поиска
+    const searchVariants = document.querySelector('.search-variants');
+
+    searchInput.addEventListener('input', () => {
+        searchVariants.classList.add('open');
+
+        if (searchInput.value === '') {
+            searchVariants.classList.remove('open');
+        }
+    })
 
     function sendSearchRequest() {
         const searchTerm = searchInput.value;

@@ -295,6 +295,92 @@ body.light .general-input_select option:checked {
 .search-button:hover line {
   stroke: var(--color-white);
 }
+.search-variants {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 12px);
+  z-index: 10000;
+  border-radius: 6px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 0px 27px var(--color-button-shadow-small);
+          box-shadow: 0px 0px 27px var(--color-button-shadow-small);
+  background-color: var(--color-black);
+}
+.search-variants.open {
+  display: block;
+}
+@media (max-width: 1290px) {
+  .search-variants {
+    top: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .search-variants {
+    padding: 10px 14px;
+  }
+}
+.search-variants__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .search-variants__item {
+    padding: 10px 14px;
+  }
+}
+.search-variants__item:not(:last-child) {
+  margin-bottom: 12px;
+}
+@media (max-width: 768px) {
+  .search-variants__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+.search-variants__item:hover {
+  background-color: var(--color-gray-dark);
+}
+.search-variants__item-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+@media (max-width: 768px) {
+  .search-variants__item-img {
+    margin-right: 8px;
+  }
+}
+.search-variants__item-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: var(--color-white);
+}
+@media (max-width: 768px) {
+  .search-variants__item-title {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+.search-variants__item_empty {
+  cursor: default;
+  margin-bottom: 0;
+}
+.search-variants__item_empty .search-variants__item-title {
+  font-style: italic;
+  color: var(--color-gray-light);
+}
+.search-variants__item_empty:hover {
+  background-color: initial;
+}
 
 body.light .search-input {
   color: var(--color-accent-dark);
@@ -320,6 +406,23 @@ body.light .search-button line {
 body.light .search-button:hover circle,
 body.light .search-button:hover line {
   stroke: var(--color-black);
+}
+body.light .search-variants {
+  -webkit-box-shadow: 0px 0px 27px var(--color-button-shadow-small);
+          box-shadow: 0px 0px 27px var(--color-button-shadow-small);
+  background-color: var(--color-beige-light);
+}
+body.light .search-variants__item:hover {
+  background-color: var(--color-mint);
+}
+body.light .search-variants__item-title {
+  color: var(--color-accent-dark);
+}
+body.light .search-variants__item_empty:hover {
+  background-color: initial;
+}
+body.light .search-variants__item_empty .search-variants__item-title {
+  color: var(--color-gray-light);
 }
 
 .select {
