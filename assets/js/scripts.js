@@ -235,15 +235,65 @@ window.addEventListener("DOMContentLoaded", () => {
 
     lightSwitch.forEach((item) => {
         item.addEventListener('click', () => {
-            setTheme('light')
+            setTheme('light');
         })
     });
 
     darkSwitch.forEach((item) => {
         item.addEventListener('click', () => {
-            setTheme('dark')
+            setTheme('dark');
         })
     });
+
+    // Change_old start 20.07 - скрипт смены заглушки (blank-image) при смене цветовой темы
+
+    // Пути необходимо переуказать в зависимости от используемых в проекте
+    const emptyImg = document.querySelectorAll("[src = 'assets/img/blank-image.svg']");
+
+    function setDarkBlankImg() {
+        emptyImg.forEach(element => {
+            element.setAttribute('src', 'assets/img/blank-image.svg')
+        })
+    }
+
+    function setLightBlankImg() {
+        emptyImg.forEach(element => {
+            element.setAttribute('src', 'assets/img/blank-image-light.svg')
+        })
+    }
+
+    // Устанавливаем соответствующее изображение, в зависимости от темы при первой загрузке страницы
+    if (savedTheme === 'dark') {
+        setDarkBlankImg();
+    } else {
+        setLightBlankImg();
+    }
+
+    // Изменяем изображение без перезагрузки страницы, если пользователь в процессе меняет тему
+    function handleBodyClassChange(mutationsList, observer) {
+        mutationsList.forEach(mutation => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const body = document.querySelector('body');
+                const newClass = body.className;
+
+                // Проверяем, был ли изменен класс с 'dark' на 'light' или наоборот
+                if (newClass.includes('dark')) {
+                    setDarkBlankImg();
+                } else if (newClass.includes('light')) {
+                    setLightBlankImg();
+                }
+            }
+        });
+    }
+
+    // Создаем MutationObserver для отслеживания изменений класса body
+    const bodyObserver = new MutationObserver(handleBodyClassChange);
+
+    // Настройка MutationObserver для отслеживания изменений атрибутов body
+    bodyObserver.observe(document.querySelector('body'), { attributes: true });
+
+    // Change_old end 20.07
+
 
     // Страница Игры - 05.03 Меню элементов без горизонтальной прокрутки и селекта на мобильной версии (по дизайну) 
 
