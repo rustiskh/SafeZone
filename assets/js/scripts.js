@@ -356,12 +356,31 @@ window.addEventListener("DOMContentLoaded", () => {
     // Скрипт переполнения карточки отзывов review-card
     const reviewCard = document.querySelectorAll('.review-card');
 
-    function openReviewCard(btn) {
+    function openReviewCard(btn, textBlock) {
         btn.addEventListener('click', () => {
-            btn.parentElement.classList.add('open');
+            const targetHeight = textBlock.scrollHeight; // Высота, которую нужно достичь (полная высота текста)
+
+            textBlock.style.transition = 'none'; // Отключаем стандартную анимацию
+            textBlock.style.height = '46px'; // Начальная высота, например, 46px
+
+            // Запускаем анимацию изменения высоты
+            function animateHeight(currentHeight, targetHeight) {
+                const increment = 10; // Шаг увеличения высоты
+                if (currentHeight < targetHeight) {
+                    textBlock.style.height = `${currentHeight + increment}px`;
+                    requestAnimationFrame(() => animateHeight(currentHeight + increment, targetHeight));
+                } else {
+                    textBlock.style.height = '100%'; // Устанавливаем высоту на 100%, чтобы избежать погрешности
+                    textBlock.style.transition = 'all 2s ease-in-out'; // Включаем анимацию для будущих изменений высоты
+                }
+            }
+
+            animateHeight(46, targetHeight); // Начинаем анимацию с текущей высоты (46px)
+            console.log(btn);
             btn.remove();
-        })
+        });
     }
+
 
     reviewCard.forEach(elem => {
         let reviewText = elem.querySelector('.review-card__text');
@@ -373,7 +392,7 @@ window.addEventListener("DOMContentLoaded", () => {
             showMoreBtn.remove();
         }
 
-        openReviewCard(showMoreBtn);
+        openReviewCard(showMoreBtn, reviewText);
     })
 
     // Открытие модальных окон
