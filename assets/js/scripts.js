@@ -360,7 +360,6 @@ window.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener('click', () => {
             const targetHeight = textBlock.scrollHeight; // Высота, которую нужно достичь (полная высота текста)
 
-            textBlock.style.transition = 'none'; // Отключаем стандартную анимацию
             textBlock.style.height = '46px'; // Начальная высота, например, 46px
 
             // Запускаем анимацию изменения высоты
@@ -371,7 +370,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     requestAnimationFrame(() => animateHeight(currentHeight + increment, targetHeight));
                 } else {
                     textBlock.style.height = '100%'; // Устанавливаем высоту на 100%, чтобы избежать погрешности
-                    textBlock.style.transition = 'all 2s ease-in-out'; // Включаем анимацию для будущих изменений высоты
                 }
             }
 
