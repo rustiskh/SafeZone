@@ -356,6 +356,16 @@ window.addEventListener("DOMContentLoaded", () => {
     // Скрипт переполнения карточки отзывов review-card
     const reviewCard = document.querySelectorAll('.review-card');
 
+    function unwrapSmoothly(currentHeight, targetHeight, wrapper) {
+        const increment = 10; // Шаг увеличения высоты
+        if (currentHeight < targetHeight) {
+            wrapper.style.height = `${currentHeight + increment}px`;
+            requestAnimationFrame(() => unwrapSmoothly(currentHeight + increment, targetHeight, wrapper));
+        } else {
+            wrapper.style.height = '100%'; // Устанавливаем высоту на 100%, чтобы избежать погрешности
+        }
+    }
+
     function openReviewCard(btn, textBlock) {
         btn.addEventListener('click', () => {
             const targetHeight = textBlock.scrollHeight; // Высота, которую нужно достичь (полная высота текста)
@@ -363,17 +373,7 @@ window.addEventListener("DOMContentLoaded", () => {
             textBlock.style.height = '46px'; // Начальная высота, например, 46px
 
             // Запускаем анимацию изменения высоты
-            function animateHeight(currentHeight, targetHeight) {
-                const increment = 10; // Шаг увеличения высоты
-                if (currentHeight < targetHeight) {
-                    textBlock.style.height = `${currentHeight + increment}px`;
-                    requestAnimationFrame(() => animateHeight(currentHeight + increment, targetHeight));
-                } else {
-                    textBlock.style.height = '100%'; // Устанавливаем высоту на 100%, чтобы избежать погрешности
-                }
-            }
-
-            animateHeight(46, targetHeight); // Начинаем анимацию с текущей высоты (46px)
+            unwrapSmoothly(46, targetHeight, textBlock); // Начинаем анимацию с текущей высоты (46px)
             console.log(btn);
             btn.remove();
         });
