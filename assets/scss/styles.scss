@@ -145,6 +145,16 @@ body {
 }
 
 .padding-side {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 40px;
+	padding-right: 40px;
+
+	@include tablet {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@include mobile {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
