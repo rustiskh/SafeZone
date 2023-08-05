@@ -9223,6 +9223,18 @@ body.light .header-main__color-theme-dark {
 }
 
 .padding-side {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+@media (max-width: 998px) {
+  .padding-side {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .padding-side {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }/*# sourceMappingURL=styles.css.map */
