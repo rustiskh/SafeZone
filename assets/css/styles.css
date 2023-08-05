@@ -466,6 +466,8 @@ body.light .search-variants__item_empty .search-variants__item-title {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 .select .selected {
   font-weight: 700;
@@ -487,7 +489,6 @@ body.light .search-variants__item_empty .search-variants__item-title {
   width: 100%;
 }
 .select .list {
-  display: none;
   position: absolute;
   z-index: 1;
   top: 100%;
@@ -503,6 +504,14 @@ body.light .search-variants__item_empty .search-variants__item-title {
   width: calc(100% - 48px);
   margin-left: 24px;
   margin-right: 24px;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 0.26s ease;
+  transition: -webkit-transform 0.26s ease;
+  transition: transform 0.26s ease;
+  transition: transform 0.26s ease, -webkit-transform 0.26s ease;
 }
 .select .list .item {
   margin-top: 20px;
