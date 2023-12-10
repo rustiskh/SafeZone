@@ -52,8 +52,9 @@ window.addEventListener("DOMContentLoaded", () => {
         autoplaySpeed: 10000,
         variableWidth: true,
         slidesToShow: 4,
+        // Вместо 7 можно указать любое значение
+        dots: $(".game-slide").length > 7 ? true : false,
         slidesToScroll: 4,
-        dots: true,
         infinite: false,
         prevArrow:
             '<button type="button" class="slick-prev"><svg width="30" height="55" viewBox="0 0 30 55" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 27.5121C0.00904655 28.1779 0.266644 28.8163 0.722221 29.3019L25.8429 54.4226C26.331 54.8232 26.9506 55.0279 27.5813 54.9969C28.212 54.966 28.8085 54.7015 29.255 54.255C29.7015 53.8086 29.966 53.212 29.9969 52.5813C30.0279 51.9506 29.8232 51.331 29.4226 50.8429L6.06037 27.5121L29.4226 4.18122C29.8232 3.69313 30.0279 3.0735 29.9969 2.44284C29.966 1.81218 29.7015 1.21558 29.255 0.7691C28.8085 0.32262 28.212 0.0581703 27.5813 0.027195C26.9506 -0.00377655 26.331 0.200939 25.8429 0.601521L0.722221 25.7222C0.266644 26.2079 0.00904655 26.8462 0 27.5121Z" fill="#3EDA2B"/></svg></button>',
@@ -74,6 +75,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
+                    centerMode: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                 },
             },
         ]

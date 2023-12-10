@@ -3649,7 +3649,7 @@ body.light .main-slider .slick-dots li.slick-active button {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: calc(100% - 20px);
   height: 1px;
   background: -webkit-gradient(linear, left top, right top, from(rgba(62, 218, 43, 0)), color-stop(51.04%, #3eda2b), to(rgba(62, 218, 43, 0)));
   background: linear-gradient(90deg, rgba(62, 218, 43, 0) 0%, #3eda2b 51.04%, rgba(62, 218, 43, 0) 100%);
