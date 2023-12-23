@@ -7041,6 +7041,93 @@ body.light .ya-map {
     text-align: left;
   }
 }
+.blog-article__slider {
+  margin-top: 24px;
+}
+.blog-article__slider-slide-img {
+  width: 100%;
+}
+.blog-article__slider .slick-slide {
+  max-width: 400px;
+  margin-right: 32px;
+}
+@media (max-width: 768px) {
+  .blog-article__slider .slick-slide {
+    margin-right: 12px;
+  }
+}
+.blog-article__slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  top: 0px;
+  list-style: none;
+  margin-top: 32px;
+  width: 100%;
+}
+.blog-article__slider .slick-dots li {
+  margin-bottom: 12px;
+  margin-right: 16px;
+}
+.blog-article__slider .slick-dots li:last-child {
+  margin-right: 0;
+}
+.blog-article__slider .slick-dots li button {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: none;
+  border: none;
+  font-size: 0px;
+  cursor: pointer;
+  background: rgba(62, 218, 43, 0.5);
+  opacity: 0.5;
+  border: 1px solid var(--color-accent);
+}
+.blog-article__slider .slick-dots li.slick-active button {
+  opacity: 1;
+  background: var(--color-accent);
+}
+.blog-article__slider .slick-prev,
+.blog-article__slider .slick-next {
+  width: 70px;
+  height: 70px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 216px;
+  cursor: pointer;
+  z-index: 50;
+}
+.blog-article__slider .slick-next {
+  right: -72px;
+}
+@media (max-width: 1290px) {
+  .blog-article__slider .slick-next {
+    right: -42px;
+  }
+}
+.blog-article__slider .slick-prev {
+  left: -71px;
+}
+@media (max-width: 1290px) {
+  .blog-article__slider .slick-prev {
+    left: -41px;
+  }
+}
+
 .blog-article__wrapper {
   margin-top: 60px;
 }
@@ -7138,6 +7225,14 @@ body.light .blog-article__info {
 }
 body.light .blog-article__views-icon path {
   fill: var(--color-accent-dark);
+}
+body.light .blog-article__slider .slick-dots li button {
+  background: rgba(62, 218, 43, 0.5);
+  opacity: 0.5;
+  border: 1px solid var(--color-accent-dark);
+}
+body.light .blog-article__slider .slick-dots li.slick-active button {
+  background: var(--color-accent-dark);
 }
 body.light .blog-article__media-content::before {
   background: var(--color-accent-dark);
