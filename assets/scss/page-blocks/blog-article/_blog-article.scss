@@ -56,6 +56,92 @@
 		&-text {
 		}
 	}
+
+	&__slider {
+		margin-top: 24px;
+
+		&-slide-img {
+			width: 100%;
+		}
+
+		.slick-slide {
+			max-width: 400px;
+			margin-right: 32px;
+	
+			@include mobile {
+				margin-right: 12px;
+			}
+		}
+	
+		.slick-dots {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			width: fit-content;
+			position: relative;
+			top: 0px;
+			list-style: none;
+			margin-top: 32px;
+			width: 100%;
+	
+			li {
+				margin-bottom: 12px;
+				margin-right: 16px;
+	
+				&:last-child {
+					margin-right: 0;
+				}
+	
+				button {
+					display: block;
+					width: 30px;
+					height: 3px;
+					background: none;
+					border: none;
+					font-size: 0px;
+					cursor: pointer;
+	
+					background: rgba(62, 218, 43, 0.5);
+					opacity: 0.5;
+					border: 1px solid color(accent);
+				}
+			}
+	
+			li.slick-active {
+				button {
+					opacity: 1;
+					background: color(accent);
+				}
+			}
+		}
+	
+		.slick-prev,
+		.slick-next {
+			width: 70px;
+			height: 70px;
+			background: none;
+			border: none;
+			position: absolute;
+			top: 216px;
+			cursor: pointer;
+			z-index: 50;
+		}
+	
+		.slick-next {
+			right: -72px;
+			@include laptop {
+				right: -42px;
+			}
+		}
+	
+		.slick-prev {
+			left: -71px;
+			@include laptop {
+				left: -41px;
+			}
+		}
+	}
 }
 
 // Основная текстовая обертка
@@ -154,6 +240,26 @@ body.light {
 			&-icon {
 				path {
 					fill: color(accent-dark);
+				}
+			}
+		}
+
+		&__slider {
+		
+			.slick-dots {
+		
+				li {
+					button {
+						background: rgba(62, 218, 43, 0.5);
+						opacity: 0.5;
+						border: 1px solid color(accent-dark);
+					}
+				}
+		
+				li.slick-active {
+					button {
+						background: color(accent-dark);
+					}
 				}
 			}
 		}

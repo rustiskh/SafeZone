@@ -155,7 +155,7 @@ window.addEventListener("DOMContentLoaded", () => {
         variableWidth: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         infinite: true,
         prevArrow: '<button type="button" class="slick-prev"><img src="assets/icons/pages/game/arrow-left.svg"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="assets/icons/pages/game/arrow-right.svg"></button>',
@@ -168,5 +168,34 @@ window.addEventListener("DOMContentLoaded", () => {
             },
         ]
     });
+
+    // Слайдер в тексте на странице Статья блога
+    $(".blog-article__slider").slick({
+        arrows: true,
+        centerMode: true,
+        variableWidth: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: true,
+        infinite: false,
+        prevArrow: '<button type="button" class="slick-prev"><img src="assets/icons/pages/game/arrow-left.svg"></button>',
+        nextArrow: '<button type="button" class="slick-next"><img src="assets/icons/pages/game/arrow-right.svg"></button>',
+        responsive: [
+            {
+                breakpoint: 1560,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ]
+    });
+
+    $('.blog-article__slider-slide a').magnificPopup({
+        type: 'image',
+        gallery:{
+          enabled:true,
+          tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+        }
+      });
 });
 
