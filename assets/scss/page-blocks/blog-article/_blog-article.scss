@@ -123,22 +123,31 @@
 			background: none;
 			border: none;
 			position: absolute;
-			top: 216px;
+			top: 50%;
+			transform: translateY(-50%);
 			cursor: pointer;
 			z-index: 50;
 		}
 	
 		.slick-next {
 			right: -72px;
-			@include laptop {
+			@include pc {
 				right: -42px;
+			}
+
+			@include tablet {
+				right: -20px;
 			}
 		}
 	
 		.slick-prev {
 			left: -71px;
-			@include laptop {
+			@include pc {
 				left: -41px;
+			}
+
+			@include tablet {
+				left: -20px;
 			}
 		}
 	}

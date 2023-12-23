@@ -7107,24 +7107,36 @@ body.light .ya-map {
   background: none;
   border: none;
   position: absolute;
-  top: 216px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   cursor: pointer;
   z-index: 50;
 }
 .blog-article__slider .slick-next {
   right: -72px;
 }
-@media (max-width: 1290px) {
+@media (max-width: 1560px) {
   .blog-article__slider .slick-next {
     right: -42px;
+  }
+}
+@media (max-width: 998px) {
+  .blog-article__slider .slick-next {
+    right: -20px;
   }
 }
 .blog-article__slider .slick-prev {
   left: -71px;
 }
-@media (max-width: 1290px) {
+@media (max-width: 1560px) {
   .blog-article__slider .slick-prev {
     left: -41px;
+  }
+}
+@media (max-width: 998px) {
+  .blog-article__slider .slick-prev {
+    left: -20px;
   }
 }
 
