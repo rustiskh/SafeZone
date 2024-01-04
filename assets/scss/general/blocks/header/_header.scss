@@ -10,6 +10,7 @@
 		@include mobile {
 			flex-direction: column;
 			padding-top: 5px;
+			min-height: 110px;
 		}
 
 		&__logo {
@@ -24,8 +25,8 @@
 				height: 57px;
 
 				@include mobile {
-					height: 31px;
-					width: 124.55px;
+					width: 145px;
+					height: auto;
 				}
 			}
 
@@ -91,6 +92,26 @@
 			@include mobile {
 				width: 320px;
 				margin-top: 10px;
+			}
+
+			&#mob-header-btn {
+				display: none;
+				margin-top: 0;
+				max-width: 120px;
+				padding-left: 0;
+				padding-right: 0;
+
+				@include mobile {
+					display: block;
+				}
+			}
+
+			&#pc-header-btn {
+				display: block;
+
+				@include mobile {
+					display: none;
+				}
 			}
 		}
 
@@ -166,12 +187,15 @@
 	}
 
 	@include mobile {
+
 		&-mob-opener {
+			display: none;
 			margin-left: 42px;
 		}
 
 		.search-wrapper {
-			bottom: -47%;
+			display: flex;
+			bottom: 10px;
 		}
 
 		.search-categories-select {
@@ -219,6 +243,7 @@
 
 	@include mobile {
 		font-size: 0;
+		margin-left: 0;
 	}
 
 	&-burger {

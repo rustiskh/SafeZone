@@ -2028,6 +2028,7 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
         -ms-flex-direction: column;
             flex-direction: column;
     padding-top: 5px;
+    min-height: 110px;
   }
 }
 .header-main__logo {
@@ -2044,8 +2045,8 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 }
 @media (max-width: 768px) {
   .header-main__logo img {
-    height: 31px;
-    width: 124.55px;
+    width: 145px;
+    height: auto;
   }
 }
 .header-main__logo_black {
@@ -2109,6 +2110,26 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
   .header-main__auth-btn {
     width: 320px;
     margin-top: 10px;
+  }
+}
+.header-main__auth-btn#mob-header-btn {
+  display: none;
+  margin-top: 0;
+  max-width: 120px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 768px) {
+  .header-main__auth-btn#mob-header-btn {
+    display: block;
+  }
+}
+.header-main__auth-btn#pc-header-btn {
+  display: block;
+}
+@media (max-width: 768px) {
+  .header-main__auth-btn#pc-header-btn {
+    display: none;
   }
 }
 .header-main__telegram-btn {
@@ -2192,10 +2213,14 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 }
 @media (max-width: 768px) {
   .header-main__search-mob-opener {
+    display: none;
     margin-left: 42px;
   }
   .header-main__search .search-wrapper {
-    bottom: -47%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 10px;
   }
   .header-main__search .search-categories-select {
     font-size: 12px;
@@ -2241,6 +2266,7 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 @media (max-width: 768px) {
   .header-main__menu {
     font-size: 0;
+    margin-left: 0;
   }
 }
 .header-main__menu-burger {
