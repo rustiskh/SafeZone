@@ -5418,6 +5418,51 @@ body.light .promo__descr {
   color: var(--color-gray);
 }
 
+.hero-game_new .hero-game__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero-game_new .hero-game__img {
+  max-width: 688px;
+  margin-bottom: 0;
+}
+.hero-game_new .hero-game__img img {
+  max-width: 400px;
+}
+@media (max-width: 768px) {
+  .hero-game_new .hero-game__img img {
+    max-width: 200px;
+  }
+}
+.hero-game_new .hero-game__description-title {
+  margin-left: 12px;
+}
+.hero-game_new .services {
+  padding-top: 0px;
+}
+.hero-game_new .services__list {
+  margin: 20px auto 16px auto;
+}
+.hero-game_new .services__content {
+  display: grid;
+  grid-gap: 11px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .hero-game_new .services__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .hero-game__title {
   text-align: center;
   margin-top: 33px;
