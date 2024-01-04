@@ -1410,6 +1410,118 @@ body.light .hor-unscroll-menu__item_active::before {
   }
 }
 
+.hor-product-card {
+  max-width: 485px;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  background-color: var(--color-gray-dark);
+  position: relative;
+  border-radius: 12px;
+}
+.hor-product-card__main-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.hor-product-card__img {
+  width: 205px;
+  margin-right: 16px;
+}
+.hor-product-card__content-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.hor-product-card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--color-white);
+  margin-bottom: 13px;
+}
+.hor-product-card__list {
+  margin-bottom: 13px;
+}
+.hor-product-card__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  margin-bottom: 13px;
+}
+.hor-product-card__list-item-icon {
+  margin-right: 5px;
+}
+.hor-product-card__description, .hor-product-card__list-item-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--color-white);
+}
+.hor-product-card__description {
+  margin-bottom: 13px;
+}
+.hor-product-card__price {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  color: var(--color-white);
+}
+.hor-product-card__btn {
+  margin-top: 20px;
+  padding: 6px 0 9px 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hor-product-card {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .hor-product-card__img {
+    width: 160px;
+  }
+  .hor-product-card__main-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    justify-content: start;
+  }
+}
+@media (max-width: 480px) {
+  .hor-product-card__main-wrapper {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    align-items: start;
+  }
+  .hor-product-card__img {
+    width: 80px;
+  }
+  .hor-product-card__content-wrapper {
+    max-width: auto;
+  }
+}
+
 body.light .product-card {
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
@@ -1466,6 +1578,17 @@ body.light .mini-product-card__description {
   margin-bottom: 13px;
 }
 body.light .mini-product-card__price {
+  color: var(--color-gray);
+}
+body.light .hor-product-card {
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-beige-light);
+}
+body.light .hor-product-card__title {
+  color: var(--color-gray);
+}
+body.light .hor-product-card__price {
   color: var(--color-gray);
 }
 
@@ -1905,6 +2028,7 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
         -ms-flex-direction: column;
             flex-direction: column;
     padding-top: 5px;
+    min-height: 110px;
   }
 }
 .header-main__logo {
@@ -1921,8 +2045,8 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 }
 @media (max-width: 768px) {
   .header-main__logo img {
-    height: 31px;
-    width: 124.55px;
+    width: 145px;
+    height: auto;
   }
 }
 .header-main__logo_black {
@@ -1986,6 +2110,26 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
   .header-main__auth-btn {
     width: 320px;
     margin-top: 10px;
+  }
+}
+.header-main__auth-btn#mob-header-btn {
+  display: none;
+  margin-top: 0;
+  max-width: 120px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 768px) {
+  .header-main__auth-btn#mob-header-btn {
+    display: block;
+  }
+}
+.header-main__auth-btn#pc-header-btn {
+  display: block;
+}
+@media (max-width: 768px) {
+  .header-main__auth-btn#pc-header-btn {
+    display: none;
   }
 }
 .header-main__telegram-btn {
@@ -2069,10 +2213,14 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 }
 @media (max-width: 768px) {
   .header-main__search-mob-opener {
+    display: none;
     margin-left: 42px;
   }
   .header-main__search .search-wrapper {
-    bottom: -47%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 10px;
   }
   .header-main__search .search-categories-select {
     font-size: 12px;
@@ -2118,6 +2266,7 @@ body.light .modal-buy .modal__body .multiselect .ss-main {
 @media (max-width: 768px) {
   .header-main__menu {
     font-size: 0;
+    margin-left: 0;
   }
 }
 .header-main__menu-burger {
@@ -5269,6 +5418,51 @@ body.light .promo__descr {
   color: var(--color-gray);
 }
 
+.hero-game_new .hero-game__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero-game_new .hero-game__img {
+  max-width: 688px;
+  margin-bottom: 0;
+}
+.hero-game_new .hero-game__img img {
+  max-width: 400px;
+}
+@media (max-width: 768px) {
+  .hero-game_new .hero-game__img img {
+    max-width: 200px;
+  }
+}
+.hero-game_new .hero-game__description-title {
+  margin-left: 12px;
+}
+.hero-game_new .services {
+  padding-top: 0px;
+}
+.hero-game_new .services__list {
+  margin: 20px auto 16px auto;
+}
+.hero-game_new .services__content {
+  display: grid;
+  grid-gap: 11px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .hero-game_new .services__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .hero-game__title {
   text-align: center;
   margin-top: 33px;
