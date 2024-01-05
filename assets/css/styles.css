@@ -3630,6 +3630,34 @@ body.light .review-card__show-btn {
     background-image: url("../img/pages/landing-page/main-slider/img_1_mob.webp");
   }
 }
+@media (max-width: 1290px) {
+  .main-slider__slide[data-slide-number="1"] .main-slider__slide-text-wrapper {
+    position: relative;
+  }
+}
+@media (max-width: 1290px) and (max-width: 768px) {
+  .main-slider__slide[data-slide-number="1"] .main-slider__slide-text-wrapper {
+    top: 50%;
+  }
+}
+@media (max-width: 1290px) {
+  .main-slider__slide[data-slide-number="1"] .main-slider__slide-text-wrapper::after {
+    content: "";
+    width: 130%;
+    height: 200%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0.85;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    background: var(--color-background-dark);
+    border-radius: 100px;
+  }
+}
 .main-slider__slide[data-slide-number="2"] {
   background-image: url("../img/pages/landing-page/main-slider/img_4.webp");
 }
