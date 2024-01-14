@@ -1,0 +1,66 @@
+.toast {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+
+    width: 290px;
+    padding: 12px 16px 12px 16px;
+
+    box-shadow: 0px 0px 27px 0px rgba(22, 199, 83, 0.84);
+    border-radius: 4px;
+    border: 1px solid;
+    border-color: color(accent);
+    border-left-width: 10px; 
+
+    background-color: color(background-dark);
+    z-index: 10001;
+
+    @include mobile {
+        width: 240px;
+    }
+
+    &__message {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        color: color(white);
+        text-decoration: none;
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+body.light {
+    .toast {
+        border-color: color(accent-dark);
+        background-color: color(beige-light);
+
+        &__message {
+            color: color(gray);
+        }
+
+        &__close {
+            svg {
+                path {
+                    fill: color(accent-dark);
+                }
+            }
+        }
+    }
+	
+}
