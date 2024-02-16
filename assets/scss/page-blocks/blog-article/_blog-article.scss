@@ -52,9 +52,6 @@
 			margin-bottom: 20px;
 			text-align: left;
 		}
-
-		&-text {
-		}
 	}
 
 	&__slider {
@@ -67,12 +64,12 @@
 		.slick-slide {
 			max-width: 400px;
 			margin-right: 32px;
-	
+
 			@include mobile {
 				margin-right: 12px;
 			}
 		}
-	
+
 		.slick-dots {
 			display: flex;
 			flex-wrap: wrap;
@@ -84,15 +81,15 @@
 			list-style: none;
 			margin-top: 32px;
 			width: 100%;
-	
+
 			li {
 				margin-bottom: 12px;
 				margin-right: 16px;
-	
+
 				&:last-child {
 					margin-right: 0;
 				}
-	
+
 				button {
 					display: block;
 					width: 30px;
@@ -101,13 +98,13 @@
 					border: none;
 					font-size: 0px;
 					cursor: pointer;
-	
+
 					background: rgba(62, 218, 43, 0.5);
 					opacity: 0.5;
 					border: 1px solid color(accent);
 				}
 			}
-	
+
 			li.slick-active {
 				button {
 					opacity: 1;
@@ -115,7 +112,7 @@
 				}
 			}
 		}
-	
+
 		.slick-prev,
 		.slick-next {
 			width: 70px;
@@ -128,7 +125,7 @@
 			cursor: pointer;
 			z-index: 50;
 		}
-	
+
 		.slick-next {
 			right: -72px;
 			@include pc {
@@ -139,7 +136,7 @@
 				right: -20px;
 			}
 		}
-	
+
 		.slick-prev {
 			left: -71px;
 			@include pc {
@@ -178,9 +175,6 @@
 				}
 			}
 		}
-	}
-
-	&__text-wrapper {
 	}
 
 	&__subtitle {
@@ -254,9 +248,7 @@ body.light {
 		}
 
 		&__slider {
-		
 			.slick-dots {
-		
 				li {
 					button {
 						background: rgba(62, 218, 43, 0.5);
@@ -264,7 +256,7 @@ body.light {
 						border: 1px solid color(accent-dark);
 					}
 				}
-		
+
 				li.slick-active {
 					button {
 						background: color(accent-dark);

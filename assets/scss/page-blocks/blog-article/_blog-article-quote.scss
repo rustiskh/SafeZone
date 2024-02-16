@@ -1,0 +1,26 @@
+.blog-article-quote {
+	margin: 12px 0 12px 0;
+	padding: 16px 16px 16px 32px;
+	background-color: color(gray);
+
+	border-radius: 4px;
+	border: 0px solid;
+	border-color: color(accent);
+	border-left-width: 5px;
+
+	@include mobile {
+		padding: 8px 8px 8px 16px;
+		border-left-width: 2px;
+	}
+
+	span {
+		font-weight: 600;
+	}
+}
+
+body.light {
+	.blog-article-quote {
+		background-color: color(mint);
+		border-color: color(accent-dark);
+	}
+}
