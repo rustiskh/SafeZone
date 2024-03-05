@@ -1,0 +1,35 @@
+.img-position {
+	&--contain {
+		&_top {
+			object-fit: contain;
+			object-position: top;
+		}
+
+		&_center {
+			object-fit: contain;
+			object-position: center;
+		}
+
+		&_bot {
+			object-fit: contain;
+			object-position: bottom;
+		}
+	}
+
+	&--cover {
+		&_left {
+			object-fit: cover;
+			object-position: left;
+		}
+
+		&_center {
+			object-fit: cover;
+			object-position: center;
+		}
+
+		&_right {
+			object-fit: cover;
+			object-position: right;
+		}
+	}
+}
