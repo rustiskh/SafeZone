@@ -10,6 +10,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/slick.css" />
 		<link rel="stylesheet" href="assets/css/styles.min.css" />
+		<!-- Календарь -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+		<!-- Таблица -->
+		<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" />
 	</head>
 	<body class="dark">
 		<header class="header">
@@ -340,6 +344,44 @@
 
 		<!-- change old start - новая форма пополнения 05.04.23 -->
 		<h1 class="title title_h2 cabinet-balance__title">Личный кабинет</h1>
+
+		<div class="group">
+			<input type="text" id="calendar-1" />
+			<span class="bar"></span>
+			<label class="input-label">Выбор даты для таблицы</label>
+		</div>
+
+		<div class="table">
+			<table id="dataTable">
+				<thead>
+					<tr>
+						<th>Дата создания</th>
+						<th>Имя</th>
+						<th>Реф ссылка</th>
+						<th>Реф id</th>
+						<th>Клики</th>
+						<th>Рефералы</th>
+						<th>Оплат</th>
+						<th>Сумма оплат</th>
+						<!-- Добавьте другие заголовки столбцов здесь -->
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Добавьте другие строки с данными здесь -->
+				</tbody>
+			</table>
+		</div>
+
+		<div class="group">
+			<input type="text" id="calendar-chart" />
+			<span class="bar"></span>
+			<label class="input-label">Выбор даты для графика</label>
+		</div>
+
+		<div class="chart-container" style="width: 100%; height: 400px">
+			<canvas id="myChart"></canvas>
+		</div>
+
 		<section class="cabinet-balance container padding-side">
 			<h3 class="title title_h2 title_h2-small cabinet-balance__subtitle">Баланс: 1000 р.</h3>
 
@@ -765,8 +807,19 @@
 		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<script src="assets/js/slick.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> -->
+		<!-- Календарь -->
+		<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+		<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+		<!-- Таблица -->
+		<script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+		<!-- График -->
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 		<script src="assets/js/sliders-script.js"></script>
+
 		<script src="assets/js/scripts.js"></script>
+		<script src="assets/js/calendar-table-chart.js"></script>
 		<!-- <script src="assets/js/test.js"></script> -->
 	</body>
 </html>
