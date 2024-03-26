@@ -716,22 +716,6 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-    // dataSet1.addEventListener('click', (event) => {
-    //     toggleActiveClass(event);
-    //     handleDataSetClick('comission')(event);
-    // });
-    // dataSet2.addEventListener('click', (event) => {
-    //     toggleActiveClass(event);
-    //     handleDataSetClick('clicks')(event);
-    // });
-    // dataSet3.addEventListener('click', (event) => {
-    //     toggleActiveClass(event);
-    //     handleDataSetClick('referals')(event);
-    // });
-    // dataSet4.addEventListener('click', (event) => {
-    //     toggleActiveClass(event);
-    //     handleDataSetClick('transactions')(event);
-    // });
     dataSet1.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('comission')(event);
@@ -756,7 +740,6 @@ window.addEventListener("DOMContentLoaded", () => {
         myChart.data.labels = labels;
         myChart.data.datasets[0].data = data;
         myChart.update();
-        // return { labels, data };
     }
 
 
