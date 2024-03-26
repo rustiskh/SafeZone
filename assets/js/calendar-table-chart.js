@@ -487,6 +487,9 @@ window.addEventListener("DOMContentLoaded", () => {
             // Отрисовка графика при открытии блок по клику на Подробнее в таблице
             setDataset(detailedDatabase[link_id].dataComission)
             dataSet1.classList.add('active')
+            dataSet2.classList.remove('active');
+            dataSet3.classList.remove('active');
+            dataSet4.classList.remove('active');
         })
     }
 
@@ -713,6 +716,22 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    // dataSet1.addEventListener('click', (event) => {
+    //     toggleActiveClass(event);
+    //     handleDataSetClick('comission')(event);
+    // });
+    // dataSet2.addEventListener('click', (event) => {
+    //     toggleActiveClass(event);
+    //     handleDataSetClick('clicks')(event);
+    // });
+    // dataSet3.addEventListener('click', (event) => {
+    //     toggleActiveClass(event);
+    //     handleDataSetClick('referals')(event);
+    // });
+    // dataSet4.addEventListener('click', (event) => {
+    //     toggleActiveClass(event);
+    //     handleDataSetClick('transactions')(event);
+    // });
     dataSet1.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('comission')(event);
@@ -751,17 +770,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
         onChange: function (selectedDates) {
             const currentId = dataSet1.getAttribute("data-current-link_id");
-            updateChartData(selectedDates, currentId)
+            const activeDataType = document.querySelector(".graph-tab.active").getAttribute("data-type");
+            updateChartData(selectedDates, currentId, activeDataType)
         },
         onReady: function (selectedDates) {
             const currentId = dataSet1.getAttribute("data-current-link_id");
-            updateChartData(selectedDates, currentId)
+            const activeDataType = document.querySelector(".graph-tab.active").getAttribute("data-type");
+            updateChartData(selectedDates, currentId, activeDataType)
         },
     });
 
     // Функция для обновления данных графика
 
-    function updateChartData(selectedDates, currentId) {
+    function updateChartData(selectedDates, currentId, dataType) {
         let startDate = "";
         let endDate = "";
 
@@ -774,20 +795,17 @@ window.addEventListener("DOMContentLoaded", () => {
             endDate = formatDate(selectedDates[0], dateFormat); // Используем одну и ту же дату для начала и конца диапазона
         }
 
-        // Фильтруем данные для каждого типа информации
-        const dataTypes = ['dataComission', 'dataClicks', 'dataReferals', 'dataTransactions'];
-
-        dataTypes.forEach(type => {
-            const filteredData = detailedDatabase[currentId][type].filter(data => {
-                const date = new Date(data.created_at);
-                const startDateObj = new Date(startDate);
-                const endDateObj = new Date(endDate);
-                return date >= startDateObj && date <= endDateObj;
-            });
-
-            myChart.data.labels = filteredData.map(data => data.created_at);
-            myChart.data.datasets[0].data = filteredData.map(data => parseInt(data.sum));
+        // myChart.update();
+        // Фильтруем данные для текущего типа информации
+        const filteredData = detailedDatabase[currentId][dataType].filter(data => {
+            const date = new Date(data.created_at);
+            const startDateObj = new Date(startDate);
+            const endDateObj = new Date(endDate);
+            return date >= startDateObj && date <= endDateObj;
         });
+
+        myChart.data.labels = filteredData.map(data => data.created_at);
+        myChart.data.datasets[0].data = filteredData.map(data => parseInt(data.sum));
 
         myChart.update();
     }
