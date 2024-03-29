@@ -562,50 +562,46 @@ window.addEventListener("DOMContentLoaded", () => {
         // Строка таблицы
         const row = document.createElement("tr");
 
-        // Содержимое ячейки
         for (const prop in data) {
-            const cell = document.createElement("td");
-            cell.textContent = data[prop];
+            // Создаем ячейки по условию, чтобы не выводить какой-то параметр
+            if (prop !== "ref_link_id") {
+                const cell = document.createElement("td");
+                cell.textContent = data[prop];
 
-            // Добавление ячейки с ссылкой классов для рендера кнопок редактирвоания и копирования. Навесил на 2 разных класса на всякий случай
-            if (prop === "ref_link") {
-                cell.classList.add("link")
-                const cellControllers = document.createElement('div');
-                cellControllers.classList.add("controllers", "edit", "copy", "detail");
+                // Логика для ячейки ref_link
+                if (prop === "ref_link") {
+                    cell.classList.add("link")
+                    const cellControllers = document.createElement('div');
+                    cellControllers.classList.add("controllers", "edit", "copy", "detail");
 
-                if (cellControllers.classList.contains("copy")) {
+                    // Логика для кнопки "Скопировать"
                     const copyBtn = document.createElement("button");
                     copyBtn.classList.add("copy-btn");
                     copyBtn.innerHTML = "Скопировать";
                     cellControllers.appendChild(copyBtn);
-                    // Помещено сюда на случай задержки при получении данных для построения таблицы
                     copyData(copyBtn);
-                }
 
-                if (cellControllers.classList.contains("edit")) {
+                    // Логика для кнопки "Редактировать"
                     const editBtn = document.createElement("button");
                     editBtn.classList.add("edit-btn");
                     editBtn.innerHTML = "Редактировать";
                     cellControllers.appendChild(editBtn);
-                    // Помещено сюда на случай задержки при получении данных для построения таблицы
                     showEditModal(editBtn);
-                }
 
-                if (cellControllers.classList.contains("detail")) {
+                    // Логика для кнопки "Подробнее"
                     const detailBtn = document.createElement("button");
                     detailBtn.classList.add("detail-btn");
-                    // Добавляем к каждой кнопке дата-атрибут для дальнейшего использования в запросах
                     detailBtn.setAttribute("data-link-id", data.ref_link_id)
                     detailBtn.setAttribute("data-link", data.ref_link)
                     detailBtn.innerHTML = "Подробнее";
                     cellControllers.appendChild(detailBtn);
                     showGraph(detailBtn, data.ref_link_id, data.ref_link);
+
+                    cell.appendChild(cellControllers);
                 }
 
-                cell.appendChild(cellControllers)
+                row.appendChild(cell);
             }
-
-            row.appendChild(cell);
         }
 
         // Пушим строку в тело таблицы
