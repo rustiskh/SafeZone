@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/slick.css" />
 		<link rel="stylesheet" href="assets/css/styles.min.css" />
 		<!-- Календарь -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+		<link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css" />
 		<!-- Таблица -->
 		<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css" />
 	</head>
@@ -345,53 +345,64 @@
 		<!-- change old start - новая форма пополнения 05.04.23 -->
 		<h1 class="title title_h2 cabinet-balance__title">Личный кабинет</h1>
 
-		<div class="group">
-			<input type="text" id="calendar-1" />
-			<span class="bar"></span>
-			<label class="input-label">Выбор даты для таблицы</label>
-		</div>
+		<section class="container padding-side cabinet-statistics">
+			<div id="statistics-table-container" class="cabinet-statistics-table">
+				<div class="cabinet-statistics-calendar">
+					<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
+					<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-1" />
+				</div>
 
-		<div class="table">
-			<table id="dataTable">
-				<thead>
-					<tr>
-						<th>Дата создания</th>
-						<th>Имя</th>
-						<th>Реф ссылка</th>
-						<th>Реф id</th>
-						<th>Клики</th>
-						<th>Рефералы</th>
-						<th>Оплат</th>
-						<th>Сумма оплат</th>
-						<!-- Заголовки должны соответсоввать порядку данных из json'a -->
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-		</div>
+				<table class="cabinet-statistics-table__element display responsive nowrap" width="100%" id="dataTable">
+					<thead>
+						<tr>
+							<th>Дата создания</th>
+							<th>Имя</th>
+							<th>Реф ссылка</th>
+							<th>Реф id</th>
+							<th>Клики</th>
+							<th>Рефералы</th>
+							<th>Оплат</th>
+							<th>Сумма оплат</th>
+							<!-- Заголовки должны соответсоввать порядку данных из json'a -->
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<!-- style="display: none" -->
+			<div id="graph-container" class="cabinet-statistics-graph">
+				<div id="graph-back-btn" class="cabinet-statistics-graph__back-btn">
+					<svg width="24" height="32" viewBox="0 0 30 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 27.5121C0.00904602 28.1779 0.266644 28.8163 0.722221 29.3019L25.8429 54.4226C26.331 54.8232 26.9506 55.0279 27.5813 54.9969C28.212 54.966 28.8085 54.7015 29.255 54.255C29.7015 53.8086 29.966 53.212 29.9969 52.5813C30.0279 51.9506 29.8232 51.331 29.4226 50.8429L6.06037 27.5121L29.4226 4.18122C29.8232 3.69314 30.0279 3.0735 29.9969 2.44284C29.966 1.81218 29.7015 1.21558 29.255 0.7691C28.8085 0.322618 28.212 0.058169 27.5813 0.027195C26.9506 -0.00377904 26.331 0.200938 25.8429 0.601521L0.722221 25.7222C0.266644 26.2079 0.00904602 26.8462 0 27.5121V27.5121Z" fill="#3EDA2B" />
+					</svg>
+				</div>
+				<div class="cabinet-statistics-graph__content">
+					<div class="cabinet-statistics-graph__title title_h3">Статистика по ссылке: <span id="graph-title">--</span></div>
 
-		<div id="graph-container" class="graph-container" style="display: none">
-			<button id="testData1" class="graph-tab" data-type="dataComission">Комиссия: <span id="dataSum-1" class="graph-tab__data">--</span> руб</button>
-			<button id="testData2" class="graph-tab" data-type="dataClicks">Кликов: <span id="dataSum-2" class="graph-tab__data">--</span></button>
-			<button id="testData3" class="graph-tab" data-type="dataReferals">Рефералов: <span id="dataSum-3" class="graph-tab__data">--</span></button>
-			<button id="testData4" class="graph-tab" data-type="dataTransactions">Транзакций: <span id="dataSum-4" class="graph-tab__data">--</span></button>
+					<div class="cabinet-statistics-graph__controls">
+						<button id="testData1" class="cabinet-statistics-graph__tab" data-type="dataComission">Комиссия: <span id="dataSum-1" class="cabinet-statistics-graph__tab-data">--</span> руб</button>
+						<button id="testData2" class="cabinet-statistics-graph__tab" data-type="dataClicks">Кликов: <span id="dataSum-2" class="cabinet-statistics-graph__tab-data">--</span></button>
+						<button id="testData3" class="cabinet-statistics-graph__tab" data-type="dataReferals">Рефералов: <span id="dataSum-3" class="cabinet-statistics-graph__tab-data">--</span></button>
+						<button id="testData4" class="cabinet-statistics-graph__tab" data-type="dataTransactions">Транзакций: <span id="dataSum-4" class="cabinet-statistics-graph__tab-data">--</span></button>
+					</div>
 
-			<div class="group">
-				<input type="text" id="calendar-chart" />
-				<span class="bar"></span>
-				<label class="input-label">Выбор даты для графика</label>
+					<div class="cabinet-statistics-calendar">
+						<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
+						<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-chart" />
+					</div>
+
+					<div class="cabinet-statistics-chart" style="width: 100%; height: 400px">
+						<canvas id="myChart"></canvas>
+					</div>
+				</div>
 			</div>
 
-			<div class="chart-container" style="width: 100%; height: 400px">
-				<canvas id="myChart"></canvas>
-			</div>
-		</div>
-
-		<style>
-			.graph-tab.active {
-				border: 1px solid red;
-			}
-		</style>
+			<!-- <style>
+				.cabinet-statistics-graph__tab.active {
+					border: 1px solid red;
+				}
+			</style> -->
+		</section>
 
 		<section class="cabinet-balance container padding-side">
 			<h3 class="title title_h2 title_h2-small cabinet-balance__subtitle">Баланс: 1000 р.</h3>
