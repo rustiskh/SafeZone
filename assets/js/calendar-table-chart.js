@@ -574,6 +574,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     const cellControllers = document.createElement('div');
                     cellControllers.classList.add("controllers", "edit", "copy", "detail");
 
+                    // Оборачиваем ссылку в span, назначаем ему id
+                    cell.textContent = "";
+                    const linkElement = document.createElement("span");
+                    linkElement.textContent = data[prop];
+                    linkElement.setAttribute("id", `ref_link_${data.ref_link_id}`)
+                    cell.appendChild(linkElement);
+
                     // Логика для кнопки "Скопировать"
                     const copyBtn = document.createElement("button");
                     copyBtn.classList.add("copy-btn");
@@ -598,6 +605,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     showGraph(detailBtn, data.ref_link_id, data.ref_link);
 
                     cell.appendChild(cellControllers);
+                }
+
+                // Задаем id ячейке столбца Имя
+                if (prop === "name") {
+                    cell.setAttribute("id", `name_${data.ref_link_id}`)
                 }
 
                 row.appendChild(cell);
