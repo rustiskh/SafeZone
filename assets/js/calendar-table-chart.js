@@ -456,7 +456,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const graphTitle = document.getElementById('graph-title');
     // Получаем кнопку всех периодов в календаре таблицы
     const tableAllPeriod = document.getElementById('table-calendar-all-period');
-    // Получаем кнопку всех периодов в графике таблицы
+    // Получаем кнопку всех периодов в графике
     const chartAllPeriod = document.getElementById('chart-calendar-all-period');
     // Получаем кнопки-табы
     const dataSet1 = document.getElementById("testData1");
