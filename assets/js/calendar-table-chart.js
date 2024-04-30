@@ -40,7 +40,7 @@ const dataTable = [
         all_transactions_sum: 0
     },
     {
-        created_at: "2024-03-14 16:33:25",
+        created_at: "2024-03-18 16:33:25",
         name: "474b749e50",
         ref_link: "https:\/\/szmarket.ru\/r\/474b749e50",
         ref_link_id: '12',
@@ -432,9 +432,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Формат даты - используется в календаре, в графике и таблице для отображения и фильтрации при изменении
     const dateFormat = "Y-m-d";
     // Значение даты по умолчанию при инициализации для календарей Таблицы и Графика
-    const defaultTableDate = [formatDate(new Date(Math.min(...dataTable.map(item => new Date(item.created_at))))), new Date().fp_incr(-1)];
-
-    const defaultChartDate = [formatDate(new Date(Math.min(...dataTable.map(item => new Date(item.created_at))))), new Date().fp_incr(-1)]
+    const defaultChartDate = [new Date().fp_incr(-24), new Date().fp_incr(-1)]; // Дата по умолчанию предыдущие 24 дня
+    const defaultDateTable = [dataTable[0].created_at.substring(0, dataTable[0].created_at.indexOf(' ')), dataTable[dataTable.length - 1].created_at.substring(0, dataTable[dataTable.length - 1].created_at.indexOf(' '))];
 
     // Эта функция нужна для форматирования диапазона дат перед передачей в таблицу и график - она унифицирует все значения дат 
     function formatDate(date) {
@@ -459,6 +458,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const graphBackBtn = document.getElementById('graph-back-btn');
     // Получаем контейнер для заголовка табилицы
     const graphTitle = document.getElementById('graph-title');
+    // Получаем кнопку всех периодов в календаре таблицы
+    const tableAllPeriod = document.getElementById('table-calendar-all-period');
+    // Получаем кнопку всех периодов в графике
+    const chartAllPeriod = document.getElementById('chart-calendar-all-period');
     // Получаем кнопки-табы
     const dataSet1 = document.getElementById("testData1");
     const tabDataSum1 = document.getElementById('dataSum-1');
@@ -627,7 +630,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    let table = new DataTable('#dataTable', {
+    var table = new DataTable('#dataTable', {
         info: false,
         autoWidth: true,
         scrollX: true,
@@ -691,10 +694,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }).draw();
     }
 
-    let tableCalendar = flatpickr("#calendar-1", {
+    var tableCalendar = flatpickr("#calendar-1", {
         "mode": "range",
         "locale": "ru",
-        defaultDate: defaultTableDate, // Дата по умолчанию предыдущие 2 недели
+        defaultDate: defaultDateTable, // Дата по умолчанию предыдущие 2 недели
         dateFormat: dateFormat, // Формат даты
         onChange: function (selectedDates) {
             filterTableByCalendar(selectedDates);
@@ -704,8 +707,14 @@ window.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    tableAllPeriod.addEventListener('click', () => {
+        const firstDate = dataTable[0].created_at;
+        const lastDate = dataTable[dataTable.length - 1].created_at;
+        tableCalendar.setDate([firstDate.substring(0, firstDate.indexOf(' ')), lastDate.substring(0, lastDate.indexOf(' '))], true);
+    })
+
     // Календарь для графика
-    let chartCalendar = flatpickr("#calendar-chart", {
+    var chartCalendar = flatpickr("#calendar-chart", {
         "mode": "range",
         "locale": "ru",
         defaultDate: defaultChartDate, // Дата по умолчанию предыдущие 2 недели
@@ -722,6 +731,14 @@ window.addEventListener("DOMContentLoaded", () => {
             updateChartData(selectedDates, currentId, activeDataType)
         },
     });
+
+    // chartAllPeriod.addEventListener('click', () => {
+
+    //     const firstDate = dataTable[0].created_at;
+    //     const lastDate = dataTable[dataTable.length - 1].created_at;
+    //     chartCalendar.setDate([firstDate.substring(0, firstDate.indexOf(' ')), lastDate.substring(0, lastDate.indexOf(' '))], true);
+    // })
+
     // График
     // Инициализация
 
@@ -737,7 +754,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    let myChart;
+    var myChart;
     const ctx = document.getElementById('myChart').getContext('2d');
     myChart = new Chart(ctx, {
         type: 'line',
