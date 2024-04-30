@@ -8479,6 +8479,9 @@ body.light .cabinet-orders__more {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.cabinet-statistics-calendar__selector :first-child {
+  margin-right: 12px;
+}
 .cabinet-statistics-calendar__label {
   text-align: center;
   font-weight: 400;
@@ -8495,6 +8498,26 @@ body.light .cabinet-orders__more {
 .cabinet-statistics-calendar__input {
   font-weight: 500;
   padding: 11px 20px;
+}
+.cabinet-statistics-calendar__period-btn {
+  display: block;
+  background: var(--color-accent-dark);
+  color: var(--color-white);
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .cabinet-statistics-calendar__period-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+.cabinet-statistics-calendar__period-btn:hover {
+  color: var(--color-gray-dark);
 }
 .cabinet-statistics-table .cabinet-statistics-calendar {
   margin-bottom: 32px;

@@ -10,6 +10,12 @@
 		gap: 12px 24px;
 		flex-wrap: wrap;
 
+		&__selector {
+			:first-child {
+				margin-right: 12px;
+			}
+		}
+
 		&__label {
 			text-align: center;
 			font-weight: 400;
@@ -26,6 +32,29 @@
 		&__input {
 			font-weight: 500;
 			padding: 11px 20px;
+		}
+
+		&__period-btn {
+			display: block;
+			background: color(accent-dark);
+			color: color(white);
+			padding: 10px 14px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+
+			font-weight: 600;
+			font-size: 14px;
+
+			@include mobile {
+				padding: 6px 8px;
+
+				font-size: 12px;
+			}
+
+			&:hover {
+				color: color(gray-dark);
+			}
 		}
 	}
 

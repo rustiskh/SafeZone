@@ -348,8 +348,11 @@
 		<section class="container padding-side cabinet-statistics">
 			<div id="statistics-table-container" class="cabinet-statistics-table">
 				<div class="cabinet-statistics-calendar">
-					<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
-					<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-1" />
+					<div class="cabinet-statistics-calendar__selector">
+						<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
+						<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-1" />
+					</div>
+					<button id="table-calendar-all-period" class="button button_mini cabinet-statistics-calendar__period-btn">За всё время</button>
 				</div>
 
 				<table class="cabinet-statistics-table__element display responsive nowrap" width="100%" id="dataTable">
@@ -386,8 +389,11 @@
 					</div>
 
 					<div class="cabinet-statistics-calendar">
-						<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
-						<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-chart" />
+						<div class="cabinet-statistics-calendar__selector">
+							<label class="cabinet-statistics-calendar__label">Выбрать дату</label>
+							<input class="general-input cabinet-statistics-calendar__input" type="text" id="calendar-chart" />
+						</div>
+						<button id="chart-calendar-all-period" class="button button_mini cabinet-statistics-calendar__period-btn">За всё время</button>
 					</div>
 
 					<div class="cabinet-statistics-chart" style="width: 100%; height: 400px">

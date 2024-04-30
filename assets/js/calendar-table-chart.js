@@ -10,20 +10,10 @@ const dataTable = [
         all_transactions_sum: 0
     },
     {
-        created_at: "2024-03-14 16:33:25",
-        name: "474b749e50",
-        ref_link: "https:\/\/szmarket.ru\/r\/474b749e50",
-        ref_link_id: '12',
-        all_clicks: 0,
-        all_members: 0,
-        all_transactions: 0,
-        all_transactions_sum: 0
-    },
-    {
-        created_at: "2024-03-11 16:30:00",
-        name: "e8feeb9224",
-        ref_link: "https:\/\/szmarket.ru\/r\/e8feeb9224",
-        ref_link_id: '121',
+        created_at: "2024-03-04 16:22:55",
+        name: "7df5c27f2e",
+        ref_link: "https:\/\/szmarket.ru\/r\/7df5c27f2e",
+        ref_link_id: '122',
         all_clicks: 0,
         all_members: 0,
         all_transactions: 0,
@@ -40,10 +30,20 @@ const dataTable = [
         all_transactions_sum: 0
     },
     {
-        created_at: "2024-03-04 16:22:55",
-        name: "7df5c27f2e",
-        ref_link: "https:\/\/szmarket.ru\/r\/7df5c27f2e",
-        ref_link_id: '122',
+        created_at: "2024-03-11 16:30:00",
+        name: "e8feeb9224",
+        ref_link: "https:\/\/szmarket.ru\/r\/e8feeb9224",
+        ref_link_id: '121',
+        all_clicks: 0,
+        all_members: 0,
+        all_transactions: 0,
+        all_transactions_sum: 0
+    },
+    {
+        created_at: "2024-03-18 16:33:25",
+        name: "474b749e50",
+        ref_link: "https:\/\/szmarket.ru\/r\/474b749e50",
+        ref_link_id: '12',
         all_clicks: 0,
         all_members: 0,
         all_transactions: 0,
@@ -428,7 +428,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Формат даты - используется в календаре, в графике и таблице для отображения и фильтрации при изменении
     const dateFormat = "Y-m-d";
     // Значение даты по умолчанию при инициализации для календарей Таблицы и Графика
-    const defaultDate = [new Date().fp_incr(-24), new Date().fp_incr(-1)]; // Дата по умолчанию предыдущие 24 дня
+    const defaultChartDate = [new Date().fp_incr(-24), new Date().fp_incr(-1)]; // Дата по умолчанию предыдущие 24 дня
+    const defaultDateTable = [dataTable[0].created_at.substring(0, dataTable[0].created_at.indexOf(' ')), dataTable[dataTable.length - 1].created_at.substring(0, dataTable[dataTable.length - 1].created_at.indexOf(' '))];
 
     // Эта функция нужна для форматирования диапазона дат перед передачей в таблицу и график - она унифицирует все значения дат 
     function formatDate(date) {
@@ -453,6 +454,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const graphBackBtn = document.getElementById('graph-back-btn');
     // Получаем контейнер для заголовка табилицы
     const graphTitle = document.getElementById('graph-title');
+    // Получаем кнопку всех периодов в календаре таблицы
+    const tableAllPeriod = document.getElementById('table-calendar-all-period');
+    // Получаем кнопку всех периодов в графике таблицы
+    const chartAllPeriod = document.getElementById('chart-calendar-all-period');
     // Получаем кнопки-табы
     const dataSet1 = document.getElementById("testData1");
     const tabDataSum1 = document.getElementById('dataSum-1');
@@ -621,7 +626,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    let table = new DataTable('#dataTable', {
+    var table = new DataTable('#dataTable', {
         info: false,
         autoWidth: true,
         scrollX: true,
@@ -685,10 +690,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }).draw();
     }
 
-    let tableCalendar = flatpickr("#calendar-1", {
+    var tableCalendar = flatpickr("#calendar-1", {
         "mode": "range",
         "locale": "ru",
-        defaultDate: defaultDate, // Дата по умолчанию предыдущие 2 недели
+        defaultDate: defaultDateTable, // Дата по умолчанию предыдущие 2 недели
         dateFormat: dateFormat, // Формат даты
         onChange: function (selectedDates) {
             filterTableByCalendar(selectedDates);
@@ -697,12 +702,18 @@ window.addEventListener("DOMContentLoaded", () => {
             filterTableByCalendar(selectedDates);
         },
     });
+
+    tableAllPeriod.addEventListener('click', () => {
+        const firstDate = dataTable[0].created_at;
+        const lastDate = dataTable[dataTable.length - 1].created_at;
+        tableCalendar.setDate([firstDate.substring(0, firstDate.indexOf(' ')), lastDate.substring(0, lastDate.indexOf(' '))], true);
+    })
 
     // Календарь для графика
-    let chartCalendar = flatpickr("#calendar-chart", {
+    var chartCalendar = flatpickr("#calendar-chart", {
         "mode": "range",
         "locale": "ru",
-        defaultDate: defaultDate, // Дата по умолчанию предыдущие 2 недели
+        defaultDate: defaultChartDate, // Дата по умолчанию предыдущие 2 недели
         dateFormat: dateFormat, // Формат даты
 
         onChange: function (selectedDates) {
@@ -716,6 +727,13 @@ window.addEventListener("DOMContentLoaded", () => {
             updateChartData(selectedDates, currentId, activeDataType)
         },
     });
+
+    // chartAllPeriod.addEventListener('click', () => {
+
+    //     const firstDate = dataTable[0].created_at;
+    //     const lastDate = dataTable[dataTable.length - 1].created_at;
+    //     chartCalendar.setDate([firstDate.substring(0, firstDate.indexOf(' ')), lastDate.substring(0, lastDate.indexOf(' '))], true);
+    // })
 
     // График
     // Инициализация
@@ -732,7 +750,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    let myChart;
+    var myChart;
     const ctx = document.getElementById('myChart').getContext('2d');
     myChart = new Chart(ctx, {
         type: 'line',
