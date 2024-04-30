@@ -48,12 +48,16 @@ const dataTable = [
         all_members: 0,
         all_transactions: 0,
         all_transactions_sum: 0
-    }
+    },
 ]
 
 const detailedDatabase = {
     "1": {
         dataComission: [
+            {
+                created_at: "2024-03-04",
+                sum: "4",
+            },
             {
                 created_at: "2024-03-05",
                 sum: "4",
@@ -813,21 +817,26 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    // 04/04 Добавил перенос даты, между графиками
     dataSet1.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('comission')(event);
+        // updateChartData(chartCalendar.selectedDates, event.target.getAttribute('data-current-link_id'), event.target.getAttribute('data-type'));
     });
     dataSet2.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('clicks')(event);
+        // updateChartData(chartCalendar.selectedDates, event.target.getAttribute('data-current-link_id'), event.target.getAttribute('data-type'));
     });
     dataSet3.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('referals')(event);
+        // updateChartData(chartCalendar.selectedDates, event.target.getAttribute('data-current-link_id'), event.target.getAttribute('data-type'));
     });
     dataSet4.addEventListener('click', (event) => {
         toggleActiveClass(event);
         handleDataSetClick('transactions')(event);
+        // updateChartData(chartCalendar.selectedDates, event.target.getAttribute('data-current-link_id'), event.target.getAttribute('data-type'));
     });
 
     function setDataset(dataset) {
@@ -843,7 +852,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function updateChartData(selectedDates, currentId, dataType) {
         let startDate = "";
         let endDate = "";
-
+        console.log(selectedDates);
         if (selectedDates.length === 2) {
             startDate = formatDate(selectedDates[0], dateFormat);
             endDate = formatDate(selectedDates[1], dateFormat);
